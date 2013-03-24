@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+.cellOverview
+{
+	width:100%;
+	height:180px;
+	padding:0px;
+	border-spacing:30px;
+}
+
+td.statusOk
+{
+	background-color:#00FF00;
+}
+
+td.statusWarning
+{
+	background-color:#FFFF00;
+}
+
+td.statusAlert
+{
+	background-color:#FF0000
+}
+
+td.statusDefect
+{
+	background-color:#000000;
+}
+
+.stationOverview
+{
+	width:100%;
+	border:none;
+	padding:0px;
+	border-spacing:10px;
+}
+
+.station
+{
+	width:100%;
+	padding:0px;
+	border-spacing:10px;
+}
+
+.centeredImage
+{
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:10px;
+	padding:10px;
+}
