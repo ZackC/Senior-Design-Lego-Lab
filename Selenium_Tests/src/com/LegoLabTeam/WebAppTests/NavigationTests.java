@@ -44,10 +44,24 @@ public class NavigationTests extends TestCase
 	  }
 	 
 	 @Test
+	  public void testNavigationToCell1AndBack() throws Exception {
+	    
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+	    cellOverview.navigateToCell1().goBack(driver);
+	  }
+	 
+	 @Test
 	  public void testNavigationToCell2() throws Exception {
 	    
 		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 	    cellOverview.navigateToCell2();
+	  }
+	 
+	 @Test
+	  public void testNavigationToCell2AndBack() throws Exception {
+	    
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+	    cellOverview.navigateToCell2().goBack(driver);
 	  }
 	 
 	 @Test
@@ -56,7 +70,140 @@ public class NavigationTests extends TestCase
 		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 	    cellOverview.navigateToCell3();
 	  }
-
+	 
+	 @Test
+	  public void testNavigationToCell3AndBack() throws Exception {
+	    
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+	    cellOverview.navigateToCell3().goBack(driver);
+	  }
+	 
+	 @Test
+	 public void testNavigationToCell1Overall() throws Exception
+	 {
+		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		 cellOverview.navigateToCell1().navigateToOverall();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell1Station1() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell1().navigateToStation1();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell1Station2() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell1().navigateToStation2();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell1Station3() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell1().navigateToStation3();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell1Station4() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell1().navigateToStation4();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell1Station5() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell1().navigateToStation5();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell2Overall() throws Exception
+	 {
+		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		 cellOverview.navigateToCell2().navigateToOverall();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell2Station1() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell2().navigateToStation1();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell2Station2() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell2().navigateToStation2();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell2Station3() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell2().navigateToStation3();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell2Station4() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell2().navigateToStation4();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell2Station5() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell2().navigateToStation5();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell3Overall() throws Exception
+	 {
+		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		 cellOverview.navigateToCell3().navigateToOverall();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell3Station1() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell3().navigateToStation1();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell3Station2() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell3().navigateToStation2();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell3Station3() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell3().navigateToStation3();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell3Station4() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell3().navigateToStation4();
+	 }
+	 
+	 @Test
+	 public void testNavigationToCell3Station5() throws Exception
+	 {
+		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
+		cellOverview.navigateToCell3().navigateToStation5();
+	 }
+     
 	  @After
 	  public void tearDown() throws Exception {
 	    driver.quit();

@@ -4,10 +4,13 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-
+import org.junit.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 
 public class LabDisplayPageObject 
@@ -32,20 +35,35 @@ public class LabDisplayPageObject
     
     public Cell1DisplayPageObject navigateToCell1()
     {
-    	driver.findElement(By.id("cell1Station1")).click();
+    	getButton(1).click();
     	return new Cell1DisplayPageObject(driver);
     }
     
     public Cell2DisplayPageObject navigateToCell2()
     {
-    	driver.findElement(By.id("cell2Station1")).click();
+    	getButton(2).click();
     	return new Cell2DisplayPageObject(driver);
     }
     
     public Cell3DisplayPageObject navigateToCell3()
     {
-    	driver.findElement(By.id("cell3Station1")).click();
+    	getButton(3).click();
     	return new Cell3DisplayPageObject(driver);
+    }
+    
+    public WebElement getButton(int cellNumber)
+    {
+    	return driver.findElement(By.id("cell"+cellNumber+"Station1")).findElement(By.xpath("ancestor::a"));
+    }
+    
+    public void checkTitleIsInButton(int cellNubmer, String title) throws Exception
+    {
+    	assertTrue(getButton(cellNubmer).getText().contains(title));
+    }
+    
+    public void checkStationStatusIsInButton(int cellNumber, int stationNumber) throws Exception
+    {
+    	assertTrue(getButton(cellNumber).findElement(By.id("cell"+cellNumber+"Station"+stationNumber)).isEnabled());
     }
 
 }

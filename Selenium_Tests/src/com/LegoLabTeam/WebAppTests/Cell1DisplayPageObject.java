@@ -9,17 +9,50 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
-public class Cell1DisplayPageObject 
+public class Cell1DisplayPageObject extends CellDisplay
 {
-   final WebDriver driver;
+
 	
   public Cell1DisplayPageObject(WebDriver newDriver)
   {
-	  driver = newDriver;  
-      Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)  
-         .withTimeout(20, TimeUnit.SECONDS)  
-         .pollingEvery(2, TimeUnit.SECONDS);  
-
-      wait.until(ExpectedConditions.titleIs("Tiger Automotive Lab: Cell 1"));  
+	  super(newDriver,"Tiger Automotive Lab: Cell 1",1); 
+        
   }
+  
+  @Override
+	public Cell1OverallStationPageObject navigateToOverall() throws Exception {
+		return performNavigation(Cell1OverallStationPageObject.class,0);
+	}
+
+@Override
+public Cell1Station1PageObject navigateToStation1() throws Exception 
+{
+	return performNavigation(Cell1Station1PageObject.class,1);
+}      
+		  
+		  
+		  
+
+@Override
+public Cell1Station2PageObject navigateToStation2() throws Exception {
+	return performNavigation(Cell1Station2PageObject.class,2);
+}
+
+@Override
+public Cell1Station3PageObject navigateToStation3() throws Exception {
+	return performNavigation(Cell1Station3PageObject.class,3);
+}
+
+@Override
+public Cell1Station4PageObject navigateToStation4() throws Exception {
+	return performNavigation(Cell1Station4PageObject.class,4);
+}
+
+@Override
+public Cell1Station5PageObject navigateToStation5() throws Exception {
+	return performNavigation(Cell1Station5PageObject.class,5);
+}
+
+
+
 }
