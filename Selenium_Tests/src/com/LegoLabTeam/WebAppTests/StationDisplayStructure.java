@@ -20,17 +20,31 @@ import org.openqa.selenium.support.ui.Wait;
  */
 public class StationDisplayStructure extends DisplayStructure
 {
+	/***
+	 * This method checks if the text is in the body of the webpage.
+	 * @param driver - the webdriver
+	 * @param stringToFind - the string to find in the page
+	 * @throws Exception
+	 */
 	public static void checkForStringInPage(WebDriver driver, String stringToFind) throws Exception
 	{
        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().contains(stringToFind));
 		//driver.getPageSource().contians() may also work    
 	}
 	
+	/**
+	 * This method checks if the picture is displayed on the webpage
+	 * @param driver - the webdriver
+	 * @param pictureName - the name of the picture to verify
+	 */
 	public static void checkPictureDisplayedInPage(WebDriver driver, String pictureName)
 	{
 		driver.findElement(By.name(pictureName)).isDisplayed();
 	}
-	
+	/***
+	 * This method defines how to click the back button on the page
+	 * @param driver- the webdriver
+	 */
 	public static void clickBackButton(WebDriver driver)
 	{
 		driver.findElement(By.cssSelector("span.ui-btn-text")).click();

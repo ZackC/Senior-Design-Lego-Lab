@@ -9,7 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import junit.framework.TestCase;
-
+/***
+ * These are tests for testing the static view of the main page
+ * @author Zack Coker
+ *
+ */
 public class LabStaticDisplayTests extends TestCase
 {
 	WebDriver driver;

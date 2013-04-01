@@ -20,9 +20,9 @@ public class WebAppTestMain {
 	public static Test suite() {
 	    TestSuite suite = new TestSuite();
 	    suite.addTestSuite(NavigationTests.class);
-	    //suite.addTestSuite(StationStaticDisplayTests.class);
-	    //suite.addTestSuite(CellStaticDisplayTests.class);
-	    //suite.addTestSuite(LabStaticDisplayTests.class);
+	    suite.addTestSuite(StationStaticDisplayTests.class);
+	    suite.addTestSuite(CellStaticDisplayTests.class);
+	    suite.addTestSuite(LabStaticDisplayTests.class);
 	    return suite;
 	  }
 

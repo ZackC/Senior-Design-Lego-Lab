@@ -2,7 +2,7 @@ package com.LegoLabTeam.WebAppTests;
 
 import org.openqa.selenium.WebDriver;
 
-public class Cell2Station3PageObject extends StationDisplay
+public class Cell2Station3PageObject extends StationsForCell2PageObject
 {
 	
 	public Cell2Station3PageObject(WebDriver newDriver)

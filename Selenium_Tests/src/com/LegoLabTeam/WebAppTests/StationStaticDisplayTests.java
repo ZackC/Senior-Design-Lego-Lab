@@ -11,13 +11,19 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
-
+/***
+ * This class holds the tests for the static information of the GUI
+ * 
+ */
 public class StationStaticDisplayTests extends TestCase{
 
 	WebDriver driver;
 	String baseUrl;
 	private StringBuffer verificationErrors = new StringBuffer();
 	
+	/***
+	 * The set up for the test cases.  
+	 */
 	 @Before
 	  public void setUp() throws Exception {
 	    driver = new FirefoxDriver();
@@ -25,7 +31,7 @@ public class StationStaticDisplayTests extends TestCase{
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
 	 
-	 
+
 	 @Test
 	 public void testProccessStringAtCell1OverallStation() throws Exception
 	 {
