@@ -1,5 +1,5 @@
 <?php
-class tableWriter
+class TableWriter
 {
 	//Database Information
 	private $dbHost = "localhost";
@@ -39,8 +39,13 @@ class tableWriter
 	public function writeToTable()
 	{
 		$stations = mysqli_query($this->con, "SELECT * FROM station WHERE cell = $this->cellNumber AND station = $this->stationNumber");
+                echo "Cell Number: ".$this->cellNumber."\n";
+                echo "Station Number: ".$this->stationNumber."\n";
 		$stationRow = mysqli_fetch_array($stations);
 		$stationId = $stationRow['station_id'];
+                echo "Stations: ".$stationId."\n";
+                echo "Average Idle Time: ".$this->average_idle_time."\n"; 
+                echo "Database String: "."UPDATE latest_info SET average_idle_time = $this->average_idle_time WHERE station = $stationId"."\n";
 		mysqli_query($this->con, "UPDATE latest_info SET average_idle_time = $this->average_idle_time WHERE station = $stationId");
 	}
 }

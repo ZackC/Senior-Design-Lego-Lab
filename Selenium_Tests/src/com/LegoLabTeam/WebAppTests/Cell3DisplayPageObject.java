@@ -55,7 +55,7 @@ public class Cell3DisplayPageObject extends CellDisplay{
 	}
 
 	/***
-	 * The method for nabigating to station 4 from this cell
+	 * The method for navigating to station 4 from this cell
 	 */
 	@Override
 	public Cell3Station4PageObject navigateToStation4() throws Exception {

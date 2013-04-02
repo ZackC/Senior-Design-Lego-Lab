@@ -40,6 +40,11 @@
      {
        $this -> filename = $newFilename;
      }
+
+     public function getFilename()
+     {
+        return $this -> filename;
+     } 
      
   }
 ?>

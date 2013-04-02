@@ -15,6 +15,7 @@
      // the file to read from, or the file prefix and path if new files are being created
      private $filename;
 
+
      //the constructor
      //$type - the type of the file being watched (1 for time file, anything else for 
      //    defect files
@@ -23,7 +24,6 @@
      {
         $this -> fileToTableObject = new FileInformationToValidTableObject($type, $newFilename); // may have to change this if watching a directory instead of a file
         $this -> filename = $newFilename;
-        $filenamesetto = $this -> filename;
      }
 
      // the function that watches a specific file for changes.
@@ -74,19 +74,22 @@
            for($i = 0; $i < $size; $i++)
            {
              // at moment could have error with this if the other system builds up a lot of files before we read any since this doesn't do any ordering.  Will need to know there ordering system better before this is fixed.
-             //echo "basename: ".basename($this -> filename)."\n";
-             //echo "File being compared: ".$newDirectoryContents[$i]."\n";
+             
+             echo "basename: ".basename($this -> filename)."\n";
+             echo "File being compared: ".$newDirectoryContents[$i]."\n";
              if(strpos($newDirectoryContents[$i],basename($this -> filename)) !== FALSE)
              {
-                 //$this -> fileToTableObject -> setFilename($newDirectoryContents[$i]);
-                 //$this -> fileToTableObject -> fileDataToTable();   //may need to change if implementing observer pattern
-                 echo "Deleting file.\n";
+                 $this -> fileToTableObject -> setFilename($newDirectoryContents[$i]);
+                 $this -> fileToTableObject -> fileDataToTable();   //may need to change if implementing observer pattern
+                 echo "Found File.\n";
                  echo "{$newDirectoryContents[$i]}\n";
-                 unlink($newDirectoryContents[$i]);
+                 //unlink($newDirectoryContents[$i]);
              }
              //echo strpos($newDirectoryContents[$i],basename($this -> filename));
            }
            $oldDirectoryContentsSize = count(scandir($directory));  
+
+           $this -> setRunning(false);
          }
        }
      }
@@ -102,6 +105,11 @@
      public function getRunning()
      {
         return $this -> running;
+     }
+
+     public function getTableObject()
+     {
+        return $this -> fileToTableObject -> getTableObject();
      }
   }
 ?>
