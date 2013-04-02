@@ -21,22 +21,34 @@ function display()
 	
 	//Connect to the database
 	$con = mysqli_connect($db_host, $db_username, $db_pass, $db_name);
-	$cellResult = mysqli_query($con, "SELECT * FROM cells");
+	$cells = mysqli_query($con, "SELECT DISTINCT cell FROM station ORDER BY cell");
+	$stations = mysqli_query($con, "SELECT * FROM station ORDER BY cell, station");
 	
-	while ($cellRow = mysqli_fetch_array($cellResult))
+	while ($cellRow = mysqli_fetch_array($cells))
 	{
-		echo '<a href="Cell ' . $cellRow['cell_number'] . ' Overview.php" rel="external" data-role="button">
-	          <h3 align="left">Cell ' . $cellRow['cell_number'] . ':</h3>
-              <table class="cellOverview">
-	            <tr>
-	              <td id="cell' . $cellRow['cell_number'] . 'Station1" class="statusOk">&nbsp;</td>
-	              <td id="cell' . $cellRow['cell_number'] . 'Station2" class="statusWarning">&nbsp;</td>
-	              <td id="cell' . $cellRow['cell_number'] . 'Station3" class="statusAlert">&nbsp;</td>
-	              <td id="cell' . $cellRow['cell_number'] . 'Station4" class="statusDefect">&nbsp;</td>
-	              <td id="cell' . $cellRow['cell_number'] . 'Station5" class="statusOk">&nbsp;</td>
-               </tr>
-             </table>
-             </a>';
+		echo '
+		<a href="Cell ' . $cellRow['cell'] . ' Overview.php" rel="external" data-role="button">
+		<h3 align="left">Cell ' . $cellRow['cell'] . ':</h3>
+		<table class="cellOverview">
+		<tr>';
+		while (($stationRow = mysqli_fetch_array($stations)) && $stationRow['cell'] == $cellRow['cell'])
+		{
+			if ($stationRow['station'] != 0)
+			{
+				$stationId = $stationRow['station_id'];
+				$status = mysqli_query($con, "SELECT status FROM latest_info WHERE station = $stationId");
+				$statusRow = mysqli_fetch_array($status);
+				$statusNumber = $statusRow['status'];
+				$status = mysqli_query($con, "SELECT status FROM status WHERE status_id = $statusNumber");
+				$statusRow = mysqli_fetch_array($status);
+				echo '
+				<td id="cell' . $stationRow['cell'] . 'Station' . $stationRow['station'] . '" class="' . $statusRow['status'] . '">&nbsp;</td>';
+			}
+		}
+		echo '
+		</tr>
+		</table>
+		</a>';
 	}
 }
 ?>
@@ -47,7 +59,7 @@ function display()
 	</div>
 	<div data-role="content">
     	<?php display(); ?>
-    	<h3 align="left">Overall:</h3>
+    	<!--<h3 align="left">Overall:</h3>-->
     </div>
 	<div data-role="footer">
 		<h4>Page Footer</h4>

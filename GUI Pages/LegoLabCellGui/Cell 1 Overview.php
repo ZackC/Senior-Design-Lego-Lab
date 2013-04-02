@@ -10,13 +10,92 @@
 </head>
 
 <body>
+<?php
+function display()
+{
+	//Database Information
+	$db_host = "localhost";
+	$db_username = "admin";
+	$db_pass = "";
+	$db_name = "test";
+	
+	//Connect to the database
+	$con = mysqli_connect($db_host, $db_username, $db_pass, $db_name);
+	$stations = mysqli_query($con, "SELECT * FROM station WHERE cell = 1 ORDER BY station");
+	
+	echo '
+	<table class="stationOverview">
+	<tr>';
+			  
+	$count = 0;
+	
+	while ($stationRow = mysqli_fetch_array($stations))
+	{
+		$stationId = $stationRow['station_id'];
+		$latestInfo = mysqli_query($con, "SELECT * FROM latest_info WHERE station = $stationId");
+		$infoRow = mysqli_fetch_array($latestInfo);
+		if ($stationRow['station'] != 0)
+		{
+			echo '
+			<td>
+			<a href="Cell ' . $stationRow['cell'] . ' Station ' . $stationRow['station'] . '.php" rel="external" data-role="button">
+			<table class="station">
+			<tr>
+			<td width=60%><h2 align="left">Station ' . $stationRow['station'] . ':</h2>
+			<p id="overallProcessTime" align="left">Average Process Time: ' . $infoRow['average_process_time'] . '</p>
+			<p id="overallIdleTime" align="left">Average Idle Time: ' . $infoRow['average_idle_time'] . '</p>
+			<p id="overallTaktTime" align="left">Takt Time: ' . $infoRow['takt_time'] . '</p>
+			<p id="overallDailyDefects" align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
+			<p>&nbsp;</p>
+			</td>';
+		}
+		else
+		{
+			echo '
+			<td>
+			<a href="Cell ' . $stationRow['cell'] . ' Overall.php" rel="external" data-role="button">
+			<table class="station">
+			<tr>
+			<td width=60%><h2 align="left">Overall:</h2>
+			<p id="overallProcessTime" align="left">Average Process Time: ' . $infoRow['average_process_time'] . '</p>
+			<p id="overallIdleTime" align="left">Average Idle Time: ' . $infoRow['average_idle_time'] . '</p>
+			<p id="overallTaktTime" align="left">Takt Time: ' . $infoRow['takt_time'] . '</p>
+			<p id="overallDailyDefects" align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
+			<p id="overallBottleneckStation" align="left">Bottleneck Station: ' . $infoRow['bottleneck'] . '</p>
+			</td>';
+		}
+		$statusNumber = $infoRow['status'];
+		$status = mysqli_query($con, "SELECT status FROM status WHERE status_id = $statusNumber");
+		$statusRow = mysqli_fetch_array($status);
+		echo '
+		<td id="overallStatus" width="40%" class="' . $statusRow['status'] . '">&nbsp;</td>
+		</tr>
+		</table>
+		</a>
+		</td>';
+		if ($count % 2 != 0)
+		{
+			echo '
+			</tr>
+			<tr>';
+		}
+		$count++;
+	}
+	
+	echo '
+	</tr>
+	</table>';
+}
+?>
+
 <div data-role="page" id="Cell 1 Overview">
 	<div data-role="header">
     	<a href="Cell Overview.php" data-rel="back" data-icon="back">Back</a>
 		<h1>Tiger Automotive Lab: Cell 1</h1>
 	</div>
 	<div data-role="content">
-	  <table class="stationOverview">
+    	<?php display(); ?>
+	  <!--<table class="stationOverview">
 	    <tr>
 	      <td>
           <a href="Cell 1 Overall.php" rel="external" data-role="button">
@@ -119,7 +198,7 @@
           </a>
           </td>
         </tr>
-      </table>
+      </table>-->
   </div>
 	<div data-role="footer">
 		<h4>Page Footer</h4>
