@@ -15,6 +15,12 @@
      private $tableObjectValidator;
 
      private $tableObject;
+     
+     private $tableWriterDelegator;
+
+     private $stationInformation;
+
+     private $type;
 
      // Used to construct the two different pathways.  a type 1 is the time file path
      // while any other type is the defect path.  Creates all three objects necessary to
@@ -22,34 +28,51 @@
      // $type - which type of information the file stores (1 for time, anything else for 
      //      defect)
      // $filename - the name of the file to read from.
-     public function __construct($type,$filename)
+     public function __construct($newType,$filename, $newStationInformation)
      {
-       if($type == 1)
+       $this -> stationInformation = $newStationInformation;
+       $this -> type = $newType;
+       if($newType == 1)
        {
          echo "123 Filename: ".$filename."\n";
+         
          $this -> fileReader = new TimeFileReader($filename);
          $this -> fileToObjectMapper = new TimeFileToTableObjectMapper();
          $this -> tableObjectValidator = new TimeTableObjectValidator();
          $this -> tableObject = new TimeTableObject();
+         $this -> tableWriterDelegator = new TimeTableWriterDelegator();
        } 
        else
        {
+         
          $this -> fileReader = new DefectFileReader($filename);
          $this -> fileToObjectMapper = new DefectFileToTableObjectMapper();
          $this -> tableObjectValidator = new DefectTableObjectValidator();
          $this -> tableObject = new DefectTableObject();
+         $this -> tableWriterDelegator = new DefectTableWriterDelegator();
        }
      }
      
      // the method for extracting information from the file and preparing it for the table
      public function fileDataToTable()
      {
+        if($this -> type == 1)
+        {
+           $this -> stationInformation -> incrementTimeFileCarNumber();
+        }
+        else
+        {
+           $this -> stationInformation -> incrementDefectFileCarNumber();
+        }
         $result = $this -> fileReader -> extractData($this -> fileReader -> openFile());
         echo "Filename: ".$this -> fileReader -> getFilename()."\n";
-        $this -> fileToObjectMapper -> mapTimeFromFileName($this -> fileReader -> getFilename(), $this -> tableObject);
-        $this -> fileToObjectMapper -> mapData($result, $this -> tableObject);
-        //$this->tableObjectValidator->validateTableObject();
-        return $this -> tableObject;
+        $this -> fileToObjectMapper -> mapInformationFromFileName($this -> fileReader -> getFilename(), $this -> tableObject);
+        if($this -> fileToObjectMapper -> mapData($result, $this -> tableObject) and 
+ $this -> tableObjectValidator -> validateTableObject($this -> tableObject))
+        {
+          $this -> tableWriterDelegator -> writeTableObjectToTable($this -> tableObject, $this -> stationInformation);
+        }
+        //return $this -> tableObject;
      }
 
      //sets the file to be read from.

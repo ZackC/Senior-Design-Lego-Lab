@@ -15,7 +15,7 @@
     //$data - the information from the file.
     abstract protected function mapData($data, $tableObject);
 
-    public function mapTimeFromFileName($filename, $tableObject)
+    public function mapInformationFromFileName($filename, $tableObject)
     {
       $tableObject -> setCellNumber(substr($filename,self::CHARACTERS_TILL_CELL_NUMBER, 1));
       $tableObject -> setStationNumber(substr($filename,self::CHARACTERS_TILL_STATION_NUMBER,1)); 

@@ -9,7 +9,11 @@
      //$tableObject - the object to be validated
      public function validateTableObject($tableObject)
      {
-
+     	return $this -> validateCellNumber($tableObject -> getCellNumber()) and 
+     	  $this -> validateStationNumber($tableObject -> getStationNumber()) and
+     	  $this -> validateFileTime($tableObject -> getFileTime()) and 
+          $this -> isValidTimeInput($tableObject -> getOnTime()) and
+          $this -> isValidTimeInput($tableObject -> getOffTime());
      }
 
      // the method that checks to see if an input is a valid way of writing time for 
@@ -17,7 +21,7 @@
      // sure what part would be checking for that
      public function isValidTimeInput($timeInput)
      {
-        return preg_match('/^\d\d\.\d\d$/',$timeInput); // if there can only be 2 digits on either side of the decimal.
+        return preg_match('/^\d+\.\d\d$/',$timeInput); // if there can only be 2 digits on either side of the decimal.
         //return preg_match('/^\d+\.\d$/',$timeInput);  // line for there can be multiple digits on both sides of the decimal.
      }
   }

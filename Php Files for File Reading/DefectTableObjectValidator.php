@@ -10,23 +10,32 @@
      // handle it another way yet.
      public function validateTableObject($tableObject)
      {
-       
+     	$defects = $tableObject -> getDefects();
+     	$checkedDefects = true;
+     	for($i = 0; $i < count($defects); $i++)
+     	{
+     	  if(!$this -> isInteger($defects[$i]))
+     	  {
+     	  	$checkedDefects = false;
+     	  	break;
+     	  }
+     	}
+     	return $checkedDefects and 
+     	$this -> validateCellNumber($tableObject -> getCellNumber()) and
+     	$this -> validateStationNumber($tableObject -> getStationNumber()) and
+     	$this -> validateFileTime($tableObject -> getFileTime());
+     	
      }
 
       //checks to see if the provided parameter is a string of integers
       //returns true if it is and false if it is not.
       //at the moment it does not handle spaces between the commas and integers 
       //    --need to add that.
-      public function isCommaSeperatedIntegers($integersString)
+      public function isInteger($possibleInteger)
       {
-         $integers = explode(",",$integersString);
-         $size = count($integers);
-         for($i = 0; $i < $size; $i++)
+         if(preg_match('/^\d+$/',$possibleInteger) == FALSE)
          {
-            if(preg_match('/^\d+$/',$integers[$i]) == FALSE)
-            {
-               return FALSE;
-            }
+            return FALSE;
          }
          return TRUE;
       }

@@ -20,9 +20,9 @@
      //$type - the type of the file being watched (1 for time file, anything else for 
      //    defect files
      //$newFilename - the name of the file to watch
-     public function __construct($type, $newFilename)  // may need to change constructor if we change class to use observer pattern
+     public function __construct($type, $newFilename, $stationInformation)  // may need to change constructor if we change class to use observer pattern
      {
-        $this -> fileToTableObject = new FileInformationToValidTableObject($type, $newFilename); // may have to change this if watching a directory instead of a file
+        $this -> fileToTableObject = new FileInformationToValidTableObject($type, $newFilename,$stationInformation); // may have to change this if watching a directory instead of a file
         $this -> filename = $newFilename;
      }
 
@@ -57,26 +57,18 @@
      //directory.  It will read files that contain the basename of the original 
      //filename.  
      // **notice the error comment below.  
-     public function watchDirectoryForSimilarFiles()
+     public function processSimilarFiles($newDirectoryContents)
      {
        //echo $this -> filename;
-       $directory = dirname($this -> filename);
-       //echo $directory;
-       $directoryContents = scandir($directory) or die("Unable to read director\n"); // may need to make a softer error handling later
-       $oldDirectoryContentsSize = count($directoryContents);
-       while($this -> getRunning())
-       {
-         $newDirectoryContents = scandir($directory);
-         if($oldDirectoryContentsSize != count($newDirectoryContents))
-         {
+       
           // $oldDirectoryContentsSize = count($newDirectoryContents); //may change this if deleting files
            $size = count($newDirectoryContents);
            for($i = 0; $i < $size; $i++)
            {
              // at moment could have error with this if the other system builds up a lot of files before we read any since this doesn't do any ordering.  Will need to know there ordering system better before this is fixed.
              
-             echo "basename: ".basename($this -> filename)."\n";
-             echo "File being compared: ".$newDirectoryContents[$i]."\n";
+             //echo "basename: ".basename($this -> filename)."\n";
+             //echo "File being compared: ".$newDirectoryContents[$i]."\n";
              if(strpos($newDirectoryContents[$i],basename($this -> filename)) !== FALSE)
              {
                  $this -> fileToTableObject -> setFilename($newDirectoryContents[$i]);
@@ -87,11 +79,11 @@
              }
              //echo strpos($newDirectoryContents[$i],basename($this -> filename));
            }
-           $oldDirectoryContentsSize = count(scandir($directory));  
+             
 
-           $this -> setRunning(false);
-         }
-       }
+           //$this -> setRunning(false);
+         //}
+       //}
      }
 
      //sets the running boolean to the value of $newRunning

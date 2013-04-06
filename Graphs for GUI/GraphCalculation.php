@@ -113,7 +113,7 @@
          return TRUE;
        }
        // see if last 2 out of 3 points were past 2 sigmas
-       $count = 0
+       $count = 0;
        for($i = $this -> countOfPointsInChart - 3; $i < $this -> countOfPointsInChart; 
                $i++)
        {
@@ -127,7 +127,7 @@
          } 
        }
        // see if 4 of last 5 are beyond 1 sigma
-       $count = 0
+       $count = 0;
        for($i = $this -> countOfPointsInChart - 5; $i < $this -> countOfPointsInChart; 
                $i++)
        {
@@ -145,9 +145,9 @@
        for($i = $this -> countOfPointsInChart - 5; $i < $this -> countOfPointsInChart; 
                $i++)
        {
-         if($lastValue = 0;)
+         if($lastValue = 0)
          {
-           $lastValue = $this -> lastPointsForChartArray[$i]
+           $lastValue = $this -> lastPointsForChartArray[$i];
          }
          else if($this -> lastPointsForChartArray[$i] > $lastValue) 
          {

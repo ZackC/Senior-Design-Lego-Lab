@@ -10,6 +10,7 @@
     */
    //This class is not ready yet but will be used to watch multiple files.
    //also forking may by different on different operating systems.
+   /*
   $childrenArray;
   $numberOfChildProcesses = 10;
   $filesForChildren[0]=realpath(dirname(__FILE__))."/Station1TimeData.txt\n";
@@ -35,7 +36,7 @@
   //Have only the parent create all child processes.  All child processes start running.
   for($i = 0; $i < $numberOfChildProcesses; $i++)
   { 
-    $pid = pntcl_fork()
+    $pid = pntcl_fork();
     if($pid == -1)
     {
       die("Could not fork.\n"); //need to make a way to handle not forking later 
@@ -55,13 +56,60 @@
   if($pid)
   {
     //need to put a condition for when to kill all children here.
-    for($i = 0; $i < $numberOfChildProcesses; i++)
+    for($i = 0; $i < $numberOfChildProcesses; $i++)
     {
        $childID = array_pop($childrenArray);
        posix_kill($childID,SIGKILL); // this is for linux, may have to do something different for windows
        pcntl_waitpid($childID,null);
     }
-  }
+  
   } 
-   
+  */
+
+  function my_autoloader($class)
+  {
+    include realpath(dirname(__FILE__))."/".$class.'.php';
+  }
+
+  spl_autoload_register('my_autoloader');
+
+  $stationInformationArray = array(new StationInformation(),new StationInformation(),
+       new StationInformation(), new StationInformation(), new StationInformation());
+
+  $fileWatcherArray = array();
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station1TimeData",$stationInformationArray[0]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station2TimeData",$stationInformationArray[1]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station3TimeData",$stationInformationArray[2]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station4TimeData",$stationInformationArray[3]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station5TimeData",$stationInformationArray[4]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station1DefectResults",$stationInformationArray[0]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station2DefectResults",$stationInformationArray[1]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station3DefectResults",$stationInformationArray[2]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station4DefectResults",$stationInformationArray[3]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station5DefectResults",$stationInformationArray[4]);
+
+  $fileWatcherArraySize = count($fileWatcherArray);
+  $directory = realpath(dirname(__FILE__));
+        //echo "Directory: ".$directory."\n";
+  $directoryContents = scandir($directory) or die("Unable to read directory\n"); // may need to make a softer error handling later
+  $oldDirectoryContentsSize = count($directoryContents);  
+  while(true)
+  {
+
+       //while($this -> getRunning())
+       //{
+       $newDirectoryContents = scandir($directory);
+       echo "Old Directory Size: ".$oldDirectoryContentsSize."\n";
+       echo "New Directory Size: ".count($newDirectoryContents)."\n";
+       if($oldDirectoryContentsSize != count($newDirectoryContents))
+       {
+  	 for($i = 0; $i < $fileWatcherArraySize; $i++)
+  	 {
+  		$fileWatcherArray[$i] -> processSimilarFiles($newDirectoryContents);
+  	 }
+         $oldDirectoryContentsSize = count(scandir($directory));
+         break;
+       }	
+  }
+  echo "Done\n";
 ?>

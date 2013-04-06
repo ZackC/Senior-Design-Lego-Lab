@@ -1,6 +1,6 @@
 <?php
 
-  set_include_path('/home/zack/Documents/SeniorDesign/jpGraphs/jpgraph-3.5.0b1/src/');
+  set_include_path('jpgraph-3.5.0b1/src/');
   require_once ('jpgraph.php');
   require_once ('jpgraph_line.php');
   /*
@@ -47,7 +47,7 @@
      //outputs the graph (for my computer a .png)
      public function drawGraph()
      {
-       $this -> graph -> Stroke();
+       $this -> graph -> Stroke("test.png");
      }
 
      // adds the 3rd sigma line to the graph as a dotted red line

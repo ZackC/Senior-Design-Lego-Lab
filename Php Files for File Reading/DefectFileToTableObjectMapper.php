@@ -10,11 +10,15 @@
     //$data - the information from the defect file
     public function mapData($data, $tableObject)
     {
-      if($data[0] == 1)
+      echo "data: ".$data."\n";
+      echo "data[0][0]: ".$data[0][0]."\n";
+      if($data[0][0] == 1)
       {
-        $defects = explode(",",$integersString);
+        $defects = explode(",",$data[0][1]);
+        $tableObject -> setDefects($defects);
+        return true;
       }
-      $tableObject -> setDefects($defects);
+      return false;
     }
 
 

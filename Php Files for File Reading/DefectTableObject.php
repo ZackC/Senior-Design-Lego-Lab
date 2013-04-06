@@ -10,10 +10,10 @@
     
     public function getDefects()
     {
-      return $defects;
+      return $this -> defects;
     }
  
-    public fucntion setDefects($newDefects)
+    public function setDefects($newDefects)
     {
       $this -> defects = $newDefects;
     }

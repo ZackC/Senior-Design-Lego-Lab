@@ -16,6 +16,7 @@
        echo $data[0][1]."\n";
        $tableObject -> setOnTime($data[0][0]);
        $tableObject -> setOffTime($data[0][1]);
+       return true;
     }
   }
 ?>

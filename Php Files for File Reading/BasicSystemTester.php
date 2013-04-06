@@ -16,7 +16,7 @@ function my_autoloader($class)
   echo $tableObject -> getOffTime()."\n";
 
   $tw = new TableWriter();
-  $tw -> readTableObject($tableObject);
+  $tw -> readTimeTableObject($tableObject);
   $tw -> calculateIdleTime($tableObject);
-  $tw -> writeToTable();
+  $tw -> writeAverageIdleTimeToTable();
 ?>
