@@ -42,33 +42,36 @@ function display()
 			<table class="station">
 			<tr>
 			<td width=60%><h2 align="left">Station ' . $stationRow['station'] . ':</h2>
-			<p id="overallProcessTime" align="left">Average Process Time: ' . $infoRow['average_process_time'] . '</p>
-			<p id="overallIdleTime" align="left">Average Idle Time: ' . $infoRow['average_idle_time'] . '</p>
-			<p id="overallTaktTime" align="left">Takt Time: ' . $infoRow['takt_time'] . '</p>
-			<p id="overallDailyDefects" align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
+			<p align="left">Average Process Time: ' . $infoRow['average_process_time'] . '</p>
+			<p align="left">Average Idle Time: ' . $infoRow['average_idle_time'] . '</p>
+			<p align="left">Takt Time: ' . $infoRow['takt_time'] . '</p>
+			<p align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
+			<p align="left">Time Since Defect: 0</p>
 			<p>&nbsp;</p>
 			</td>';
 		}
 		else
 		{
+			//Need to put column for cycle time for overall cell. Change from takt_time in code
 			echo '
 			<td>
 			<a href="Cell ' . $stationRow['cell'] . ' Overall.php" rel="external" data-role="button">
 			<table class="station">
 			<tr>
 			<td width=60%><h2 align="left">Overall:</h2>
-			<p id="overallProcessTime" align="left">Average Process Time: ' . $infoRow['average_process_time'] . '</p>
-			<p id="overallIdleTime" align="left">Average Idle Time: ' . $infoRow['average_idle_time'] . '</p>
-			<p id="overallTaktTime" align="left">Takt Time: ' . $infoRow['takt_time'] . '</p>
-			<p id="overallDailyDefects" align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
-			<p id="overallBottleneckStation" align="left">Bottleneck Station: ' . $infoRow['bottleneck'] . '</p>
+			<p align="left">Average Process Time: ' . $infoRow['average_process_time'] . '</p>
+			<p align="left">Average Idle Time: ' . $infoRow['average_idle_time'] . '</p>
+			<p align="left">Cycle Time: ' . $infoRow['takt_time'] . '</p>
+			<p align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
+			<p align="left">Time Since Defect: 0</p>
+			<p align="left">Bottleneck Station: ' . $infoRow['bottleneck'] . '</p>
 			</td>';
 		}
 		$statusNumber = $infoRow['status'];
 		$status = mysqli_query($con, "SELECT status FROM status WHERE status_id = $statusNumber");
 		$statusRow = mysqli_fetch_array($status);
 		echo '
-		<td id="overallStatus" width="40%" class="' . $statusRow['status'] . '">&nbsp;</td>
+		<td width="40%" class="' . $statusRow['status'] . '">&nbsp;</td>
 		</tr>
 		</table>
 		</a>
@@ -88,117 +91,13 @@ function display()
 }
 ?>
 
-<div data-role="page" id="Cell 3 Overview">
+<div data-role="page">
 	<div data-role="header">
     	<a href="Cell Overview.php" data-rel="back" data-icon="back">Back</a>
 		<h1>Tiger Automotive Lab: Cell 3</h1>
 	</div>
 	<div data-role="content">
     	<?php display(); ?>
-	  <!--<table class="stationOverview">
-	    <tr>
-	      <td>
-          <a href="Cell 3 Overall.php" rel="external" data-role="button">
-          <table class="station">
-            <tr>
-              <td width=60%><h2 align="left">Overall:</h2>
-                <p id="overallProcessTime" align="left">Average Process Time:</p>
-                <p id="overallIdleTime" align="left">Average Idle Time:</p>
-                <p id="overallTaktTime" align="left">Takt Time:</p>
-                <p id="overallDailyDefects" align="left">Daily Defects:</p>
-                <p id="overallBottleneckStation" align="left">Bottleneck Station:</p>
-              </td>
-              <td id="overallStatus" width="40%" class="statusOk">&nbsp;</td>
-            </tr>
-          </table>
-          </a>
-          </td>
-	      <td>
-          <a href="Cell 3 Station 1.php" rel="external" data-role="button">
-          <table class="station">
-            <tr>
-              <td width="60%"><h2 align="left">Station 1:</h2>
-                <p id="station1ProcessTime" align="left">Average Process Time:</p>
-                <p id="station1IdleTime" align="left">Average Idle Time:</p>
-                <p id="station1TaktTime" align="left">Takt Time:</p>
-                <p id="station1DailyDefects" align="left">Daily Defects:</p>
-                <p>&nbsp;</p>
-              </td>
-              <td id="station1Status" width="40%" class="statusOk">&nbsp;</td>
-            </tr>
-          </table>
-          </a>
-          </td>
-        </tr>
-	    <tr>
-	      <td>
-          <a href="Cell 3 Station 2.php" rel="external" data-role="button">
-          <table class="station">
-            <tr>
-              <td width="60%"><h2 align="left">Station 2:</h2>
-                <p id="station2ProcessTime" align="left">Average Process Time:</p>
-                <p id="station2IdleTime" align="left">Average Idle Time:</p>
-                <p id="station2TaktTime" align="left">Takt Time:</p>
-              	<p id="station2DailyDefects" align="left">Daily Defects:</p>
-                <p>&nbsp;</p>
-              </td>
-              <td id="station2Status" width="40%" class="statusOk">&nbsp;</td>
-            </tr>
-          </table>
-          </a>
-          </td>
-	      <td>
-          <a href="Cell 3 Station 3.php" rel="external" data-role="button">
-          <table class="station">
-            <tr>
-              <td width="60%"><h2 align="left">Station 3:</h2>
-                <p id="station3ProcessTime" align="left">Average Process Time:</p>
-                <p id="station3IdleTime" align="left">Average Idle Time:</p>
-                <p id="station3TaktTime" align="left">Takt Time:</p>
-              	<p id="station3DailyDefects" align="left">Daily Defects:</p>
-                <p>&nbsp;</p>
-              </td>
-              <td id="station3Status" width="40%" class="statusOk">&nbsp;</td>
-            </tr>
-          </table>
-          </a>
-          </td>
-        </tr>
-	    <tr>
-	      <td>
-          <a href="Cell 3 Station 4.php" rel="external" data-role="button">
-          <table class="station">
-            <tr>
-              <td width="60%"><h2 align="left">Station 4:</h2>
-                <p id="station4ProcessTime" align="left">Average Process Time:</p>
-                <p id="station4IdleTime" align="left">Average Idle Time:</p>
-                <p id="station4TaktTime" align="left">Takt Time:</p>
-              	<p id="station4DailyDefects" align="left">Daily Defects:</p>
-                <p>&nbsp;</p>
-              </td>
-              <td id="station4Status" width="40%" class="statusOk">&nbsp;</td>
-            </tr>
-          </table>
-          </a>
-          </td>
-	      <td>
-          <a href="Cell 3 Station 5.php" rel="external" data-role="button">
-          <table class="station">
-            <tr>
-              <td width="60%"><h2 align="left">Station 5:</h2>
-                <p id="station5ProcessTime" align="left">Average Process Time:</p>
-                <p id="station5IdleTime" align="left">Average Idle Time:</p>
-                <p id="station5TaktTime" align="left">Takt Time:</p>
-              	<p id="station5DailyDefects" align="left"=>Daily Defects:</p>
-                <p>&nbsp;</p>
-              </td>
-              <td id="station5Status" width="40%" class="statusOk">&nbsp;</td>
-            </tr>
-          </table>
-          </a>
-          </td>
-        </tr>
-      </table>-->
   </div>
 	<div data-role="footer">
 		<h4>Page Footer</h4>

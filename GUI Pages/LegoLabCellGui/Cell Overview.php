@@ -42,7 +42,7 @@ function display()
 				$status = mysqli_query($con, "SELECT status FROM status WHERE status_id = $statusNumber");
 				$statusRow = mysqli_fetch_array($status);
 				echo '
-				<td id="cell' . $stationRow['cell'] . 'Station' . $stationRow['station'] . '" class="' . $statusRow['status'] . '">&nbsp;</td>';
+				<td class="' . $statusRow['status'] . '">&nbsp;</td>';
 			}
 		}
 		echo '
@@ -53,7 +53,7 @@ function display()
 }
 ?>
 
-<div data-role="page" id="Cell Overview">
+<div data-role="page">
 	<div data-role="header">
 		<h1>Tiger Automotive Lab Status</h1>
 	</div>
