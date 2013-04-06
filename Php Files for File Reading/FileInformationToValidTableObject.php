@@ -18,7 +18,7 @@
      
      private $tableWriterDelegator;
 
-     private $stationInformation;
+     private $sensorInformation;
 
      private $type;
 
@@ -28,9 +28,9 @@
      // $type - which type of information the file stores (1 for time, anything else for 
      //      defect)
      // $filename - the name of the file to read from.
-     public function __construct($newType,$filename, $newStationInformation)
+     public function __construct($newType,$filename, $newSensorInformation)
      {
-       $this -> stationInformation = $newStationInformation;
+       $this -> sensorInformation = $newSensorInformation;
        $this -> type = $newType;
        if($newType == 1)
        {
@@ -58,11 +58,11 @@
      {
         if($this -> type == 1)
         {
-           $this -> stationInformation -> incrementTimeFileCarNumber();
+           $this -> sensorInformation -> incrementTimeFileCarNumber();
         }
         else
         {
-           $this -> stationInformation -> incrementDefectFileCarNumber();
+           $this -> sensorInformation -> incrementDefectFileCarNumber();
         }
         $result = $this -> fileReader -> extractData($this -> fileReader -> openFile());
         echo "Filename: ".$this -> fileReader -> getFilename()."\n";
@@ -70,7 +70,7 @@
         if($this -> fileToObjectMapper -> mapData($result, $this -> tableObject) and 
  $this -> tableObjectValidator -> validateTableObject($this -> tableObject))
         {
-          $this -> tableWriterDelegator -> writeTableObjectToTable($this -> tableObject, $this -> stationInformation);
+          $this -> tableWriterDelegator -> writeTableObjectToTable($this -> tableObject, $this -> sensorInformation);
         }
         //return $this -> tableObject;
      }

@@ -20,9 +20,9 @@
      //$type - the type of the file being watched (1 for time file, anything else for 
      //    defect files
      //$newFilename - the name of the file to watch
-     public function __construct($type, $newFilename, $stationInformation)  // may need to change constructor if we change class to use observer pattern
+     public function __construct($type, $newFilename, $sensorInformation)  // may need to change constructor if we change class to use observer pattern
      {
-        $this -> fileToTableObject = new FileInformationToValidTableObject($type, $newFilename,$stationInformation); // may have to change this if watching a directory instead of a file
+        $this -> fileToTableObject = new FileInformationToValidTableObject($type, $newFilename,$sensorInformation); // may have to change this if watching a directory instead of a file
         $this -> filename = $newFilename;
      }
 

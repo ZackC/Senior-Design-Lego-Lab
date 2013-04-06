@@ -73,20 +73,23 @@
 
   spl_autoload_register('my_autoloader');
 
-  $stationInformationArray = array(new StationInformation(),new StationInformation(),
-       new StationInformation(), new StationInformation(), new StationInformation());
+
+
+  $tableWriter() = new TableWriter();
+  $labInit = new LabInitialization();
+  $sensorTable = $labInit -> setUpLab($tableWriter);
 
   $fileWatcherArray = array();
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station1TimeData",$stationInformationArray[0]);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station2TimeData",$stationInformationArray[1]);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station3TimeData",$stationInformationArray[2]);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station4TimeData",$stationInformationArray[3]);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station5TimeData",$stationInformationArray[4]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station1DefectResults",$stationInformationArray[0]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station2DefectResults",$stationInformationArray[1]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station3DefectResults",$stationInformationArray[2]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station4DefectResults",$stationInformationArray[3]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station5DefectResults",$stationInformationArray[4]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station1TimeData",$sensorTable[0]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station2TimeData",$sensorTable[1]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station3TimeData",$sensorTable[2]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station4TimeData",$sensorTable[3]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station5TimeData",$ssensorTable[4]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station1DefectResults",$sensorTable[0]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station2DefectResults",$sensorTable[1]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station3DefectResults",$sensorTable[2]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station4DefectResults",$sensorTable[3]);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station5DefectResults",$sensorTable[4]);
 
   $fileWatcherArraySize = count($fileWatcherArray);
   $directory = realpath(dirname(__FILE__));

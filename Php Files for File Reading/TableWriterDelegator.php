@@ -11,6 +11,6 @@
      //echo "Table Writer in parent: ".$this -> tableWriter."\n";
    }
   
-  abstract public function writeTableObjectToTable($tableObject, $stationInformation);
+  abstract public function writeTableObjectToTable($tableObject, $sensorInformation);
  }
 ?>

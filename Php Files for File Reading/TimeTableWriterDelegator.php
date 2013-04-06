@@ -6,7 +6,7 @@
   		parent::__construct();
   	}
 
-  	public function writeTableObjectToTable($tableObject,$stationInformation)
+  	public function writeTableObjectToTable($tableObject,$sensorInformation)
   	{
 		//echo "tablewriter: ".$this->tableWriter."\n";
   		$this -> tableWriter -> readTimeTableObject($tableObject,$stationInformation);
@@ -14,7 +14,7 @@
                 $this -> tableWriter -> writeTimesToTable();
   		//$this -> tableWriter -> calculateIdleTime($tableObject);
   		//$this -> tableWriter -> writeAverageIdleTimeToTable();
-                $this -> tableWriter -> closeConnection();
+                //$this -> tableWriter -> closeConnection();
   	}
   }
 ?>
