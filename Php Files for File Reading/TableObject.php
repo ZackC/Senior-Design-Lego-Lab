@@ -5,7 +5,7 @@
 
     private $fileTime;
     private $cellNumber;
-    private $stationNumber;
+    private $sensorNumber;
 
     public function __construct()
     {
@@ -22,9 +22,9 @@
       return $this -> fileTime;
     }
 
-    public function getStationNumber()
+    public function getSensorNumber()
     {
-      return $this -> stationNumber;
+      return $this -> sensorNumber;
     }
 
     public function setCellNumber($newCellNumber)
@@ -37,9 +37,9 @@
       $this -> fileTime = $newFileTime;
     }
 
-    public function setStationNumber($newStationTime)
+    public function setSensorNumber($newSensorNumber)
     {
-      $this -> stationNumber = $newStationTime;
+      $this -> sensorNumber = $newSensorNumber;
     }
 
   }  
