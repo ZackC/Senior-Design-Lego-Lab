@@ -6,6 +6,12 @@
   class DefectFileToTableObjectMapper extends FileToTableObjectMapper
   {
    
+    public function __construct()
+    {
+      parent::__construct();
+      
+    }
+
     //maps the data from file information to table information 
     //$data - the information from the defect file
     public function mapData($data, $tableObject)

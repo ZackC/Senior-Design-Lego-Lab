@@ -12,6 +12,7 @@
     private $accumulatedProcessTimeCount = 0;
     private $averageProcessTime;
     private $idleTimes = array();
+    private $lastIdleTime;
     private $countOfTimesInIdleTimes = 0;
     private $accumulatedIdleTime = 0;
     private $accumulatedIdleTimeCount = 0;
@@ -19,12 +20,12 @@
     private $currentCarNumber = 0;
     private $status = 1;
     private $tableWriter;
-    private $grapher
+    private $grapher;
     private $meanIdleTimeForStation;
     private $meanProcessTimeForStation;
     private $sigmaIdleTimeForStation;
     private $sigmaProcessTimeForStation;
-    private const NUMBEROFTIMESINARRAY = 10;
+    const NUMBEROFTIMESINARRAY = 10;
     private $overallStation;
     
     public function __construct($newStationNumber, $newTableWriter,$newGrapher,$newMeanIdleTime, $newMeanProcessTime, $newSigmaIdleTime, $newSigmaProcessTime, $newOverallStation)
@@ -70,17 +71,29 @@
          if($this -> processTimes[self::NUBMEROFTIMESINARRAY - 1] > 2 * $this -> sigmaProcesTimeForStation)
          {
            $isWarning = true;
+           $this -> updateStatus(2,$this -> currentCarNumber);
          }
          else
          {
            $isWarning = false;
+           $this -> updateStatus(1,$this -> currentCarNumber);
          }
        }
+       else
+       {
+         $this -> updateStatus(3,$this -> currentCarNumber);
+       }
        //something to create graph and add information to tables here
+       $this -> overallStation -> updateAverageProcessTime($time, $this -> currentStationNumber);
+       $totalStationTime = $time + $this -> lastIdleTime;//not sure if this is order safe
+       $this -> overallStation -> updateBotleNeckStation($totalStationTime, $this -> stationNumber);
+       $this -> overallStation -> updateTotalTime($this -> currentCarNumber, $totalStationTime, $this -> stationNumber)
+       
     }
 
     public function addIdleTime($time)
     {
+       $this -> lastIdleTime = $time;
        $this -> addTimePoint($time, $this -> accumulatedIdleTimeCount, $this -> accumulatedIdleTime, $this -> countOfTimesInIdleTimes, $this -> idleTimes);
        $this -> averageIdleTime = $this -> accumulatedIdelTime / $this -> accumulatedProcessTimeCount;
        $isOnAlert = $this -> isSystemOutOfControl($this -> idleTimes, $this -> sigmaIdleTimeForStation;
@@ -89,12 +102,19 @@
          if($this -> idleTimes[self::NUBMEROFTIMESINARRAY - 1] > 2 * $this -> sigmaIdleTimeForStation)
          {
            $isWarning = true;
+           $this -> updateStatus(2,$this -> currentCarNumber);
          }
          else
          {
            $isWarning = false;
+           $this -> updateStatus(1,$this -> currentCarNumber);
          }
        }
+       else
+       {
+         $this -> updateStatus(3,$this -> currentCarNumber);
+       }
+       $this -> overallStation -> updateAverageIdleTime($time, $this -> currentStationNumber);
      //something to create graphs and add informartion to tables here
     }
 
@@ -197,6 +217,56 @@
          } 
        }
        return FALSE;
+    }
+
+    public function calculateProcessTimeFromSensorOnTime($onTime, $carNumber)
+    {
+      $this -> currentCarNumber = $carNumber;
+      if($this -> previousSensor -> getOutOfOffTimeArray($carNumber) != 0)
+      {
+        if($this -> previousSensor != null)
+        {
+          $stationOnTime = $this -> previousSensor -> getOutOffTimeArray($carNumber);
+          if($stationOnTime != 0)
+          {
+            $stationOffTime = $onTime;
+            $processTime = $stationOffTime - $stationOnTime;
+            $this -> previousSensor -> setInTimeArray($carNumber, 0);
+            $this -> nextSensor -> setInTimeArray($carNumber, 0);
+            $this -> addProcessTime($processTime);
+          }
+        }
+        else
+        {
+          if($carNumber == 1)
+          {
+            $processTime = $onTime
+          }
+          else
+          {
+            $processTime = $onTime - $this -> nextSensor -> getOutOfOnTimeArray($carNumber - 1);
+            $this -> nextSensor -> setInOnTimeArray($carNumber - 1,0); // this might be wrong
+          }
+          $this -> addProcessTime($processTime)
+        }
+      }
+    }
+
+    public function calculateProcessTimeFromSensorOffTime($offTime, $carNumber)
+    {
+      $this -> currentCarNumber = $carNumber;
+      if($this -> stationNumber != 5)
+      {
+        $stationOffTime = $this -> previousSensor -> getOutOfOnTimeArray($carNumber);
+        if($stationOffTime != 0)
+        {
+          $stationOnTime = $offTime;
+          $processTime = $stationOffTime - $stationOnTime;
+          $this -> previousSensor -> setInTimeArray($carNumber,0);
+          $this -> nextSensor -> setInTimeArray($carNumber , 0);
+          $this -> addProcessTime($stationOnTime);
+        }
+      }
     }
 
   }

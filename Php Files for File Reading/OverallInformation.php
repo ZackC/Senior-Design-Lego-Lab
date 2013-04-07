@@ -11,8 +11,8 @@
      private $accumulatedTotalTime = 0;
      private $accumulatedTotalTimeCount = 0;
      private $tableWriter;
-     private const STATIONNUMBER = 0;
-     private const NUMBEROFTIMESKEPT = 20;
+     const STATIONNUMBER = 0;
+     const NUMBEROFTIMESKEPT = 20;
      private $stationsPerCell;
      
      public function __construct($newStationsPerCell, $newTableWriter)

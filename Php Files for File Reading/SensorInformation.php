@@ -19,6 +19,14 @@
       $this -> offTimeArray = array_pad($this -> offTimeArray, self::NUMBEROFTIMESKEPT, 0);
     }
 
+
+    public function updateStation($onTime, $offTime)
+    {
+      $this -> addTimeToOnTimeArray($onTime);
+      $this -> addTimeToOffTimeArray($offTime);
+      $this -> stationBeforeSensor -> addIdleTime($offTime - $onTime);
+    }
+
     public function addTimeToOnTimeArray($newOnTime)
     {
       $this -> onTimeArray[$this -> timeCarNumber % self::NUMBEROFTIMESKEPT] = $newOnTime;
@@ -41,6 +49,31 @@
     public function incrementDefectCarNumber()
     {
       $this -> defectCarNumber = $this -> defectCarNumber + 1;
+    }
+
+    public function getOutOfOnTimeArray($carNumber)
+    {
+       return $this -> onTimeArray[$carNumber % self::NUMBEROFTIMESKEPT];
+    }
+   
+    public function setInOnTimeArray($carNumber, $value)
+    {
+      $this -> onTimeArray[$carNumber % self::NUMBEROFTIMESKEPT];
+    }
+
+    public function getOutOfOffTimeArray($carNumber)
+    {
+      return $this -> offTimeArray[$carNumber % self::NUMBEROFTIMESKEPT];
+    }
+
+    public function setInOffTimeArray($carNumber, $value)
+    {
+      $this -> offTimeArray[$carNumber % self::NUMBEROFTIMESKEPT]; 
+    }
+
+    public function getBeforeStation()
+    {
+      return $this -> stationBeforeSensor;
     }
   }
 ?>

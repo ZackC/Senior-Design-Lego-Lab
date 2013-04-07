@@ -67,10 +67,12 @@
         $result = $this -> fileReader -> extractData($this -> fileReader -> openFile());
         echo "Filename: ".$this -> fileReader -> getFilename()."\n";
         $this -> fileToObjectMapper -> mapInformationFromFileName($this -> fileReader -> getFilename(), $this -> tableObject);
-        if($this -> fileToObjectMapper -> mapData($result, $this -> tableObject) and 
- $this -> tableObjectValidator -> validateTableObject($this -> tableObject))
+        if($this -> fileToObjectMapper -> mapData($result, $this -> tableObject))
         {
-          $this -> tableWriterDelegator -> writeTableObjectToTable($this -> tableObject, $this -> sensorInformation);
+          if($this -> tableObjectValidator -> validateTableObject($this -> tableObject))
+          {
+            $this -> tableWriterDelegator -> writeTableObjectToTable($this -> tableObject, $this -> sensorInformation);
+          }
         }
         //return $this -> tableObject;
      }
