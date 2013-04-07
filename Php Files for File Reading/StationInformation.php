@@ -83,8 +83,9 @@
        {
          $this -> updateStatus(3,$this -> currentCarNumber);
        }
-       //something to create graph and add information to tables here
-       $this -> overallStation -> updateAverageProcessTime($time, $this -> currentStationNumber);
+       $this -> grapher -> makeGraph($this -> processTimes, $this ->meanProcessTimeForStation, $this -> sigmaProcessTimeForStation, "Cell1Station".$this -> stationNumber."ProcessGraph.png");
+       //something to add information to tables here
+       $this -> overallStation -> updateAverageProcessTime($this -> accumulatedProcessTime/$this -> accumulatedProcessTimeCount, $this -> currentStationNumber);
        $totalStationTime = $time + $this -> lastIdleTime;//not sure if this is order safe
        $this -> overallStation -> updateBotleNeckStation($totalStationTime, $this -> stationNumber);
        $this -> overallStation -> updateTotalTime($this -> currentCarNumber, $totalStationTime, $this -> stationNumber)
@@ -114,8 +115,9 @@
        {
          $this -> updateStatus(3,$this -> currentCarNumber);
        }
-       $this -> overallStation -> updateAverageIdleTime($time, $this -> currentStationNumber);
-     //something to create graphs and add informartion to tables here
+       $this -> overallStation -> updateAverageIdleTime($this -> accumulatedIdleTime/$this -> accumulatedIdleTimeCount, $this -> currentStationNumber);
+       $this -> grapher -> makeGraph($this -> idleTimes, $this ->meanIdleTimeForStation, $this -> sigmaIdleTimeForStation, "Cell1Station".$this -> stationNumber."IdleGraph.png");
+     //something to add informartion to tables here
     }
 
     private function addTimePoint($time,&$numberOfTimes,&$totalTime,&$countOfTimeArrayPoints,$timeArray)

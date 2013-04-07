@@ -6,6 +6,12 @@
   class TimeFileToTableObjectMapper extends FileToTableObjectMapper
   {
 
+    public function __construct($newSensor)
+    {
+      parent::__construct($newSensor);
+
+    }
+
     //maps the information stored in $data into a format that can 
     //be put in tables.
     public function mapData($data, $tableObject)

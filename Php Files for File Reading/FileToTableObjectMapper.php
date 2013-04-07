@@ -10,6 +10,13 @@
     const CHARACTERS_TILL_CELL_NUMBER = 4;
     const CHARACTERS_TILL_STATION_NUMBER = 12;
     const TIME_CHARACTERS = 6;
+    private $sensor;
+
+    public function __construct($newSensor)
+    {
+      $this -> sensor = $newSensor;
+    }
+    
 
     // the function used to convert the data from a file format to a table format
     //$data - the information from the file.
@@ -17,6 +24,8 @@
 
     public function mapInformationFromFileName($filename, $tableObject)
     {
+      $this -> sensor -> incrementTimeCarNumber();
+      $this -> sensor -> getBeforeStation() -> updateStatus($this -> sensor -> getTimeCarNumber(),1);
       $tableObject -> setCellNumber(substr($filename,self::CHARACTERS_TILL_CELL_NUMBER, 1));
       $tableObject -> setStationNumber(substr($filename,self::CHARACTERS_TILL_STATION_NUMBER,1)); 
       $tableObject -> setFileTime(substr($filename,strrpos($filename,"T")+1,self::TIME_CHARACTERS));

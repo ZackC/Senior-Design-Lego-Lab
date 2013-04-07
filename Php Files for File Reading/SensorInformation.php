@@ -51,6 +51,16 @@
       $this -> defectCarNumber = $this -> defectCarNumber + 1;
     }
 
+    public function getTimeCarNumber()
+    {
+      return $this -> timeCarNumber;
+    }
+
+    public function getDefectCarNumber()
+    {
+      return $this -> defectCarNumber;
+    }
+
     public function getOutOfOnTimeArray($carNumber)
     {
        return $this -> onTimeArray[$carNumber % self::NUMBEROFTIMESKEPT];
