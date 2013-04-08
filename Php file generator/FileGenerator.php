@@ -9,7 +9,7 @@ class FileGenerator
 	private $waitPeriod = 1;
 	
 	private $timeSpent = 0.01;
-	private $add = 1.50;
+	private $add = 2.50;
 	
 	private $hasDefect = 0;
 	private $stationsWithDefect = array(0, 0, 0, 0, 0);
