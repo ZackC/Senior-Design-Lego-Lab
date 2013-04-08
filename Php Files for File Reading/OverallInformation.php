@@ -5,6 +5,7 @@
      private $bottleneckStationNumber;
      private $bottleneckArray = array();
      private $averageProcessTime;
+     private $averageIdleTime;
      private $averageDefectTime;
      private $averageProcessTimeArray = array();
      private $averageIdleTimeArray = array();
@@ -31,7 +32,7 @@
         $this -> updateAverageTime($processTime, $stationNumber, $this -> averageProcessTimeArray, $this -> averageProcessTime);
      }
 
-     private function updateAverageTime($newTimeValue, $stationNumber, $array, $averageTime)
+     private function updateAverageTime($newTimeValue, $stationNumber, $array, &$averageTime)
      {
         if($stationNumber > 0 and $stationNumber < $this -> stationsPerCell)
         {
@@ -47,7 +48,7 @@
      //may want to add a call to udpate the tables later
      public function updateAverageIdleTime($idleTime, $stationNumber)
      {
-        $this -> updateAverageTime($processTime, $stationNumber, $this -> averageIdleTimeArray, $this -> averageIdleTime);
+        $this -> updateAverageTime($idleTime, $stationNumber, $this -> averageIdleTimeArray, $this -> averageIdleTime);
      }
 
      //may want to add a call to udpate the tables later

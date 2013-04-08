@@ -11,7 +11,7 @@
      public function __construct()
      {
        $this -> stationMeanIdleTimes = array(10,10,10,10,10);
-       $this -> stationMeanProcessTimes = array(50,50,50,50,50);
+       $this -> stationMeanProcessTimes = array(5,5,5,5,5);
        $this -> stationSigmaIdleTimes = array(2,2,2,2,2);
        $this -> stationSigmaProcessTimes = array(5,5,5,5,5);
      }
@@ -23,7 +23,7 @@
        $grapher = new Grapher();
        for($i = 0; $i < self::NUMBEROFSTATIONSPERCELL; $i++)
        { 
-         $stationArray[$i] = new StationInformation($i+1,$tableWriter,$grapher,$this -> stationMeanIdleTimes[$i],$this -> stationMeanProcessTimes[$i],$this -> stationSigmaIdleTimes[$i],$this -> stationSigmaProcessTimes,$overallStation);
+         $stationArray[$i] = new StationInformation($i+1,$tableWriter,$grapher,$this -> stationMeanIdleTimes[$i],$this -> stationMeanProcessTimes[$i],$this -> stationSigmaIdleTimes[$i],$this -> stationSigmaProcessTimes[$i],$overallStation);
        }
        $sensorArray = array();
        for($i = 0; $i < self::NUMBEROFSTATIONSPERCELL; $i++)
@@ -49,7 +49,7 @@
            $stationArray[$i] -> setPreviousStation($stationArray[$i - 1]);
            $stationArray[$i] -> setPreviousSensor($sensorArray[$i - 1]);
          }
-         if($i = self::NUMBEROFSTATIONSPERCELL - 1)
+         if($i == self::NUMBEROFSTATIONSPERCELL - 1)
          {
            $stationArray[$i] -> setNextStation(null);
          }

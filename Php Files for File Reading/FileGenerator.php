@@ -8,7 +8,7 @@ class FileGenerator
 	
 	private $waitPeriod = 1;
 	
-	private $timeSpent = 0.01;
+	private $timeSpent = 1.51;
 	private $add = 1.50;
 	
 	private $hasDefect = 0;
