@@ -7,8 +7,8 @@
     private $defectCarNumber = 0;
     private $sensorNumber;
     private $stationBeforeSensor;
-    private $stationAfterSensor
-    private const NUMBEROFTIMESKEPT = 20;
+    private $stationAfterSensor;
+    const NUMBEROFTIMESKEPT = 20;
 
     public function __construct($newSensorNumber, $newStationBeforeSensor, $newStationAfterSensor)
     {
@@ -20,7 +20,7 @@
     }
 
 
-    public function updateStation($onTime, $offTime)
+    public function updateSensor($onTime, $offTime)
     {
       $this -> addTimeToOnTimeArray($onTime);
       $this -> addTimeToOffTimeArray($offTime);
@@ -38,7 +38,7 @@
     {
        $this -> offTimeArray[$this -> timeCarNumber % self::NUMBEROFTIMESKEPT] = $newOffTime;
        //haven't decided what this next function is yet
-       $this -> stationAfterSesnor -> calculateProcessTimeFromSensorOffTime($newOffTime, $this -> timeCarNumber);
+       $this -> stationAfterSensor -> calculateProcessTimeFromSensorOffTime($newOffTime, $this -> timeCarNumber);
     }
 
     public function incrementTimeCarNumber()

@@ -28,7 +28,7 @@
      // $type - which type of information the file stores (1 for time, anything else for 
      //      defect)
      // $filename - the name of the file to read from.
-     public function __construct($newType,$filename, $newSensorInformation)
+     public function __construct($newType,$filename, $newSensorInformation, $tableWriter)
      {
        $this -> sensorInformation = $newSensorInformation;
        $this -> type = $newType;
@@ -37,44 +37,65 @@
          echo "123 Filename: ".$filename."\n";
          
          $this -> fileReader = new TimeFileReader($filename);
-         $this -> fileToObjectMapper = new TimeFileToTableObjectMapper();
+         $this -> fileToObjectMapper = new TimeFileToTableObjectMapper($this -> sensorInformation);
          $this -> tableObjectValidator = new TimeTableObjectValidator();
          $this -> tableObject = new TimeTableObject();
-         $this -> tableWriterDelegator = new TimeTableWriterDelegator();
+         $this -> tableWriterDelegator = new TimeTableWriterDelegator($tableWriter,$this -> sensorInformation);
        } 
        else
        {
          
          $this -> fileReader = new DefectFileReader($filename);
-         $this -> fileToObjectMapper = new DefectFileToTableObjectMapper();
+         $this -> fileToObjectMapper = new DefectFileToTableObjectMapper($this -> sensorInformation);
          $this -> tableObjectValidator = new DefectTableObjectValidator();
          $this -> tableObject = new DefectTableObject();
-         $this -> tableWriterDelegator = new DefectTableWriterDelegator();
+         $this -> tableWriterDelegator = new DefectTableWriterDelegator($tableWriter);
        }
      }
      
      // the method for extracting information from the file and preparing it for the table
      public function fileDataToTable()
      {
-        if($this -> type == 1)
+        /*if($this -> type == 1)
         {
            $this -> sensorInformation -> incrementTimeFileCarNumber();
         }
         else
         {
            $this -> sensorInformation -> incrementDefectFileCarNumber();
-        }
-        $result = $this -> fileReader -> extractData($this -> fileReader -> openFile());
-        echo "Filename: ".$this -> fileReader -> getFilename()."\n";
-        $this -> fileToObjectMapper -> mapInformationFromFileName($this -> fileReader -> getFilename(), $this -> tableObject);
-        if($this -> fileToObjectMapper -> mapData($result, $this -> tableObject))
+        }*/
+        $file = $this -> fileReader -> openFile();
+        echo "File contents: ".$file."\n";
+        if($file !== false)
         {
-          if($this -> tableObjectValidator -> validateTableObject($this -> tableObject))
+          $result = $this -> fileReader -> extractData($file);
+          echo "Filename: ".$this -> fileReader -> getFilename()."\n";
+          $this -> fileToObjectMapper -> mapInformationFromFileName($this -> fileReader -> getFilename(), $this -> tableObject);
+          if($this -> fileToObjectMapper -> mapData($result, $this -> tableObject))
           {
-            $this -> tableWriterDelegator -> writeTableObjectToTable($this -> tableObject, $this -> sensorInformation);
+            if($this -> tableObjectValidator -> validateTableObject($this -> tableObject))
+            {
+              $this -> tableWriterDelegator -> writeTableObjectToTable($this -> tableObject, $this -> sensorInformation);
+            }
+            else
+            {
+              die("Unable to verify information from file.\n"); //may need a softer error handling after initial testing
+            }
           }
-        }
+          else
+          {
+            //die("Unable to map data from file.\n");//may need a softer error handling after initial testing
+          echo "Unable to map data or defect file contained no defect.\n";
+          }
+          echo "Returning true\n";
+          return true;
         //return $this -> tableObject;
+         }
+         else
+         {
+           echo "Returning false\n";
+           return false;
+         }
      }
 
      //sets the file to be read from.

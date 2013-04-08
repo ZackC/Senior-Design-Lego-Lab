@@ -14,19 +14,19 @@
       return $this -> defects;
     }
     
-    public function getStationNumber()
+    /*public function getStationNumber()
     {
     	return $this->stationNumber;
-    }
+    }*/
  
     public function setDefects($newDefects)
     {
       $this -> defects = $newDefects;
     }
     
-    public function setStationNumber($newStationNumber)
+    /*public function setStationNumber($newStationNumber)
     {
     	$this->stationNumber = $newStationNumber;
-    }
+    }*/
   }
 ?>

@@ -2,7 +2,7 @@
   class LabInitialization
   {
 
-     const NUBMEROFSTATIONSPERCELL = 5;
+     const NUMBEROFSTATIONSPERCELL = 5;
      private $stationMeanIdleTimes = array();
      private $stationMeanProcessTimes = array();
      private $stationSigmaIdleTimes = array();
@@ -23,21 +23,21 @@
        $grapher = new Grapher();
        for($i = 0; $i < self::NUMBEROFSTATIONSPERCELL; $i++)
        { 
-         $stationArray[] = new StationInformation($i,$tableWriter,$grapher,$this -> stationMeanIdleTimes[$i],$this -> stationMeanProcessTimes[$i],$this -> stationSigmaIdleTimes[$i],$this -> stationSigmaProcessTimes,$overallStation);
+         $stationArray[$i] = new StationInformation($i+1,$tableWriter,$grapher,$this -> stationMeanIdleTimes[$i],$this -> stationMeanProcessTimes[$i],$this -> stationSigmaIdleTimes[$i],$this -> stationSigmaProcessTimes,$overallStation);
        }
        $sensorArray = array();
        for($i = 0; $i < self::NUMBEROFSTATIONSPERCELL; $i++)
        { 
-         if($i = self::NUMBEROFSTATIONSPERCELL - 1)
+         if($i == self::NUMBEROFSTATIONSPERCELL - 1)
          {
-           $sensorArray[] = new SensorInformation($i,$stationArray[$i],null);
+           $sensorArray[$i] = new SensorInformation($i+1,$stationArray[$i],null);
          }
          else
          {
-           $sensorArray[] = new SensorInformation($i,$stationArray[$i],$stationArray[$i + 1]);
+           $sensorArray[$i] = new SensorInformation($i+1,$stationArray[$i],$stationArray[$i + 1]);
          }
        }
-       for($i = 0; $i < self::NUBMEROFSTATIONSPERCELL; $i++)
+       for($i = 0; $i < self::NUMBEROFSTATIONSPERCELL; $i++)
        {
          if($i == 0)
          {

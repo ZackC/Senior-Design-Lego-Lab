@@ -1,14 +1,14 @@
 <?php
 class DefectTableWriterDelegator extends TableWriterDelegator
 {
-	public function __construct()
+	public function __construct($newTableWriter)
 	{
-		parent::__construct();
+		parent::__construct($newTableWriter);
 	}
 	
-	public function writeTableObjectToTable($tableObject,$sensorInformation)
+	public function writeTableObjectToTable($tableObject, $sensorInformation)
 	{
-		$this -> tableWriter -> readDefectTableObject($tableObject,$stationInformation);
+		$this -> tableWriter -> readDefectTableObject($tableObject);
 		$this -> tableWriter -> writeDefectsToTable();
                 //$this -> tableWriter -> closeConnection();
 	}

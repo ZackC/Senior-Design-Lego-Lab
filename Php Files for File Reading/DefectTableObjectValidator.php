@@ -22,7 +22,7 @@
      	}
      	return $checkedDefects and 
      	$this -> validateCellNumber($tableObject -> getCellNumber()) and
-     	$this -> validateStationNumber($tableObject -> getStationNumber()) and
+     	$this -> validateSensorNumber($tableObject -> getSensorNumber()) and
      	$this -> validateFileTime($tableObject -> getFileTime());
      	
      }

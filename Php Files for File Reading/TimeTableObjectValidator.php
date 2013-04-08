@@ -9,8 +9,14 @@
      //$tableObject - the object to be validated
      public function validateTableObject($tableObject)
      {
-     	return $this -> validateCellNumber($tableObject -> getCellNumber()) and 
-     	  $this -> validateStationNumber($tableObject -> getStationNumber()) and
+     	echo $this -> validateCellNumber($tableObject -> getCellNumber())."\n";
+        echo $this -> validateSensorNumber($tableObject -> getSensorNumber())."\n";
+        echo $this -> validateFileTime($tableObject -> getFileTime())."\n";
+        echo $this -> isValidTimeInput($tableObject -> getOnTime())."\n";
+        echo $this -> isValidTimeInput($tableObject -> getOffTime())."\n";
+
+        return $this -> validateCellNumber($tableObject -> getCellNumber()) and 
+     	  $this -> validateSensorNumber($tableObject -> getSensorNumber()) and
      	  $this -> validateFileTime($tableObject -> getFileTime()) and 
           $this -> isValidTimeInput($tableObject -> getOnTime()) and
           $this -> isValidTimeInput($tableObject -> getOffTime());

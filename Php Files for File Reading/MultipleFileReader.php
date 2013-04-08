@@ -75,21 +75,21 @@
 
 
 
-  $tableWriter() = new TableWriter();
+  $tableWriter = new TableWriter();
   $labInit = new LabInitialization();
   $sensorTable = $labInit -> setUpLab($tableWriter);
 
   $fileWatcherArray = array();
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station1TimeData",$sensorTable[0]);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station2TimeData",$sensorTable[1]);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station3TimeData",$sensorTable[2]);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station4TimeData",$sensorTable[3]);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Station5TimeData",$ssensorTable[4]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station1DefectResults",$sensorTable[0]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station2DefectResults",$sensorTable[1]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station3DefectResults",$sensorTable[2]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station4DefectResults",$sensorTable[3]);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Station5DefectResults",$sensorTable[4]);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor1TimeData",$sensorTable[0],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor2TimeData",$sensorTable[1],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor3TimeData",$sensorTable[2],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor4TimeData",$sensorTable[3],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor5TimeData",$sensorTable[4],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor1DefectResults",$sensorTable[0],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor2DefectResults",$sensorTable[1],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor3DefectResults",$sensorTable[2],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor4DefectResults",$sensorTable[3],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor5DefectResults",$sensorTable[4],$tableWriter);
 
   $fileWatcherArraySize = count($fileWatcherArray);
   $directory = realpath(dirname(__FILE__));
@@ -102,8 +102,8 @@
        //while($this -> getRunning())
        //{
        $newDirectoryContents = scandir($directory);
-       echo "Old Directory Size: ".$oldDirectoryContentsSize."\n";
-       echo "New Directory Size: ".count($newDirectoryContents)."\n";
+       //echo "Old Directory Size: ".$oldDirectoryContentsSize."\n";
+       //echo "New Directory Size: ".count($newDirectoryContents)."\n";
        if($oldDirectoryContentsSize != count($newDirectoryContents))
        {
   	 for($i = 0; $i < $fileWatcherArraySize; $i++)
@@ -111,7 +111,7 @@
   		$fileWatcherArray[$i] -> processSimilarFiles($newDirectoryContents);
   	 }
          $oldDirectoryContentsSize = count(scandir($directory));
-         break;
+         //break;
        }	
   }
   echo "Done\n";

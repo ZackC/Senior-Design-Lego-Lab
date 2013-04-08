@@ -16,8 +16,10 @@
     //be put in tables.
     public function mapData($data, $tableObject)
     {
+       $this -> sensor -> incrementTimeCarNumber();
+       $this -> sensor -> getBeforeStation() -> updateStatus(1,$this -> sensor -> getTimeCarNumber());
        echo "data: ".$data."\n";
-       echo $data[1]."\n";
+       //echo $data[1]."\n";
        echo $data[0][0]."\n";
        echo $data[0][1]."\n";
        $tableObject -> setOnTime($data[0][0]);

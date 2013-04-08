@@ -13,9 +13,10 @@
     	return $cellNumber == 1;
     }
     
-    protected function validateStationNumber($stationNumber)
+    protected function validateSensorNumber($sensorNumber)
     {
-    	return $stationNumber < 6 and $stationNumber > 0;
+        echo "Sensor number being checked: $sensorNumber;";
+    	return $sensorNumber < 6 and $sensorNumber > 0; //might want to find a way not to hard code this
     }
     
     protected function validateFileTime($fileTime)

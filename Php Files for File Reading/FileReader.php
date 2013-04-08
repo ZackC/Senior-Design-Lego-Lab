@@ -21,7 +21,17 @@
 
        if(isset($this -> filename))
        {
-          $file = file_get_contents($this -> filename) or exit("Unable to open ($this->filename)"); // might need to change this from exit to ending gracefully, but for current testing this should be fine
+          $file = file_get_contents($this -> filename);
+          if($file === false) 
+          {
+            echo "Unable to open ($this->filename)\n"; // might need to change this from exit to ending gracefully, but for current testing this should be fine
+            return false;
+          }
+          else if($file === "")
+          {
+            die("($this->filename) contained empty contents\n"); // might need to change this from exit to ending gracefully, but for current testing this should be fine
+            return false;
+          }
 //may also need to look into the false return from the file_get_contents while testing
          return $file;
        }

@@ -29,7 +29,7 @@
      //creates the graph object and puts the points on the graph.  Needs
      // to be called before the other methods. We can move this to a constructor
      // to inforce that if we want.
-     public function createGraphsOfPoints($points)
+     public function createGraphOfPoints($points)
      {
  
        $this -> numberOfPoints = count($points);     

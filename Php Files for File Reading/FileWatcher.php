@@ -14,15 +14,17 @@
      private $fileToTableObject;
      // the file to read from, or the file prefix and path if new files are being created
      private $filename;
+    
+     private $tableWriter;
 
 
      //the constructor
      //$type - the type of the file being watched (1 for time file, anything else for 
      //    defect files
      //$newFilename - the name of the file to watch
-     public function __construct($type, $newFilename, $sensorInformation)  // may need to change constructor if we change class to use observer pattern
+     public function __construct($type, $newFilename, $sensorInformation,$tableWriter)  // may need to change constructor if we change class to use observer pattern
      {
-        $this -> fileToTableObject = new FileInformationToValidTableObject($type, $newFilename,$sensorInformation); // may have to change this if watching a directory instead of a file
+        $this -> fileToTableObject = new FileInformationToValidTableObject($type, $newFilename,$sensorInformation,$tableWriter); // may have to change this if watching a directory instead of a file
         $this -> filename = $newFilename;
      }
 
@@ -48,8 +50,7 @@
        else
        {
          $fileString = $this -> filename;
-         echo "File was : $fileString\n";
-         die("Unable to open file\n"); //may need to change to error later instead of die
+         die("File doesn't exist: $fileString\n"); //may need to change to error later instead of die
        }
      }
 
@@ -72,10 +73,13 @@
              if(strpos($newDirectoryContents[$i],basename($this -> filename)) !== FALSE)
              {
                  $this -> fileToTableObject -> setFilename($newDirectoryContents[$i]);
-                 $this -> fileToTableObject -> fileDataToTable();   //may need to change if implementing observer pattern
+                 
                  echo "Found File.\n";
                  echo "{$newDirectoryContents[$i]}\n";
-                 //unlink($newDirectoryContents[$i]);
+                 if($this -> fileToTableObject -> fileDataToTable())   //may need to change if implementing observer pattern
+                 {
+                   unlink($newDirectoryContents[$i]);
+                 }
              }
              //echo strpos($newDirectoryContents[$i],basename($this -> filename));
            }

@@ -8,8 +8,8 @@ class FileGenerator
 	
 	private $waitPeriod = 1;
 	
-	private $timeSpent = 0;
-	private $add = 1.5;
+	private $timeSpent = 0.01;
+	private $add = 1.50;
 	
 	private $hasDefect = 0;
 	private $stationsWithDefect = array(0, 0, 0, 0, 0);
@@ -43,6 +43,7 @@ class FileGenerator
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->hasDefect);
 						fclose($handle);
+                                                $handle = null;
 						sleep($this->waitPeriod);
 					}
 				}
@@ -75,6 +76,7 @@ class FileGenerator
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->hasDefect);
 						fclose($handle);
+                                                $handle = null;
 						sleep($this->waitPeriod);
 					}
 				}
@@ -108,6 +110,7 @@ class FileGenerator
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->hasDefect);
 						fclose($handle);
+                                                $handle = null;
 						sleep($this->waitPeriod);
 					}
 				}

@@ -7,10 +7,10 @@
   {
 
 
-    const CHARACTERS_TILL_CELL_NUMBER = 4;
-    const CHARACTERS_TILL_STATION_NUMBER = 12;
+    const CHARACTERS_TILL_CELL_NUMBER = 4; 
+    const CHARACTERS_TILL_STATION_NUMBER = 11;
     const TIME_CHARACTERS = 6;
-    private $sensor;
+    protected $sensor;
 
     public function __construct($newSensor)
     {
@@ -24,10 +24,11 @@
 
     public function mapInformationFromFileName($filename, $tableObject)
     {
-      $this -> sensor -> incrementTimeCarNumber();
-      $this -> sensor -> getBeforeStation() -> updateStatus($this -> sensor -> getTimeCarNumber(),1);
+      echo "Cell Number: ".substr($filename,self::CHARACTERS_TILL_CELL_NUMBER, 1)."\n";
+      echo "Sensor Number: ".substr($filename,self::CHARACTERS_TILL_STATION_NUMBER,1)."\n";
+      echo "File Time: ".substr($filename,strrpos($filename,"T")+1,self::TIME_CHARACTERS)."\n";
       $tableObject -> setCellNumber(substr($filename,self::CHARACTERS_TILL_CELL_NUMBER, 1));
-      $tableObject -> setStationNumber(substr($filename,self::CHARACTERS_TILL_STATION_NUMBER,1)); 
+      $tableObject -> setSensorNumber(substr($filename,self::CHARACTERS_TILL_STATION_NUMBER,1)); 
       $tableObject -> setFileTime(substr($filename,strrpos($filename,"T")+1,self::TIME_CHARACTERS));
     }
   }

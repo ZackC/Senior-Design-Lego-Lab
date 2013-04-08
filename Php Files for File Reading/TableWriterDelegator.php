@@ -4,10 +4,10 @@
  	
    protected $tableWriter;
  	
-   public function __construct()
+   public function __construct($newTableWriter)
    {
      echo "In parent constructor\n";
-     $this -> tableWriter = new TableWriter();
+     $this -> tableWriter = $newTableWriter;
      //echo "Table Writer in parent: ".$this -> tableWriter."\n";
    }
   
