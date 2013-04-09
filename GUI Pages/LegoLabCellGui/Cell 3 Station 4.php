@@ -5,9 +5,9 @@
 <!-- InstanceBeginEditable name="title" -->
 <title>Cell 3 Station 4</title>
 <!-- InstanceEndEditable -->
-<link href="/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
-<script src="/jquery.mobile-1.3.0/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+<link href="./jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="./jquery.mobile-1.3.0/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="./jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="cellgui.css"/>
 </head>
 
@@ -18,9 +18,9 @@ function display()
 {
 	//Database Information
 	$db_host = "localhost";
-	$db_username = "admin";
+	$db_username = "LegoLab";
 	$db_pass = "";
-	$db_name = "test";
+	$db_name = "legolab";
 	
 	//Connect to the database
 	$con = mysqli_connect($db_host, $db_username, $db_pass, $db_name);
@@ -29,6 +29,10 @@ function display()
 	$stationId = $station['station_id'];
 	$latestInfo = mysqli_query($con, "SELECT * FROM latest_info WHERE station = $stationId");
 	$infoRow = mysqli_fetch_array($latestInfo);
+	date_default_timezone_set('America/Chicago');
+	$currentTime = date("His");
+	$timeDifference = $currentTime - $infoRow['time_since_defect'];
+	$timeDifference = date("H:i:s");
 	
 	echo '
 	<table class="station">
@@ -38,7 +42,7 @@ function display()
 	</tr>
 	<tr>
 	<td>Average Idle Time: ' . $infoRow['average_idle_time'] . '</td>
-	<td>Time Since Defect: ' . $infoRow['time_since_defect'] . '</td>
+	<td>Time Since Defect: ' . $timeDifference . '</td>
 	</tr>
 	<tr>
 	<td>Takt Time: ' . $infoRow['takt_time'] . '</td>
@@ -52,7 +56,7 @@ function display()
 
 <div data-role="page">
 	<div data-role="header">
-	<!-- InstanceBeginEditable name="headerInfo" -->
+	<!-- InstanceBeginEditable name="header" -->
     	<a href="Cell 3 Overview.php" data-rel="back" data-icon="back">Back</a>
         <h1>Tiger Automotive Lab: Cell 3 Station 4</h1>
 	<!-- InstanceEndEditable -->
