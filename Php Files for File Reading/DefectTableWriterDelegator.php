@@ -10,6 +10,7 @@ class DefectTableWriterDelegator extends TableWriterDelegator
 	{
 		$this -> tableWriter -> readDefectTableObject($tableObject);
 		$this -> tableWriter -> writeDefectsToTable();
+                $this -> sensorInformation -> setLastDefectTime($this -> tableObject -> getFileTime());
                 //$this -> tableWriter -> closeConnection();
 	}
 	

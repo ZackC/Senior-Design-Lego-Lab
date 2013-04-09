@@ -8,8 +8,8 @@ class FileGenerator
 	
 	private $waitPeriod = 1;
 	
-	private $timeSpent = 1.51;
-	private $add = 1.50;
+	private $timeSpent = 2.51;
+	private $add = 2.50;
 	
 	private $hasDefect = 0;
 	private $stationsWithDefect = array(0, 0, 0, 0, 0);
@@ -36,17 +36,17 @@ class FileGenerator
 						$fileName = $this->baseFileName . $count . $this->timeData . "-" . date("Ymd") . "T" . date("His") . ".txt";
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->timeSpent);
-						$this->timeSpent += $this->add;
-						fwrite($handle, " " . $this->timeSpent);
+						fwrite($handle, " " . ($this->timeSpent + $this->add));
 						fclose($handle);
 						$fileName = $this->baseFileName . $count . $this->defect . "-" . date("Ymd") . "T" . date("His") . ".txt";
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->hasDefect);
 						fclose($handle);
-                                                $handle = null;
+                        $handle = null;
 						sleep($this->waitPeriod);
 					}
 				}
+				$this->timeSpent += $this->add;
 				for ($index = $this->numSensors - 1; $index >= 0; $index--)
 				{
 					if ($this->stationsWithDefect[$index] == 1)
@@ -69,17 +69,17 @@ class FileGenerator
 						$fileName = $this->baseFileName . $count . $this->timeData . "-" . date("Ymd") . "T" . date("His") . ".txt";
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->timeSpent);
-						$this->timeSpent += $this->add;
-						fwrite($handle, " " . $this->timeSpent);
+						fwrite($handle, " " . ($this->timeSpent + $this->add));
 						fclose($handle);
 						$fileName = $this->baseFileName . $count . $this->defect . "-" . date("Ymd") . "T" . date("His") . ".txt";
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->hasDefect);
 						fclose($handle);
-                                                $handle = null;
+                        $handle = null;
 						sleep($this->waitPeriod);
 					}
 				}
+				$this->timeSpent += $this->add;
 				for ($index = $this->numSensors - 1; $index >= 0; $index--)
 				{
 					if ($this->stationsWithDefect[$index] == 1)
@@ -103,17 +103,17 @@ class FileGenerator
 						$fileName = $this->baseFileName . $count . $this->timeData . "-" . date("Ymd") . "T" . date("His") . ".txt";
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->timeSpent);
-						$this->timeSpent += $this->add;
-						fwrite($handle, " " . $this->timeSpent);
+						fwrite($handle, " " . ($this->timeSpent + $this->add));
 						fclose($handle);
 						$fileName = $this->baseFileName . $count . $this->defect . "-" . date("Ymd") . "T" . date("His") . ".txt";
 						$handle = fopen($fileName, 'w');
 						fwrite($handle, $this->hasDefect);
 						fclose($handle);
-                                                $handle = null;
+                        $handle = null;
 						sleep($this->waitPeriod);
 					}
 				}
+				$this->timeSpent += $this->add;
 				for ($index = $this->numSensors - 1; $index >= 0; $index--)
 				{
 					if ($this->stationsWithDefect[$index] == 1)

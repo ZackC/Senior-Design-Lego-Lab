@@ -43,6 +43,7 @@ class TableWriter
 		$stationId = $this->getStationId();
 		//$info = mysqli_query($this->con, "SELECT * FROM latest_info WHERE station = $stationId");
 		//$row = mysqli_fetch_array($info);
+                echo "UPDATE latest_info SET $columnName = $columnValue WHERE station = $stationId\n";
 		mysqli_query($this->con, "UPDATE latest_info SET $columnName = $columnValue WHERE station = $stationId");
 	}
 	

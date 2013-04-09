@@ -9,7 +9,7 @@
     public function __construct($newSensor)
     {
       parent::__construct($newSensor);
-      echo "Added sensor to defect file object.\n";
+      //echo "Added sensor to defect file object.\n";
     }
 
     //maps the data from file information to table information 
@@ -17,8 +17,8 @@
     public function mapData($data, $tableObject)
     {
       $this -> sensor -> incrementDefectCarNumber();
-      echo "data: ".$data."\n";
-      echo "data[0][0]: ".$data[0][0]."\n";
+      //echo "data: ".$data."\n";
+      //echo "data[0][0]: ".$data[0][0]."\n";
       if($data[0][0] == 1)
       {
         $this -> sensor -> getBeforeStation() -> updateStatus(4,$this -> sensor -> getDefectCarNumber());

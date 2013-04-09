@@ -74,8 +74,8 @@
              {
                  $this -> fileToTableObject -> setFilename($newDirectoryContents[$i]);
                  
-                 echo "Found File.\n";
-                 echo "{$newDirectoryContents[$i]}\n";
+                 //echo "Found File.\n";
+                 //echo "{$newDirectoryContents[$i]}\n";
                  if($this -> fileToTableObject -> fileDataToTable())   //may need to change if implementing observer pattern
                  {
                    unlink($newDirectoryContents[$i]);

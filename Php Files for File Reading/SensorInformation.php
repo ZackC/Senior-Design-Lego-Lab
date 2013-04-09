@@ -9,6 +9,7 @@
     private $stationBeforeSensor;
     private $stationAfterSensor;
     const NUMBEROFTIMESKEPT = 20;
+    private $lastDefectTime;
 
     public function __construct($newSensorNumber, $newStationBeforeSensor, $newStationAfterSensor)
     {
@@ -24,7 +25,10 @@
     {
       $this -> addTimeToOnTimeArray($onTime);
       $this -> addTimeToOffTimeArray($offTime);
-      $this -> stationBeforeSensor -> addIdleTime($offTime - $onTime);
+      if($this -> sensorNumber != 5) //may want to find a way not to hard code 5 later, also could check if not null after testing
+      {
+        $this -> stationAfterSensor -> addIdleTime($offTime - $onTime, $this -> timeCarNumber);
+      }
     }
 
     public function addTimeToOnTimeArray($newOnTime)
@@ -38,7 +42,10 @@
     {
        $this -> offTimeArray[$this -> timeCarNumber % self::NUMBEROFTIMESKEPT] = $newOffTime;
        //haven't decided what this next function is yet
-       $this -> stationAfterSensor -> calculateProcessTimeFromSensorOffTime($newOffTime, $this -> timeCarNumber);
+       if($this -> sensorNumber < 5) // might want to make it not a hard code of 5.  Also could check for null when we are sure everything else is correct.
+       {
+         $this -> stationAfterSensor -> calculateProcessTimeFromSensorOffTime($newOffTime, $this -> timeCarNumber);
+       }
     }
 
     public function incrementTimeCarNumber()
@@ -84,6 +91,17 @@
     public function getBeforeStation()
     {
       return $this -> stationBeforeSensor;
+    }
+
+    public function getLastDefectTime()
+    {
+      return $this -> lastDefectTime;
+    }
+
+    public function setLastDefectTime($newLastDefectTime)
+    {
+      $this -> lastDefectTime = $newLastDefectTime;
+      $this -> stationBeforeSensor -> setLastDefectTime($newLastDefectTime);
     }
   }
 ?>
