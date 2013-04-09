@@ -78,7 +78,7 @@
   $tableWriter = new TableWriter();
   $labInit = new LabInitialization();
   $sensorTable = $labInit -> setUpLab($tableWriter);
-
+  $tableWriter -> resetLatestInfo();
   $fileWatcherArray = array();
   $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor1TimeData",$sensorTable[0],$tableWriter);
   $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor2TimeData",$sensorTable[1],$tableWriter);
