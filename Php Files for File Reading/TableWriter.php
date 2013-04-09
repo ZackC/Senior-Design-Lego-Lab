@@ -112,8 +112,10 @@ class TableWriter
     
     public function resetLatestInfo()
     {
+    	date_default_timezone_set('America/Chicago');
+    	$currentTime = date("His");
     	mysqli_query($this->con, "UPDATE latest_info SET status = 1, average_process_time = 0, " .
-    			"average_idle_time = 0, takt_time = 0, daily_defect = 0, time_since_defect = 0, " .
+    			"average_idle_time = 0, takt_time = 0, daily_defect = 0, time_since_defect = $currentTime, " .
     			"bottleneck = 0, error_type = 1");
     }
 }
