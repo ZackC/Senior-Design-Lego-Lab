@@ -19,6 +19,7 @@
      private $stationsPerCell;
      private $statusArray = array();
      private $defectTimeArray = array();
+     private $totalDefectCount = 0;
      
      public function __construct($newStationsPerCell, $newTableWriter)
      {
@@ -118,7 +119,7 @@
         $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "status", $status); 
      }
    
-     public function updateDefects($newDefectTime, $stationNumber)
+     public function updateDefectTimes($newDefectTime, $stationNumber)
      {
        //$this -> defectTimeArray[$stationNumber - 1] = $newDefectTime;
        //$lastDefectTime = max($this -> defectTimeArray);
@@ -126,5 +127,7 @@
        $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "time_since_defect", $newDefectTime); 
      }
      
+     
+
    }
 ?>

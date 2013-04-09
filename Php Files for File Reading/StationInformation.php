@@ -347,6 +347,7 @@
     {
       $this -> lastDefectTime = $newLastDefectTime;
       $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> stationNumber, "time_since_defect", $this -> $newLastDefectTime);
+      $this -> overallStation -> updateDefectTimes($newLastDefectTime, $this -> stationNumber);
     }
 
     public function getLastDefectTime()
