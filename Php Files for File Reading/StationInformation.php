@@ -63,6 +63,11 @@
        //echo "Setting next sensor\n";
     }
 
+    public function getNextSensor()
+    {
+       return $this -> nextSensor;
+    }
+
 
     public function addProcessTime($time, $carNumber)
     {
@@ -97,14 +102,9 @@
        $totalStationTime = $time + $this -> lastIdleTime;//not sure if this is order safe
        $this -> tableWriter -> writeToTable($this -> cellNumber,$this -> stationNumber, "takt_time", $totalStationTime);
        $this -> overallStation -> updateBottleNeckStation($totalStationTime, $this -> stationNumber);
-       if($this -> stationNumber == 5) // may have to change this later (not hard code the number of stations.
-       {
-         $this -> overallStation -> updateTotalTime($carNumber, $time, $this -> stationNumber);
-       }
-       else
-       {
-         $this -> overallStation -> updateTotalTime($carNumber, $totalStationTime, $this -> stationNumber);
-       }
+
+       $this -> overallStation -> updateTotalTime($carNumber, $totalStationTime, $this -> stationNumber);
+       
        
     }
 

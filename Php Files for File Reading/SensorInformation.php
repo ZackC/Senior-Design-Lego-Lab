@@ -56,6 +56,11 @@
     public function incrementDefectCarNumber()
     {
       $this -> defectCarNumber = $this -> defectCarNumber + 1;
+      if($this -> stationAfterSensor != null)
+      {
+        $this -> stationAfterSensor -> getNextStation() -> incrementDefectCarNumber();
+        $this -> stationAfterSensor -> getNextStation() -> incrementTimeCarNumber();
+      } 
     }
 
     public function getTimeCarNumber()
