@@ -3,9 +3,9 @@ class TableWriter
 {
 	//Database Information
 	private $dbHost = "localhost";
-	private $dbUsername = "admin";
+	private $dbUsername = "LegoLab";
 	private $dbPass = "";
-	private $dbName = "seniorDesign";
+	private $dbName = "legolab";
 	
 	private $con;
 	private $runNumber = 1;
@@ -108,6 +108,13 @@ class TableWriter
     	$stationRow = mysqli_fetch_array($stations);
     	$stationId = $stationRow['station_id'];
     	return $stationId;
+    }
+    
+    public function resetLatestInfo()
+    {
+    	mysqli_query($this->con, "UPDATE latest_info SET status = 1, average_process_time = 0, " .
+    			"average_idle_time = 0, takt_time = 0, daily_defect = 0, time_since_defect = 0, " .
+    			"bottleneck = 0, error_type = 1");
     }
 }
 ?>
