@@ -31,7 +31,7 @@ class FileGenerator
 	{
 		while($this->carsDone < $this->numCars)
 		{
-			if ($this->currentCar < $this->numSensors)
+			if ($this->currentCar <= $this->numSensors)
 			{
 				for ($count = 1; $count <= $this->currentCar; $count++)
 				{
