@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" http-equiv="refresh" content="5">
 <title>Cell Overview</title>
-<link href="/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
-<script src="/jquery.mobile-1.3.0/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+<link href="../jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="../jquery.mobile-1.3.0/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="../jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="cellgui.css"/>
 </head>
 
@@ -15,9 +15,9 @@ function display()
 {
 	//Database Information
 	$db_host = "localhost";
-	$db_username = "admin";
+	$db_username = "LegoLab";
 	$db_pass = "";
-	$db_name = "test";
+	$db_name = "legolab";
 	
 	//Connect to the database
 	$con = mysqli_connect($db_host, $db_username, $db_pass, $db_name);
@@ -50,6 +50,8 @@ function display()
 		</table>
 		</a>';
 	}
+	echo '
+	<h3 align="left">Overall:</h3>';
 }
 ?>
 
@@ -59,7 +61,6 @@ function display()
 	</div>
 	<div data-role="content">
     	<?php display(); ?>
-    	<!--<h3 align="left">Overall:</h3>-->
     </div>
 	<div data-role="footer">
 		<h4>Page Footer</h4>

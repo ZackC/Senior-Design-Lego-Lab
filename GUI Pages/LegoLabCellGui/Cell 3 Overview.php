@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" http-equiv="refresh" content="5">
 <title>Cell 3 Overview</title>
-<link href="/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
-<script src="/jquery.mobile-1.3.0/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+<link href="../jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="../jquery.mobile-1.3.0/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="../jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="cellgui.css"/>
 </head>
 
@@ -15,9 +15,9 @@ function display()
 {
 	//Database Information
 	$db_host = "localhost";
-	$db_username = "admin";
+	$db_username = "LegoLab";
 	$db_pass = "";
-	$db_name = "test";
+	$db_name = "legolab";
 	
 	//Connect to the database
 	$con = mysqli_connect($db_host, $db_username, $db_pass, $db_name);
@@ -27,6 +27,7 @@ function display()
 	<table class="stationOverview">
 	<tr>';
 			  
+	date_default_timezone_set('America/Chicago');
 	$count = 0;
 	
 	while ($stationRow = mysqli_fetch_array($stations))
@@ -34,6 +35,9 @@ function display()
 		$stationId = $stationRow['station_id'];
 		$latestInfo = mysqli_query($con, "SELECT * FROM latest_info WHERE station = $stationId");
 		$infoRow = mysqli_fetch_array($latestInfo);
+		$currentTime = date("His");
+		$timeDifference = $currentTime - $infoRow['time_since_defect'];
+		$timeDifference = date("H:i:s");
 		if ($stationRow['station'] != 0)
 		{
 			echo '
@@ -46,7 +50,7 @@ function display()
 			<p align="left">Average Idle Time: ' . $infoRow['average_idle_time'] . '</p>
 			<p align="left">Takt Time: ' . $infoRow['takt_time'] . '</p>
 			<p align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
-			<p align="left">Time Since Defect: 0</p>
+			<p align="left">Time Since Defect: ' . $timeDifference . '</p>
 			<p>&nbsp;</p>
 			</td>';
 		}
@@ -63,7 +67,7 @@ function display()
 			<p align="left">Average Idle Time: ' . $infoRow['average_idle_time'] . '</p>
 			<p align="left">Cycle Time: ' . $infoRow['takt_time'] . '</p>
 			<p align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
-			<p align="left">Time Since Defect: 0</p>
+			<p align="left">Time Since Defect: ' . $timeDifference . '</p>
 			<p align="left">Bottleneck Station: ' . $infoRow['bottleneck'] . '</p>
 			</td>';
 		}
