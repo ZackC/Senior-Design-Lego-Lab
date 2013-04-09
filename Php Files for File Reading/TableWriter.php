@@ -3,9 +3,9 @@ class TableWriter
 {
 	//Database Information
 	private $dbHost = "localhost";
-	private $dbUsername = "admin";
+	private $dbUsername = "LegoLab";
 	private $dbPass = "";
-	private $dbName = "seniorDesign";
+	private $dbName = "legolab";
 	
 	private $con;
 	private $runNumber = 1;
