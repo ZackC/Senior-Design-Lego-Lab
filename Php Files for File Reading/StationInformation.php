@@ -97,7 +97,7 @@
        //echo "Mean Process Time for station: ".$this ->meanProcessTimeForStation."\n";
        //echo "Sigma Process Time for station: ".$this -> sigmaProcessTimeForStation."\n";
        //echo "Sigma Process Time for station * 3: ".($this -> sigmaProcessTimeForStation * 3)."\n";
-       $this -> grapher -> makeGraph($this -> processTimes, $this ->meanProcessTimeForStation, $this -> sigmaProcessTimeForStation * 3 + $this -> meanProcessTimeForStation, "Cell1Station".$this -> stationNumber."ProcessGraph.png");
+       $this -> grapher -> makeGraph($this -> processTimes, $this ->meanProcessTimeForStation, $this -> sigmaProcessTimeForStation * 3 + $this -> meanProcessTimeForStation,"Latest Process Times","Cell1Station".$this -> stationNumber."ProcessGraph.png");
        $this -> tableWriter -> writeToTable($this -> cellNumber,$this -> stationNumber, "average_process_time", $this -> averageProcessTime);
        $this -> overallStation -> updateAverageProcessTime($this -> accumulatedProcessTime/$this -> accumulatedProcessTimeCount, $this -> stationNumber);
        $totalStationTime = $time + $this -> lastIdleTime;//not sure if this is order safe
@@ -133,7 +133,7 @@
          }
        }
        $this -> overallStation -> updateAverageIdleTime($this -> accumulatedIdleTime/$this -> accumulatedIdleTimeCount, $this -> stationNumber);
-       $this -> grapher -> makeGraph($this -> idleTimes, $this ->meanIdleTimeForStation, $this -> sigmaIdleTimeForStation * 3 + $this -> meanIdleTimeForStation, "Cell1Station".$this -> stationNumber."IdleGraph.png");
+       $this -> grapher -> makeGraph($this -> idleTimes, $this ->meanIdleTimeForStation, $this -> sigmaIdleTimeForStation * 3 + $this -> meanIdleTimeForStation,"Latest Idle Times", "Cell1Station".$this -> stationNumber."IdleGraph.png");
      $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> stationNumber, "average_idle_time", $this -> averageIdleTime);
     }
 

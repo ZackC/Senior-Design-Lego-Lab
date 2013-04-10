@@ -17,11 +17,12 @@
 
 
 
-     public function makeGraph($points, $mean, $sigma, $filename)
+     public function makeGraph($points, $mean, $sigma, $title,$filename)
      {
        $this -> createGraphOfPoints($points);
        $this -> addMeanLine($mean);
        $this -> addSigmaLine($sigma);
+       $this -> setTitle($title);
        $this -> drawGraph($filename);
      }
 
@@ -85,6 +86,11 @@
         $meanLinePlot = new LinePlot($meanLinePoints);
         $this -> graph -> Add($meanLinePlot);
         $meanLinePlot -> SetColor("#FFCC00"); // have to change the color after you add it for some reason.
+     }
+
+     public function setTitle($title)
+     {
+       $this -> graph -> title -> Set($title);
      }
 
   }
