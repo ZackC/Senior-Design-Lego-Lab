@@ -29,120 +29,104 @@ class FileGenerator
 	
 	public function createFiles()
 	{
-		while($this->carsDone < $this->numCars)
-		{
-			if ($this->currentCar <= $this->numSensors)
-			{
-				for ($count = 1; $count <= $this->currentCar; $count++)
-				{
-					if ($this->stationsWithDefect[$count - 1] == 0)
-					{
-						if ($count == $this->currentCar)
-						{
-							$this->sensorTimes[$count - 1] = $this->timeSpent;
-						}
-						else
-						{
-							$this->sensorTimes[$count - 1] += $this->pTime;
-							$this->timeSpent = ($this->sensorTimes[$count - 1] + $this->add);
-						}
-						$fileName = $this->baseFileName . $count . $this->timeData . "-" . date("Ymd") . "T" . date("His") . ".txt";
-						$handle = fopen($fileName, 'w');
-						fwrite($handle, $this->sensorTimes[$count - 1]);
-						fwrite($handle, " " . ($this->sensorTimes[$count - 1] + $this->add));
-						fclose($handle);
-						$fileName = $this->baseFileName . $count . $this->defect . "-" . date("Ymd") . "T" . date("His") . ".txt";
-						$handle = fopen($fileName, 'w');
-						fwrite($handle, $this->hasDefect);
-						fclose($handle);
-                        $handle = null;
-						sleep($this->waitPeriod);
-					}
-				}
-				for ($index = $this->numSensors - 1; $index >= 0; $index--)
-				{
-					if ($this->stationsWithDefect[$index] == 1)
-					{
-						if ($index != $this->numSensors - 1)
-						{
-							$this->stationsWithDefect[$index + 1] = 1;
-						}
-						$this->stationsWithDefect[$index] = 0;
-					}
-				}
-				$this->currentCar++;
-			}
-			else if ($this->currentCar <= $this->numCars)
-			{
-				for ($count = 1; $count <= $this->numSensors; $count++)
-				{
-					if ($this->stationsWithDefect[$count - 1] == 0)
-					{
-						$this->sensorTimes[$count - 1] += $this->pTime;
-						$fileName = $this->baseFileName . $count . $this->timeData . "-" . date("Ymd") . "T" . date("His") . ".txt";
-						$handle = fopen($fileName, 'w');
-						fwrite($handle, $this->sensorTimes[$count - 1]);
-						fwrite($handle, " " . ($this->sensorTimes[$count - 1] + $this->add));
-						fclose($handle);
-						$fileName = $this->baseFileName . $count . $this->defect . "-" . date("Ymd") . "T" . date("His") . ".txt";
-						$handle = fopen($fileName, 'w');
-						fwrite($handle, $this->hasDefect);
-						fclose($handle);
-                        $handle = null;
-						sleep($this->waitPeriod);
-					}
-				}
-				$this->timeSpent += $this->add;
-				for ($index = $this->numSensors - 1; $index >= 0; $index--)
-				{
-					if ($this->stationsWithDefect[$index] == 1)
-					{
-						if ($index != $this->numSensors - 1)
-						{
-							$this->stationsWithDefect[$index + 1] = 1;
-						}
-						$this->stationsWithDefect[$index] = 0;
-					}
-				}
-				$this->currentCar++;
-				$this->carsDone++;
-			}
-			else
-			{
-				for ($count = ($this->carsDone - $this->numSensors + 1); $count <= $this->numSensors; $count++)
-				{
-					if ($this->stationsWithDefect[$count - 1] == 0)
-					{
-						$this->sensorTimes[$count - 1] += $this->pTime;
-						$fileName = $this->baseFileName . $count . $this->timeData . "-" . date("Ymd") . "T" . date("His") . ".txt";
-						$handle = fopen($fileName, 'w');
-						fwrite($handle, $this->sensorTimes[$count - 1]);
-						$this->timeSpent += $this->add;
-						fwrite($handle, " " . ($this->sensorTimes[$count - 1] + $this->add));
-						fclose($handle);
-						$fileName = $this->baseFileName . $count . $this->defect . "-" . date("Ymd") . "T" . date("His") . ".txt";
-						$handle = fopen($fileName, 'w');
-						fwrite($handle, $this->hasDefect);
-						fclose($handle);
-                        $handle = null;
-						sleep($this->waitPeriod);
-					}
-				}
-				$this->timeSpent += $this->add;
-				for ($index = $this->numSensors - 1; $index >= 0; $index--)
-				{
-					if ($this->stationsWithDefect[$index] == 1)
-					{
-						if ($index != $this->numSensors - 1)
-						{
-							$this->stationsWithDefect[$index + 1] = 1;
-						}
-						$this->stationsWithDefect[$index] = 0;
-					}
-				}
-				$this->carsDone++;
-			}
-		}
+          while($this->carsDone < $this->numCars)
+	  {
+            if($this ->currentCar == 1)
+            {
+              $this -> stationsWithDefect[0] = 1;
+            }
+            echo "Current car: ".$this->currentCar."\n";
+            if ($this->currentCar <= $this->numSensors)
+            {
+               for ($count = 1; $count <= $this->currentCar; $count++)
+	       {
+                 if ($this->stationsWithDefect[$count - 1] < 2)
+		 {
+		   if ($count == $this->currentCar)
+		   {
+		     $this->sensorTimes[$count - 1] = $this->timeSpent;
+	           }
+		   else
+		   {
+		     $this->sensorTimes[$count - 1] += $this->pTime;
+		     $this->timeSpent = ($this->sensorTimes[$count - 1] + $this->add);
+	           }
+		   $this -> writeFiles($count);
+		 }
+	       }
+               $this-> propagateDefect();
+               echo "incrementing current car\n";
+	       $this->currentCar++;
+               echo "new current car value: ".$this -> currentCar."\n";
+	     }
+	     else if ($this->currentCar <= $this->numCars)
+	     {
+	       for ($count = 1; $count <= $this->numSensors; $count++)
+	       {
+		 if ($this->stationsWithDefect[$count - 1] < 2)
+		 {
+		   $this->sensorTimes[$count - 1] += $this->pTime;
+		   $this -> writeFiles($count);
+	         }
+	       }
+	       $this->timeSpent += $this->add;
+	       $this -> propagateDefect();
+	       $this->currentCar++;
+	       $this->carsDone++;
+	     }
+	     else
+	     {
+	       for ($count = ($this->carsDone - $this->numSensors + 1); $count <= $this->numSensors; $count++)
+	       {
+		 if ($this->stationsWithDefect[$count - 1] < 2)
+	         {
+		   $this->sensorTimes[$count - 1] += $this->pTime;
+		   $this -> writeFiles($count);
+		 }
+	       }
+	       $this->timeSpent += $this->add;
+	       $this -> propagateDefect();
+	       $this->carsDone++;
+	     }
+             echo "Current car at end of while: ".$this -> currentCar."\n";
+	  }
 	}
+
+         public function propagateDefect()
+         {
+           for ($index = $this->numSensors - 1; $index >= 0; $index--)
+	   {
+	     if ($this->stationsWithDefect[$index] != 0)
+	     {
+	       if ($index != $this->numSensors - 1)
+	       {
+		 $this->stationsWithDefect[$index + 1] = 2;
+	       }
+	       $this->stationsWithDefect[$index] = 0;
+             }
+	   }
+         }
+
+         public function writeFiles($count)
+         {
+           $fileName = $this->baseFileName . $count . $this->timeData . "-" . date("Ymd") . "T" . date("His") . ".txt";
+	   $handle = fopen($fileName, 'w');
+	   fwrite($handle, $this->sensorTimes[$count - 1]);
+	   fwrite($handle, " " . ($this->sensorTimes[$count - 1] + $this->add));
+           fclose($handle);
+	   $fileName = $this->baseFileName . $count . $this->defect . "-" . date("Ymd") . "T" . date("His") . ".txt";
+	   $handle = fopen($fileName, 'w');
+           if($this -> stationsWithDefect[$count - 1] == 0)
+           {
+	     fwrite($handle, $this->hasDefect);
+           }
+           else
+           {
+             fwrite($handle, "1 4,5");
+           }
+	   fclose($handle);
+           $handle = null;
+	   sleep($this->waitPeriod);
+         }
 }
 ?>
