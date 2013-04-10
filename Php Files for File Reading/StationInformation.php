@@ -73,9 +73,10 @@
     {
        $this -> addTimePoint($time, $this -> accumulatedProcessTimeCount, $this -> accumulatedProcessTime, $this -> countOfTimesInProcessTimes, $this -> processTimes);
        echo "Old average process time for station ".$this -> stationNumber.": ".$this -> averageProcessTime."\n"; 
+       echo "Process Time is: ".$time."\n";
        $this -> averageProcessTime = $this -> accumulatedProcessTime / $this -> accumulatedProcessTimeCount;
        echo "New average process time for station ".$this -> stationNumber.": ".$this -> averageProcessTime."\n"; 
-       if($time > 2 * $this -> sigmaProcessTimeForStation)
+       if($time > 2 * $this -> sigmaProcessTimeForStation + $this -> meanProcessTimeForStation)
        {
          $isWarning = true;
          $this -> updateStatus(2,$carNumber,2);
@@ -113,7 +114,7 @@
        $this -> lastIdleTime = $time;
        $this -> addTimePoint($time, $this -> accumulatedIdleTimeCount, $this -> accumulatedIdleTime, $this -> countOfTimesInIdleTimes, $this -> idleTimes);
        $this -> averageIdleTime = $this -> accumulatedIdleTime / $this -> accumulatedIdleTimeCount;
-       if($this -> lastIdleTime > 2 * $this -> sigmaIdleTimeForStation)
+       if($this -> lastIdleTime > 2 * $this -> sigmaIdleTimeForStation + $this -> meanIdleTimeForStation)
        {
          $isWarning = true;
          $this -> updateStatus(2,$carNumber,3);
@@ -301,7 +302,7 @@
           $this -> nextSensor -> setInOnTimeArray($carNumber, 0);
           //echo "Station on time: ".$stationOnTime."\n";
           //echo "Station off time: ".$stationOffTime."\n";
-          //echo "1.Process Time for car ".$carNumber.": ".$processTime."\n";
+          echo "1.Process Time for car ".$carNumber.": ".$processTime."\n";
           $this -> addProcessTime($processTime, $carNumber);
         }
       }
@@ -310,7 +311,7 @@
         if($carNumber == 1)
         {
           $processTime = $onTime;
-          //echo "2.Process Time for car ".$carNumber.": ".$processTime."\n";
+          echo "2.Process Time for car ".$carNumber.": ".$processTime."\n";
         }
         else
         {
@@ -318,7 +319,7 @@
           //echo "Last on time: ".$this -> nextSensor -> getOutOfOnTimeArray($carNumber - 1)."\n";
           $processTime = $onTime - $this -> nextSensor -> getOutOfOnTimeArray($carNumber - 1);
           $this -> nextSensor -> setInOnTimeArray($carNumber - 1,0); // this might be wrong
-          //echo "3.Process Time for car ".$carNumber.": ".$processTime."\n";
+          echo "3.Process Time for car ".$carNumber.": ".$processTime."\n";
         }
         $this -> addProcessTime($processTime, $carNumber);
       }
@@ -337,7 +338,7 @@
           $processTime = $stationOffTime - $stationOnTime;
           $this -> previousSensor -> setInOffTimeArray($carNumber,0);
           $this -> nextSensor -> setInOnTimeArray($carNumber , 0);
-          //echo "4.Process Time for car ".$carNumber.": ".$processTime."\n";
+          echo "4.Process Time for car ".$carNumber.": ".$processTime."\n";
           $this -> addProcessTime($stationOnTime, $carNumber);
         }
       }

@@ -37,7 +37,7 @@ function display()
 		$infoRow = mysqli_fetch_array($latestInfo);
 		$currentTime = date("His");
 		$timeDifference = $currentTime - $infoRow['time_since_defect'];
-		$timeDifference = date("H:i:s");
+		$timeDifference = gmdate("H:i:s",$timeDifference);
 		if ($stationRow['station'] != 0)
 		{
 			echo '

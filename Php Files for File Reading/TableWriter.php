@@ -29,6 +29,7 @@ class TableWriter
 			$this->runNumber = $runRow['run_id'];
                         $this->runNumber = $this -> runNumber + 1;
 		}
+                date_default_timezone_set('America/Chicago');
                 $time = date("YmdHis");
                 $run = $this -> runNumber;
                 echo "Run time start is: ".$time."\n";
@@ -114,6 +115,7 @@ class TableWriter
     {
     	date_default_timezone_set('America/Chicago');
     	$currentTime = date("His");
+        echo "|$currentTime|\n";
     	mysqli_query($this->con, "UPDATE latest_info SET status = 1, average_process_time = 0, " .
     			"average_idle_time = 0, takt_time = 0, daily_defect = 0, time_since_defect = $currentTime, " .
     			"bottleneck = 0, error_type = 1");

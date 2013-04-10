@@ -16,16 +16,18 @@
     //$data - the information from the defect file
     public function mapData($data, $tableObject)
     {
-      $this -> sensor -> incrementDefectCarNumber();
+      
       //echo "data: ".$data."\n";
       //echo "data[0][0]: ".$data[0][0]."\n";
       if($data[0][0] == 1)
       {
+        $this -> sensor -> incrementDefectCarNumber(true);
         $this -> sensor -> getBeforeStation() -> updateStatus(4,$this -> sensor -> getDefectCarNumber());
         $defects = explode(",",$data[0][1]);
         $tableObject -> setDefects($defects);
         return true;
       }
+      $this -> sensor -> incrementDefectCarNumber(false);
       $this -> sensor -> getBeforeStation() -> updateStatus(1,$this -> sensor -> getDefectCarNumber());
       return false;
     }

@@ -1,5 +1,5 @@
 Found run value in database.
-Run time start is: 20130408232228
+Run time start is: 20130409201847
 
 123 Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData
 In parent constructor
@@ -17,9 +17,9 @@ In parent constructor
 In parent constructor
 In parent constructor
 In parent constructor
-Filename gets set to: Cell1Sensor1TimeData-20130408T232237.txt
+Filename gets set to: Cell1Sensor1TimeData-20130409T201849.txt
 File contents: 3.01 4.51
-|3.01 4.51|Filename: Cell1Sensor1TimeData-20130408T232237.txt
+|3.01 4.51|Filename: Cell1Sensor1TimeData-20130409T201849.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -40,8 +40,10 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,3.01,4.51,232237)
+             		VALUES (NULL,71,1,3.01,4.51,201849)
+2.Process Time for car 1: 3.01
 Old average process time for station 1: 
+Process Time is: 3.01
 New average process time for station 1: 3.01
 In write to table.
 UPDATE latest_info SET average_process_time = 3.01 WHERE station = 2
@@ -65,9 +67,23 @@ UPDATE latest_info SET average_idle_time = 0.3 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232238.txt
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201817.txt
+File contents: 0
+Filename: Cell1Sensor3DefectResults-20130409T201817.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor1TimeData-20130409T201850.txt
 File contents: 6.01 7.51
-|6.01 7.51|Filename: Cell1Sensor1TimeData-20130408T232238.txt
+|6.01 7.51|Filename: Cell1Sensor1TimeData-20130409T201850.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -88,8 +104,10 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,6.01,7.51,232238)
+             		VALUES (NULL,71,1,6.01,7.51,201850)
+3.Process Time for car 2: 3
 Old average process time for station 1: 3.01
+Process Time is: 3
 New average process time for station 1: 3.005
 In write to table.
 UPDATE latest_info SET average_process_time = 3.005 WHERE station = 2
@@ -113,14 +131,14 @@ UPDATE latest_info SET average_idle_time = 0.3 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
 Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232237.txt
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201849.txt
 File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232237.txt
+Filename: Cell1Sensor1DefectResults-20130409T201849.txt
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232239.txt
+Filename gets set to: Cell1Sensor2TimeData-20130409T201851.txt
 File contents: 7.51 9.01
-|7.51 9.01|Filename: Cell1Sensor2TimeData-20130408T232239.txt
+|7.51 9.01|Filename: Cell1Sensor2TimeData-20130409T201851.txt
 data: Array
 7.51
 9.01
@@ -132,18 +150,20 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,7.51,9.01,232239)
+             		VALUES (NULL,71,2,7.51,9.01,201851)
+1.Process Time for car 2: 0
 Old average process time for station 2: 
-New average process time for station 2: 3
+Process Time is: 0
+New average process time for station 2: 0
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET average_process_time = 0 WHERE station = 3
 In write to table.
-UPDATE latest_info SET average_process_time = 1.201 WHERE station = 1
+UPDATE latest_info SET average_process_time = 0.601 WHERE station = 1
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
+UPDATE latest_info SET takt_time = 1.5 WHERE station = 3
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET bottleneck = 1 WHERE station = 1
+The bottleneck station is: 1In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -157,14 +177,28 @@ UPDATE latest_info SET average_idle_time = 0.6 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
 Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232238.txt
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201850.txt
 File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232238.txt
+Filename: Cell1Sensor1DefectResults-20130409T201850.txt
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232240.txt
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201851.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201851.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor1TimeData-20130409T201852.txt
 File contents: 9.01 10.51
-|9.01 10.51|Filename: Cell1Sensor1TimeData-20130408T232240.txt
+|9.01 10.51|Filename: Cell1Sensor1TimeData-20130409T201852.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -185,18 +219,33 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,9.01,10.51,232240)
+             		VALUES (NULL,71,1,9.01,10.51,201852)
+3.Process Time for car 3: 3
 Old average process time for station 1: 3.005
+Process Time is: 3
 New average process time for station 1: 3.0033333333333
 In write to table.
 UPDATE latest_info SET average_process_time = 3.0033333333333 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 1.2006666666667 WHERE station = 1
+UPDATE latest_info SET average_process_time = 0.60066666666667 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET bottleneck = 1 WHERE station = 1
+The bottleneck station is: 1In write to table.
+UPDATE latest_info SET average_idle_time = 0.6 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201852.txt
+File contents: 0
+Filename: Cell1Sensor1DefectResults-20130409T201852.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor2TimeData-20130409T201853.txt
+File contents: 10.51 12.01
+|10.51 12.01|Filename: Cell1Sensor2TimeData-20130409T201853.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -205,24 +254,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 3
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 0.6 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
-Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232240.txt
-File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232240.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232239.txt
-File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232239.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232241.txt
-File contents: 10.51 12.01
-|10.51 12.01|Filename: Cell1Sensor2TimeData-20130408T232241.txt
 data: Array
 10.51
 12.01
@@ -234,18 +265,8 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,10.51,12.01,232241)
-Old average process time for station 2: 3
-New average process time for station 2: 3
+             		VALUES (NULL,71,2,10.51,12.01,201853)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
-In write to table.
-UPDATE latest_info SET average_process_time = 1.2006666666667 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -259,9 +280,9 @@ UPDATE latest_info SET average_idle_time = 0.6 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
 Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232242.txt
+Filename gets set to: Cell1Sensor3TimeData-20130409T201854.txt
 File contents: 12.01 13.51
-|12.01 13.51|Filename: Cell1Sensor3TimeData-20130408T232242.txt
+|12.01 13.51|Filename: Cell1Sensor3TimeData-20130409T201854.txt
 data: Array
 12.01
 13.51
@@ -273,18 +294,20 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,12.01,13.51,232242)
+             		VALUES (NULL,71,3,12.01,13.51,201854)
+1.Process Time for car 5: 0
 Old average process time for station 3: 
-New average process time for station 3: 3
+Process Time is: 0
+New average process time for station 3: 0
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+UPDATE latest_info SET average_process_time = 0 WHERE station = 4
 In write to table.
-UPDATE latest_info SET average_process_time = 1.8006666666667 WHERE station = 1
+UPDATE latest_info SET average_process_time = 0.60066666666667 WHERE station = 1
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
+UPDATE latest_info SET takt_time = 1.5 WHERE station = 4
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET bottleneck = 1 WHERE station = 1
+The bottleneck station is: 1In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -298,14 +321,14 @@ UPDATE latest_info SET average_idle_time = 0.9 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
 Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232241.txt
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201853.txt
 File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232241.txt
+Filename: Cell1Sensor2DefectResults-20130409T201853.txt
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232243.txt
+Filename gets set to: Cell1Sensor1TimeData-20130409T201855.txt
 File contents: 12.01 13.51
-|12.01 13.51|Filename: Cell1Sensor1TimeData-20130408T232243.txt
+|12.01 13.51|Filename: Cell1Sensor1TimeData-20130409T201855.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -326,18 +349,42 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,12.01,13.51,232243)
+             		VALUES (NULL,71,1,12.01,13.51,201855)
+3.Process Time for car 4: 3
 Old average process time for station 1: 3.0033333333333
+Process Time is: 3
 New average process time for station 1: 3.0025
 In write to table.
 UPDATE latest_info SET average_process_time = 3.0025 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 1.8005 WHERE station = 1
+UPDATE latest_info SET average_process_time = 0.6005 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET bottleneck = 1 WHERE station = 1
+The bottleneck station is: 1In write to table.
+UPDATE latest_info SET average_idle_time = 0.9 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201854.txt
+File contents: 0
+Filename: Cell1Sensor3DefectResults-20130409T201854.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor2TimeData-20130409T201856.txt
+File contents: 13.51 15.01
+|13.51 15.01|Filename: Cell1Sensor2TimeData-20130409T201856.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -346,19 +393,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 3
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 0.9 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
-Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232242.txt
-File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232242.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232244.txt
-File contents: 13.51 15.01
-|13.51 15.01|Filename: Cell1Sensor2TimeData-20130408T232244.txt
 data: Array
 13.51
 15.01
@@ -370,18 +404,21 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,13.51,15.01,232244)
-Old average process time for station 2: 3
-New average process time for station 2: 3
+             		VALUES (NULL,71,2,13.51,15.01,201856)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET average_idle_time = 0.9 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 1.8005 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201855.txt
+File contents: 0
+Filename: Cell1Sensor1DefectResults-20130409T201855.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor3TimeData-20130409T201857.txt
+File contents: 15.01 16.51
+|15.01 16.51|Filename: Cell1Sensor3TimeData-20130409T201857.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -390,19 +427,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 4
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 0.9 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
-Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232243.txt
-File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232243.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232245.txt
-File contents: 15.01 16.51
-|15.01 16.51|Filename: Cell1Sensor3TimeData-20130408T232245.txt
 data: Array
 15.01
 16.51
@@ -414,18 +438,8 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,15.01,16.51,232245)
-Old average process time for station 3: 3
-New average process time for station 3: 3
+             		VALUES (NULL,71,3,15.01,16.51,201857)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
-In write to table.
-UPDATE latest_info SET average_process_time = 1.8005 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -439,14 +453,32 @@ UPDATE latest_info SET average_idle_time = 0.9 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
 Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232244.txt
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201856.txt
 File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232244.txt
+Filename: Cell1Sensor2DefectResults-20130409T201856.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232246.txt
+Filename gets set to: Cell1Sensor4TimeData-20130409T201858.txt
 File contents: 16.51 18.01
-|16.51 18.01|Filename: Cell1Sensor4TimeData-20130408T232246.txt
+|16.51 18.01|Filename: Cell1Sensor4TimeData-20130409T201858.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 16.51
 18.01
@@ -458,18 +490,8 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,16.51,18.01,232246)
-Old average process time for station 4: 
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,16.51,18.01,201858)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
-In write to table.
-UPDATE latest_info SET average_process_time = 2.4005 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
-In write to table.
-UPDATE latest_info SET bottleneck = 4 WHERE station = 1
-The bottleneck station is: 4In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -483,14 +505,23 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
 Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232245.txt
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201857.txt
 File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232245.txt
+Filename: Cell1Sensor3DefectResults-20130409T201857.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232247.txt
+Filename gets set to: Cell1Sensor1TimeData-20130409T201859.txt
 File contents: 15.01 16.51
-|15.01 16.51|Filename: Cell1Sensor1TimeData-20130408T232247.txt
+|15.01 16.51|Filename: Cell1Sensor1TimeData-20130409T201859.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -511,18 +542,63 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,15.01,16.51,232247)
+             		VALUES (NULL,71,1,15.01,16.51,201859)
+3.Process Time for car 5: 3
 Old average process time for station 1: 3.0025
+Process Time is: 3
 New average process time for station 1: 3.002
 In write to table.
 UPDATE latest_info SET average_process_time = 3.002 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 2.4004 WHERE station = 1
+UPDATE latest_info SET average_process_time = 0.6004 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
-UPDATE latest_info SET bottleneck = 4 WHERE station = 1
-The bottleneck station is: 4In write to table.
+UPDATE latest_info SET bottleneck = 1 WHERE station = 1
+The bottleneck station is: 14.Process Time for car 5: -6
+Old average process time for station 2: 0
+Process Time is: 16.51
+New average process time for station 2: 8.255
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 2 WHERE station = 3
+Writing to error type: 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_process_time = 8.255 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 2.2514 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 18.01 WHERE station = 3
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201858.txt
+File contents: 0
+Filename: Cell1Sensor4DefectResults-20130409T201858.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor2TimeData-20130409T201900.txt
+File contents: 16.51 18.01
+|16.51 18.01|Filename: Cell1Sensor2TimeData-20130409T201900.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -531,19 +607,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 3
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
-Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232246.txt
-File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232246.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232248.txt
-File contents: 16.51 18.01
-|16.51 18.01|Filename: Cell1Sensor2TimeData-20130408T232248.txt
 data: Array
 16.51
 18.01
@@ -555,18 +618,42 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,16.51,18.01,232248)
-Old average process time for station 2: 3
-New average process time for station 2: 3
+             		VALUES (NULL,71,2,16.51,18.01,201900)
+4.Process Time for car 8: -3
+Old average process time for station 3: 0
+Process Time is: 18.01
+New average process time for station 3: 9.005
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET status = 2 WHERE station = 4
 In write to table.
-UPDATE latest_info SET average_process_time = 2.4004 WHERE station = 1
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
+UPDATE latest_info SET error_type = 2 WHERE station = 4
+Writing to error type: 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET average_process_time = 9.005 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 4.0524 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 19.51 WHERE station = 4
+In write to table.
+UPDATE latest_info SET bottleneck = 3 WHERE station = 1
+The bottleneck station is: 3In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201859.txt
+File contents: 0
+Filename: Cell1Sensor1DefectResults-20130409T201859.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor3TimeData-20130409T201901.txt
+File contents: 18.01 19.51
+|18.01 19.51|Filename: Cell1Sensor3TimeData-20130409T201901.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -575,19 +662,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 4
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
-Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232247.txt
-File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232247.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232249.txt
-File contents: 18.01 19.51
-|18.01 19.51|Filename: Cell1Sensor3TimeData-20130408T232249.txt
 data: Array
 18.01
 19.51
@@ -599,18 +673,30 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,18.01,19.51,232249)
-Old average process time for station 3: 3
-New average process time for station 3: 3
+             		VALUES (NULL,71,3,18.01,19.51,201901)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 2.4004 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201900.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201900.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
+UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor4TimeData-20130409T201902.txt
+File contents: 19.51 21.01
+|19.51 21.01|Filename: Cell1Sensor4TimeData-20130409T201902.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -619,19 +705,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 5
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
-Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232248.txt
-File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232248.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232250.txt
-File contents: 19.51 21.01
-|19.51 21.01|Filename: Cell1Sensor4TimeData-20130408T232250.txt
 data: Array
 19.51
 21.01
@@ -643,18 +716,8 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,19.51,21.01,232250)
-Old average process time for station 4: 3
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,19.51,21.01,201902)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
-In write to table.
-UPDATE latest_info SET average_process_time = 2.4004 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -668,14 +731,32 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
 Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232249.txt
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201901.txt
 File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232249.txt
+Filename: Cell1Sensor3DefectResults-20130409T201901.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232251.txt
+Filename gets set to: Cell1Sensor5TimeData-20130409T201903.txt
 File contents: 21.01 22.51
-|21.01 22.51|Filename: Cell1Sensor5TimeData-20130408T232251.txt
+|21.01 22.51|Filename: Cell1Sensor5TimeData-20130409T201903.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 21.01
 22.51
@@ -687,28 +768,25 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,21.01,22.51,232251)
-Old average process time for station 5: 
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0004 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.51 WHERE station = 1
+             		VALUES (NULL,71,5,21.01,22.51,201903)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232250.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201902.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232250.txt
+Filename: Cell1Sensor4DefectResults-20130409T201902.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232252.txt
+Filename gets set to: Cell1Sensor1TimeData-20130409T201904.txt
 File contents: 18.01 19.51
-|18.01 19.51|Filename: Cell1Sensor1TimeData-20130408T232252.txt
+|18.01 19.51|Filename: Cell1Sensor1TimeData-20130409T201904.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -729,18 +807,63 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,18.01,19.51,232252)
+             		VALUES (NULL,71,1,18.01,19.51,201904)
+3.Process Time for car 6: 3
 Old average process time for station 1: 3.002
+Process Time is: 3
 New average process time for station 1: 3.0016666666667
 In write to table.
 UPDATE latest_info SET average_process_time = 3.0016666666667 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
+UPDATE latest_info SET average_process_time = 4.0523333333333 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
+UPDATE latest_info SET bottleneck = 3 WHERE station = 1
+The bottleneck station is: 34.Process Time for car 6: -6
+Old average process time for station 2: 8.255
+Process Time is: 19.51
+New average process time for station 2: 12.006666666667
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 2 WHERE station = 3
+Writing to error type: 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_process_time = 12.006666666667 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 4.8026666666667 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 21.01 WHERE station = 3
+In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
 The bottleneck station is: 2In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201903.txt
+File contents: 0
+Filename: Cell1Sensor5DefectResults-20130409T201903.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor2TimeData-20130409T201905.txt
+File contents: 19.51 21.01
+|19.51 21.01|Filename: Cell1Sensor2TimeData-20130409T201905.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -749,19 +872,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 3
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
-Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232251.txt
-File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232251.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232253.txt
-File contents: 19.51 21.01
-|19.51 21.01|Filename: Cell1Sensor2TimeData-20130408T232253.txt
 data: Array
 19.51
 21.01
@@ -773,18 +883,21 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,19.51,21.01,232253)
-Old average process time for station 2: 3
-New average process time for station 2: 3
+             		VALUES (NULL,71,2,19.51,21.01,201905)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201904.txt
+File contents: 0
+Filename: Cell1Sensor1DefectResults-20130409T201904.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor3TimeData-20130409T201906.txt
+File contents: 21.01 22.51
+|21.01 22.51|Filename: Cell1Sensor3TimeData-20130409T201906.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
-In write to table.
-UPDATE latest_info SET bottleneck = 3 WHERE station = 1
-The bottleneck station is: 3In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -793,19 +906,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 4
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
-Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232252.txt
-File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232252.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232254.txt
-File contents: 21.01 22.51
-|21.01 22.51|Filename: Cell1Sensor3TimeData-20130408T232254.txt
 data: Array
 21.01
 22.51
@@ -817,18 +917,51 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,21.01,22.51,232254)
-Old average process time for station 3: 3
-New average process time for station 3: 3
+             		VALUES (NULL,71,3,21.01,22.51,201906)
+4.Process Time for car 14: -3
+Old average process time for station 4: 
+Process Time is: 22.51
+New average process time for station 4: 22.51
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+UPDATE latest_info SET status = 2 WHERE station = 5
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
+UPDATE latest_info SET error_type = 2 WHERE station = 5
+Writing to error type: 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET average_process_time = 22.51 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 9.3046666666667 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 24.01 WHERE station = 5
+In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201905.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201905.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor4TimeData-20130409T201907.txt
+File contents: 22.51 24.01
+|22.51 24.01|Filename: Cell1Sensor4TimeData-20130409T201907.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -837,19 +970,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 5
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
-Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232253.txt
-File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232253.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232255.txt
-File contents: 22.51 24.01
-|22.51 24.01|Filename: Cell1Sensor4TimeData-20130408T232255.txt
 data: Array
 22.51
 24.01
@@ -861,18 +981,8 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,22.51,24.01,232255)
-Old average process time for station 4: 3
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,22.51,24.01,201907)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -886,14 +996,32 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
 Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232254.txt
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201906.txt
 File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232254.txt
+Filename: Cell1Sensor3DefectResults-20130409T201906.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232256.txt
+Filename gets set to: Cell1Sensor5TimeData-20130409T201908.txt
 File contents: 24.01 25.51
-|24.01 25.51|Filename: Cell1Sensor5TimeData-20130408T232256.txt
+|24.01 25.51|Filename: Cell1Sensor5TimeData-20130409T201908.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 24.01
 25.51
@@ -905,28 +1033,25 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,24.01,25.51,232256)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.505 WHERE station = 1
+             		VALUES (NULL,71,5,24.01,25.51,201908)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232255.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201907.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232255.txt
+Filename: Cell1Sensor4DefectResults-20130409T201907.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232257.txt
+Filename gets set to: Cell1Sensor1TimeData-20130409T201909.txt
 File contents: 21.01 22.51
-|21.01 22.51|Filename: Cell1Sensor1TimeData-20130408T232257.txt
+|21.01 22.51|Filename: Cell1Sensor1TimeData-20130409T201909.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -947,18 +1072,42 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,21.01,22.51,232257)
+             		VALUES (NULL,71,1,21.01,22.51,201909)
+3.Process Time for car 7: 3
 Old average process time for station 1: 3.0016666666667
+Process Time is: 3
 New average process time for station 1: 3.0014285714286
 In write to table.
 UPDATE latest_info SET average_process_time = 3.0014285714286 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
+UPDATE latest_info SET average_process_time = 9.304619047619 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201908.txt
+File contents: 0
+Filename: Cell1Sensor5DefectResults-20130409T201908.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor2TimeData-20130409T201910.txt
+File contents: 22.51 24.01
+|22.51 24.01|Filename: Cell1Sensor2TimeData-20130409T201910.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -967,24 +1116,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 3
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
-Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232257.txt
-File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232257.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232256.txt
-File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232256.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232258.txt
-File contents: 22.51 24.01
-|22.51 24.01|Filename: Cell1Sensor2TimeData-20130408T232258.txt
 data: Array
 22.51
 24.01
@@ -996,18 +1127,21 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,22.51,24.01,232258)
-Old average process time for station 2: 3
-New average process time for station 2: 3
+             		VALUES (NULL,71,2,22.51,24.01,201910)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201909.txt
+File contents: 0
+Filename: Cell1Sensor1DefectResults-20130409T201909.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor3TimeData-20130409T201911.txt
+File contents: 24.01 25.51
+|24.01 25.51|Filename: Cell1Sensor3TimeData-20130409T201911.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1016,14 +1150,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 4
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
-Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232259.txt
-File contents: 24.01 25.51
-|24.01 25.51|Filename: Cell1Sensor3TimeData-20130408T232259.txt
 data: Array
 24.01
 25.51
@@ -1035,18 +1161,30 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,24.01,25.51,232259)
-Old average process time for station 3: 3
-New average process time for station 3: 3
+             		VALUES (NULL,71,3,24.01,25.51,201911)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201910.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201910.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
+UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor4TimeData-20130409T201912.txt
+File contents: 25.51 27.01
+|25.51 27.01|Filename: Cell1Sensor4TimeData-20130409T201912.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1055,19 +1193,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 5
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
-Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232258.txt
-File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232258.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232300.txt
-File contents: 25.51 27.01
-|25.51 27.01|Filename: Cell1Sensor4TimeData-20130408T232300.txt
 data: Array
 25.51
 27.01
@@ -1079,18 +1204,8 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,25.51,27.01,232300)
-Old average process time for station 4: 3
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,25.51,27.01,201912)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1104,14 +1219,32 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
 Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232259.txt
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201911.txt
 File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232259.txt
+Filename: Cell1Sensor3DefectResults-20130409T201911.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232301.txt
+Filename gets set to: Cell1Sensor5TimeData-20130409T201913.txt
 File contents: 27.01 28.51
-|27.01 28.51|Filename: Cell1Sensor5TimeData-20130408T232301.txt
+|27.01 28.51|Filename: Cell1Sensor5TimeData-20130409T201913.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 27.01
 28.51
@@ -1123,28 +1256,39 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,27.01,28.51,232301)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.503333333333 WHERE station = 1
+             		VALUES (NULL,71,5,27.01,28.51,201913)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232300.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201912.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232300.txt
+Filename: Cell1Sensor4DefectResults-20130409T201912.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232302.txt
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201913.txt
+File contents: 0
+Filename: Cell1Sensor5DefectResults-20130409T201913.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor1TimeData-20130409T201914.txt
 File contents: 24.01 25.51
-|24.01 25.51|Filename: Cell1Sensor1TimeData-20130408T232302.txt
+|24.01 25.51|Filename: Cell1Sensor1TimeData-20130409T201914.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -1165,18 +1309,54 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,24.01,25.51,232302)
+             		VALUES (NULL,71,1,24.01,25.51,201914)
+3.Process Time for car 8: 3
 Old average process time for station 1: 3.0014285714286
+Process Time is: 3
 New average process time for station 1: 3.00125
 In write to table.
 UPDATE latest_info SET average_process_time = 3.00125 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+UPDATE latest_info SET average_process_time = 9.3045833333333 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 44.Process Time for car 8: -9
+Old average process time for station 2: 12.006666666667
+Process Time is: 25.51
+New average process time for station 2: 15.3825
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 2 WHERE station = 3
+Writing to error type: 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_process_time = 15.3825 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 9.97975 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 27.01 WHERE station = 3
+In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
 The bottleneck station is: 2In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201914.txt
+File contents: 0
+Filename: Cell1Sensor1DefectResults-20130409T201914.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor2TimeData-20130409T201915.txt
+File contents: 25.51 27.01
+|25.51 27.01|Filename: Cell1Sensor2TimeData-20130409T201915.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1185,19 +1365,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 3
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
-Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232301.txt
-File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232301.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232303.txt
-File contents: 25.51 27.01
-|25.51 27.01|Filename: Cell1Sensor2TimeData-20130408T232303.txt
 data: Array
 25.51
 27.01
@@ -1209,18 +1376,21 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,25.51,27.01,232303)
-Old average process time for station 2: 3
-New average process time for station 2: 3
+             		VALUES (NULL,71,2,25.51,27.01,201915)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201915.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201915.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor3TimeData-20130409T201916.txt
+File contents: 27.01 28.51
+|27.01 28.51|Filename: Cell1Sensor3TimeData-20130409T201916.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1229,19 +1399,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 4
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
-Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232302.txt
-File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232302.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232304.txt
-File contents: 27.01 28.51
-|27.01 28.51|Filename: Cell1Sensor3TimeData-20130408T232304.txt
 data: Array
 27.01
 28.51
@@ -1253,18 +1410,16 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,27.01,28.51,232304)
-Old average process time for station 3: 3
-New average process time for station 3: 3
+             		VALUES (NULL,71,3,27.01,28.51,201916)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: Cell1Sensor4TimeData-20130409T201917.txt
+File contents: 28.51 30.01
+|28.51 30.01|Filename: Cell1Sensor4TimeData-20130409T201917.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1273,19 +1428,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 5
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
-Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232303.txt
-File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232303.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232305.txt
-File contents: 28.51 30.01
-|28.51 30.01|Filename: Cell1Sensor4TimeData-20130408T232305.txt
 data: Array
 28.51
 30.01
@@ -1297,18 +1439,44 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,28.51,30.01,232305)
-Old average process time for station 4: 3
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,28.51,30.01,201917)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201916.txt
+File contents: 0
+Filename: Cell1Sensor3DefectResults-20130409T201916.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
+UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201917.txt
+File contents: 0
+Filename: Cell1Sensor4DefectResults-20130409T201917.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor5TimeData-20130409T201918.txt
+File contents: 30.01 31.51
+|30.01 31.51|Filename: Cell1Sensor5TimeData-20130409T201918.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1317,19 +1485,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 6
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
-Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232304.txt
-File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232304.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232306.txt
-File contents: 30.01 31.51
-|30.01 31.51|Filename: Cell1Sensor5TimeData-20130408T232306.txt
 data: Array
 30.01
 31.51
@@ -1341,28 +1496,16 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,30.01,31.51,232306)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.5025 WHERE station = 1
+             		VALUES (NULL,71,5,30.01,31.51,201918)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232305.txt
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201918.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232305.txt
+Filename: Cell1Sensor5DefectResults-20130409T201918.txt
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232307.txt
+Filename gets set to: Cell1Sensor1TimeData-20130409T201919.txt
 File contents: 27.01 28.51
-|27.01 28.51|Filename: Cell1Sensor1TimeData-20130408T232307.txt
+|27.01 28.51|Filename: Cell1Sensor1TimeData-20130409T201919.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -1383,18 +1526,28 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,27.01,28.51,232307)
+             		VALUES (NULL,71,1,27.01,28.51,201919)
+3.Process Time for car 9: 3
 Old average process time for station 1: 3.00125
+Process Time is: 3
 New average process time for station 1: 3.0011111111111
 In write to table.
 UPDATE latest_info SET average_process_time = 3.0011111111111 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+UPDATE latest_info SET average_process_time = 9.9797222222222 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
 The bottleneck station is: 2In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: Cell1Sensor2TimeData-20130409T201920.txt
+File contents: 28.51 30.01
+|28.51 30.01|Filename: Cell1Sensor2TimeData-20130409T201920.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1403,19 +1556,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 3
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
-Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232306.txt
-File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232306.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232308.txt
-File contents: 28.51 30.01
-|28.51 30.01|Filename: Cell1Sensor2TimeData-20130408T232308.txt
 data: Array
 28.51
 30.01
@@ -1427,18 +1567,21 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,28.51,30.01,232308)
-Old average process time for station 2: 3
-New average process time for station 2: 3
+             		VALUES (NULL,71,2,28.51,30.01,201920)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201919.txt
+File contents: 0
+Filename: Cell1Sensor1DefectResults-20130409T201919.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor3TimeData-20130409T201921.txt
+File contents: 30.01 31.51
+|30.01 31.51|Filename: Cell1Sensor3TimeData-20130409T201921.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1447,19 +1590,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 4
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
-Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232307.txt
-File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232307.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232309.txt
-File contents: 30.01 31.51
-|30.01 31.51|Filename: Cell1Sensor3TimeData-20130408T232309.txt
 data: Array
 30.01
 31.51
@@ -1471,18 +1601,30 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,30.01,31.51,232309)
-Old average process time for station 3: 3
-New average process time for station 3: 3
+             		VALUES (NULL,71,3,30.01,31.51,201921)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201920.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201920.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
+UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor4TimeData-20130409T201922.txt
+File contents: 31.51 33.01
+|31.51 33.01|Filename: Cell1Sensor4TimeData-20130409T201922.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1491,19 +1633,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 5
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
-Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232308.txt
-File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232308.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232310.txt
-File contents: 31.51 33.01
-|31.51 33.01|Filename: Cell1Sensor4TimeData-20130408T232310.txt
 data: Array
 31.51
 33.01
@@ -1515,18 +1644,30 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,31.51,33.01,232310)
-Old average process time for station 4: 3
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,31.51,33.01,201922)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201921.txt
+File contents: 0
+Filename: Cell1Sensor3DefectResults-20130409T201921.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
+UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor5TimeData-20130409T201923.txt
+File contents: 33.01 34.51
+|33.01 34.51|Filename: Cell1Sensor5TimeData-20130409T201923.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1535,19 +1676,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 6
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
-Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232309.txt
-File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232309.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232311.txt
-File contents: 33.01 34.51
-|33.01 34.51|Filename: Cell1Sensor5TimeData-20130408T232311.txt
 data: Array
 33.01
 34.51
@@ -1559,33 +1687,25 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,33.01,34.51,232311)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.502 WHERE station = 1
+             		VALUES (NULL,71,5,33.01,34.51,201923)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232310.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201922.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232310.txt
+Filename: Cell1Sensor4DefectResults-20130409T201922.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232311.txt
-File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232311.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232312.txt
+Filename gets set to: Cell1Sensor1TimeData-20130409T201924.txt
 File contents: 30.01 31.51
-|30.01 31.51|Filename: Cell1Sensor1TimeData-20130408T232312.txt
+|30.01 31.51|Filename: Cell1Sensor1TimeData-20130409T201924.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -1606,8 +1726,10 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,30.01,31.51,232312)
+             		VALUES (NULL,71,1,30.01,31.51,201924)
+3.Process Time for car 10: 3
 Old average process time for station 1: 3.0011111111111
+Process Time is: 3
 New average process time for station 1: 3.001
 Values in time Array:
 3.01
@@ -1623,21 +1745,33 @@ Values in time Array:
 In write to table.
 UPDATE latest_info SET average_process_time = 3.001 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002 WHERE station = 1
+UPDATE latest_info SET average_process_time = 9.9797 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 3
+The bottleneck station is: 24.Process Time for car 10: -12
+Old average process time for station 2: 15.3825
+Process Time is: 31.51
+New average process time for station 2: 18.608
 In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
+UPDATE latest_info SET status = 2 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
-UPDATE latest_info SET error_type = 1 WHERE station = 3
-Writing to error type: 1
+UPDATE latest_info SET error_type = 2 WHERE station = 3
+Writing to error type: 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Values in time Array:
+In write to table.
+UPDATE latest_info SET average_process_time = 18.608 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 10.6248 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 33.01 WHERE station = 3
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Values in time Array:
 1.5
 1.5
 1.5
@@ -1653,9 +1787,32 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
 Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232313.txt
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201923.txt
+File contents: 0
+Filename: Cell1Sensor5DefectResults-20130409T201923.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor2TimeData-20130409T201925.txt
 File contents: 31.51 33.01
-|31.51 33.01|Filename: Cell1Sensor2TimeData-20130408T232313.txt
+|31.51 33.01|Filename: Cell1Sensor2TimeData-20130409T201925.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 31.51
 33.01
@@ -1667,18 +1824,21 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,31.51,33.01,232313)
-Old average process time for station 2: 3
-New average process time for station 2: 3
+             		VALUES (NULL,71,2,31.51,33.01,201925)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201924.txt
+File contents: 0
+Filename: Cell1Sensor1DefectResults-20130409T201924.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor3TimeData-20130409T201926.txt
+File contents: 33.01 34.51
+|33.01 34.51|Filename: Cell1Sensor3TimeData-20130409T201926.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1687,19 +1847,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 4
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
-Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232312.txt
-File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232312.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232314.txt
-File contents: 33.01 34.51
-|33.01 34.51|Filename: Cell1Sensor3TimeData-20130408T232314.txt
 data: Array
 33.01
 34.51
@@ -1711,39 +1858,80 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,33.01,34.51,232314)
-Old average process time for station 3: 3
-New average process time for station 3: 3
+             		VALUES (NULL,71,3,33.01,34.51,201926)
+1.Process Time for car 26: 18
+Old average process time for station 3: 9.005
+Process Time is: 18
+New average process time for station 3: 12.003333333333
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+UPDATE latest_info SET status = 2 WHERE station = 4
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002 WHERE station = 1
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
+UPDATE latest_info SET error_type = 2 WHERE station = 4
+Writing to error type: 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_process_time = 12.003333333333 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 11.224466666667 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 19.5 WHERE station = 4
 In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
+The bottleneck station is: 24.Process Time for car 26: -6
+Old average process time for station 4: 22.51
+Process Time is: 34.51
+New average process time for station 4: 28.51
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 2 WHERE station = 5
+Writing to error type: 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_process_time = 28.51 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 12.424466666667 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 36.01 WHERE station = 5
+In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201925.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201925.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor4TimeData-20130409T201927.txt
+File contents: 34.51 36.01
+|34.51 36.01|Filename: Cell1Sensor4TimeData-20130409T201927.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
+UPDATE latest_info SET status = 2 WHERE station = 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 5
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
-Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232313.txt
-File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232313.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232315.txt
-File contents: 34.51 36.01
-|34.51 36.01|Filename: Cell1Sensor4TimeData-20130408T232315.txt
 data: Array
 34.51
 36.01
@@ -1755,18 +1943,42 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,34.51,36.01,232315)
-Old average process time for station 4: 3
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,34.51,36.01,201927)
+1.Process Time for car 34: 12
+Old average process time for station 4: 28.51
+Process Time is: 12
+New average process time for station 4: 23.006666666667
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+UPDATE latest_info SET average_process_time = 23.006666666667 WHERE station = 5
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0002 WHERE station = 1
+UPDATE latest_info SET average_process_time = 11.3238 WHERE station = 1
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
+UPDATE latest_info SET takt_time = 13.5 WHERE station = 5
 In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
 The bottleneck station is: 2In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201926.txt
+File contents: 0
+Filename: Cell1Sensor3DefectResults-20130409T201926.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor5TimeData-20130409T201928.txt
+File contents: 36.01 37.51
+|36.01 37.51|Filename: Cell1Sensor5TimeData-20130409T201928.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1775,19 +1987,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 6
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
-Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232314.txt
-File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232314.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232316.txt
-File contents: 36.01 37.51
-|36.01 37.51|Filename: Cell1Sensor5TimeData-20130408T232316.txt
 data: Array
 36.01
 37.51
@@ -1799,28 +1998,25 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,36.01,37.51,232316)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0002 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.501666666667 WHERE station = 1
+             		VALUES (NULL,71,5,36.01,37.51,201928)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232315.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201927.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232315.txt
+Filename: Cell1Sensor4DefectResults-20130409T201927.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor1TimeData-20130408T232317.txt
+Filename gets set to: Cell1Sensor1TimeData-20130409T201929.txt
 File contents: 33.01 34.51
-|33.01 34.51|Filename: Cell1Sensor1TimeData-20130408T232317.txt
+|33.01 34.51|Filename: Cell1Sensor1TimeData-20130409T201929.txt
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -1841,8 +2037,10 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,1,33.01,34.51,232317)
+             		VALUES (NULL,71,1,33.01,34.51,201929)
+3.Process Time for car 11: 3
 Old average process time for station 1: 3.001
+Process Time is: 3
 New average process time for station 1: 3.0009090909091
 Values in time Array:
 3
@@ -1858,21 +2056,12 @@ Values in time Array:
 In write to table.
 UPDATE latest_info SET average_process_time = 3.0009090909091 WHERE station = 2
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+UPDATE latest_info SET average_process_time = 11.323781818182 WHERE station = 1
 In write to table.
 UPDATE latest_info SET takt_time = 3 WHERE station = 2
 In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 3
-In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET error_type = 1 WHERE station = 3
-Writing to error type: 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Values in time Array:
+The bottleneck station is: 2Values in time Array:
 1.5
 1.5
 1.5
@@ -1888,14 +2077,32 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
 Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232316.txt
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201928.txt
 File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232316.txt
+Filename: Cell1Sensor5DefectResults-20130409T201928.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232318.txt
+Filename gets set to: Cell1Sensor2TimeData-20130409T201930.txt
 File contents: 34.51 36.01
-|34.51 36.01|Filename: Cell1Sensor2TimeData-20130408T232318.txt
+|34.51 36.01|Filename: Cell1Sensor2TimeData-20130409T201930.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 34.51
 36.01
@@ -1907,37 +2114,7 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,34.51,36.01,232318)
-Old average process time for station 2: 3
-New average process time for station 2: 3
-Values in time Array:
-3
-3
-3
-3
-3
-3
-3
-3
-3
-3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
-In write to table.
-UPDATE latest_info SET bottleneck = 5 WHERE station = 1
-The bottleneck station is: 5In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 4
-In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET error_type = 1 WHERE station = 4
-Writing to error type: 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+             		VALUES (NULL,71,2,34.51,36.01,201930)
 Values in time Array:
 1.5
 1.5
@@ -1954,14 +2131,23 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
 Returning true
-Filename gets set to: Cell1Sensor1DefectResults-20130408T232317.txt
+Filename gets set to: Cell1Sensor1DefectResults-20130409T201929.txt
 File contents: 0
-Filename: Cell1Sensor1DefectResults-20130408T232317.txt
+Filename: Cell1Sensor1DefectResults-20130409T201929.txt
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232319.txt
+Filename gets set to: Cell1Sensor3TimeData-20130409T201931.txt
 File contents: 36.01 37.51
-|36.01 37.51|Filename: Cell1Sensor3TimeData-20130408T232319.txt
+|36.01 37.51|Filename: Cell1Sensor3TimeData-20130409T201931.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 36.01
 37.51
@@ -1973,18 +2159,30 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,36.01,37.51,232319)
-Old average process time for station 3: 3
-New average process time for station 3: 3
+             		VALUES (NULL,71,3,36.01,37.51,201931)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201930.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201930.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
+UPDATE latest_info SET status = 1 WHERE station = 3
 In write to table.
-UPDATE latest_info SET bottleneck = 3 WHERE station = 1
-The bottleneck station is: 3In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor4TimeData-20130409T201932.txt
+File contents: 37.51 39.01
+|37.51 39.01|Filename: Cell1Sensor4TimeData-20130409T201932.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 5
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -1993,19 +2191,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 5
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
-Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232318.txt
-File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232318.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232320.txt
-File contents: 37.51 39.01
-|37.51 39.01|Filename: Cell1Sensor4TimeData-20130408T232320.txt
 data: Array
 37.51
 39.01
@@ -2017,18 +2202,30 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,37.51,39.01,232320)
-Old average process time for station 4: 3
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,37.51,39.01,201932)
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201931.txt
+File contents: 0
+Filename: Cell1Sensor3DefectResults-20130409T201931.txt
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
+UPDATE latest_info SET status = 1 WHERE station = 4
 In write to table.
-UPDATE latest_info SET bottleneck = 3 WHERE station = 1
-The bottleneck station is: 3In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor5TimeData-20130409T201933.txt
+File contents: 39.01 40.51
+|39.01 40.51|Filename: Cell1Sensor5TimeData-20130409T201933.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 1
@@ -2037,19 +2234,6 @@ In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 6
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
-Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232319.txt
-File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232319.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232321.txt
-File contents: 39.01 40.51
-|39.01 40.51|Filename: Cell1Sensor5TimeData-20130408T232321.txt
 data: Array
 39.01
 40.51
@@ -2061,28 +2245,34 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,39.01,40.51,232321)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 3 WHERE station = 1
-The bottleneck station is: 3In write to table.
-UPDATE latest_info SET takt_time = 19.501428571429 WHERE station = 1
+             		VALUES (NULL,71,5,39.01,40.51,201933)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232320.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201932.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232320.txt
+Filename: Cell1Sensor4DefectResults-20130409T201932.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor2TimeData-20130408T232322.txt
+Filename gets set to: Cell1Sensor2TimeData-20130409T201934.txt
 File contents: 37.51 39.01
-|37.51 39.01|Filename: Cell1Sensor2TimeData-20130408T232322.txt
+|37.51 39.01|Filename: Cell1Sensor2TimeData-20130409T201934.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 37.51
 39.01
@@ -2094,38 +2284,29 @@ Sensor number being checked: 2;1
 Sensor number being checked: 2;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,2,37.51,39.01,232322)
-Old average process time for station 2: 3
-New average process time for station 2: 3
-Values in time Array:
-3
-3
-3
-3
-3
-3
-3
-3
-3
-3
+             		VALUES (NULL,71,2,37.51,39.01,201934)
+1.Process Time for car 22: 30
+Old average process time for station 2: 18.608
+Process Time is: 30
+New average process time for station 2: 20.506666666667
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+UPDATE latest_info SET status = 2 WHERE station = 3
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 3
+UPDATE latest_info SET error_type = 2 WHERE station = 3
+Writing to error type: 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_process_time = 20.506666666667 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 11.703515151515 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 31.5 WHERE station = 3
 In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 4
-In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET error_type = 1 WHERE station = 4
-Writing to error type: 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Values in time Array:
+The bottleneck station is: 2Values in time Array:
 1.5
 1.5
 1.5
@@ -2141,19 +2322,23 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
 Returning true
-Filename gets set to: Cell1Sensor2DefectResults-20130408T232322.txt
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201933.txt
 File contents: 0
-Filename: Cell1Sensor2DefectResults-20130408T232322.txt
+Filename: Cell1Sensor5DefectResults-20130409T201933.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232321.txt
-File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232321.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232323.txt
+Filename gets set to: Cell1Sensor3TimeData-20130409T201935.txt
 File contents: 39.01 40.51
-|39.01 40.51|Filename: Cell1Sensor3TimeData-20130408T232323.txt
+|39.01 40.51|Filename: Cell1Sensor3TimeData-20130409T201935.txt
 data: Array
 39.01
 40.51
@@ -2165,37 +2350,7 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,39.01,40.51,232323)
-Old average process time for station 3: 3
-New average process time for station 3: 3
-Values in time Array:
-3
-3
-3
-3
-3
-3
-3
-3
-3
-3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 5
-In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET error_type = 1 WHERE station = 5
-Writing to error type: 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+             		VALUES (NULL,71,3,39.01,40.51,201935)
 Values in time Array:
 1.5
 1.5
@@ -2212,9 +2367,23 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
 Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232324.txt
+Filename gets set to: Cell1Sensor2DefectResults-20130409T201934.txt
+File contents: 0
+Filename: Cell1Sensor2DefectResults-20130409T201934.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor4TimeData-20130409T201936.txt
 File contents: 40.51 42.01
-|40.51 42.01|Filename: Cell1Sensor4TimeData-20130408T232324.txt
+|40.51 42.01|Filename: Cell1Sensor4TimeData-20130409T201936.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 40.51
 42.01
@@ -2226,39 +2395,50 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,40.51,42.01,232324)
-Old average process time for station 4: 3
-New average process time for station 4: 3
+             		VALUES (NULL,71,4,40.51,42.01,201936)
+1.Process Time for car 41: 12
+Old average process time for station 4: 23.006666666667
+Process Time is: 12
+New average process time for station 4: 20.255
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+UPDATE latest_info SET average_process_time = 20.255 WHERE station = 5
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+UPDATE latest_info SET average_process_time = 11.153181818182 WHERE station = 1
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
+UPDATE latest_info SET takt_time = 13.5 WHERE station = 5
 In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
 The bottleneck station is: 2In write to table.
+UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201935.txt
+File contents: 0
+Filename: Cell1Sensor3DefectResults-20130409T201935.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor5TimeData-20130409T201937.txt
+File contents: 42.01 43.51
+|42.01 43.51|Filename: Cell1Sensor5TimeData-20130409T201937.txt
+In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 6
 In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
+UPDATE latest_info SET status = 2 WHERE station = 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
 UPDATE latest_info SET error_type = 1 WHERE station = 6
 Writing to error type: 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
-In write to table.
-UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
-Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232323.txt
-File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232323.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232325.txt
-File contents: 42.01 43.51
-|42.01 43.51|Filename: Cell1Sensor5TimeData-20130408T232325.txt
 data: Array
 42.01
 43.51
@@ -2270,28 +2450,25 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,42.01,43.51,232325)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.50125 WHERE station = 1
+             		VALUES (NULL,71,5,42.01,43.51,201937)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232324.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201936.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232324.txt
+Filename: Cell1Sensor4DefectResults-20130409T201936.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor3TimeData-20130408T232326.txt
+Filename gets set to: Cell1Sensor3TimeData-20130409T201938.txt
 File contents: 42.01 43.51
-|42.01 43.51|Filename: Cell1Sensor3TimeData-20130408T232326.txt
+|42.01 43.51|Filename: Cell1Sensor3TimeData-20130409T201938.txt
 data: Array
 42.01
 43.51
@@ -2303,37 +2480,7 @@ Sensor number being checked: 3;1
 Sensor number being checked: 3;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,3,42.01,43.51,232326)
-Old average process time for station 3: 3
-New average process time for station 3: 3
-Values in time Array:
-3
-3
-3
-3
-3
-3
-3
-3
-3
-3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 4
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 4
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 5
-In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET error_type = 1 WHERE station = 5
-Writing to error type: 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+             		VALUES (NULL,71,3,42.01,43.51,201938)
 Values in time Array:
 1.5
 1.5
@@ -2350,14 +2497,32 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
 Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232325.txt
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201937.txt
 File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232325.txt
+Filename: Cell1Sensor5DefectResults-20130409T201937.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232327.txt
+Filename gets set to: Cell1Sensor4TimeData-20130409T201939.txt
 File contents: 43.51 45.01
-|43.51 45.01|Filename: Cell1Sensor4TimeData-20130408T232327.txt
+|43.51 45.01|Filename: Cell1Sensor4TimeData-20130409T201939.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 43.51
 45.01
@@ -2369,38 +2534,20 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,43.51,45.01,232327)
-Old average process time for station 4: 3
-New average process time for station 4: 3
-Values in time Array:
-3
-3
-3
-3
-3
-3
-3
-3
-3
-3
+             		VALUES (NULL,71,4,43.51,45.01,201939)
+1.Process Time for car 43: 12
+Old average process time for station 4: 20.255
+Process Time is: 12
+New average process time for station 4: 18.604
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+UPDATE latest_info SET average_process_time = 18.604 WHERE station = 5
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+UPDATE latest_info SET average_process_time = 10.822981818182 WHERE station = 1
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
+UPDATE latest_info SET takt_time = 13.5 WHERE station = 5
 In write to table.
 UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 6
-In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In write to table.
-UPDATE latest_info SET error_type = 1 WHERE station = 6
-Writing to error type: 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Values in time Array:
+The bottleneck station is: 2Values in time Array:
 1.5
 1.5
 1.5
@@ -2416,14 +2563,32 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
 Returning true
-Filename gets set to: Cell1Sensor3DefectResults-20130408T232326.txt
+Filename gets set to: Cell1Sensor3DefectResults-20130409T201938.txt
 File contents: 0
-Filename: Cell1Sensor3DefectResults-20130408T232326.txt
+Filename: Cell1Sensor3DefectResults-20130409T201938.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232328.txt
+Filename gets set to: Cell1Sensor5TimeData-20130409T201940.txt
 File contents: 45.01 46.51
-|45.01 46.51|Filename: Cell1Sensor5TimeData-20130408T232328.txt
+|45.01 46.51|Filename: Cell1Sensor5TimeData-20130409T201940.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 45.01
 46.51
@@ -2435,28 +2600,34 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,45.01,46.51,232328)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.501111111111 WHERE station = 1
+             		VALUES (NULL,71,5,45.01,46.51,201940)
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232327.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201939.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232327.txt
+Filename: Cell1Sensor4DefectResults-20130409T201939.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor4TimeData-20130408T232329.txt
+Filename gets set to: Cell1Sensor4TimeData-20130409T201941.txt
 File contents: 46.51 48.01
-|46.51 48.01|Filename: Cell1Sensor4TimeData-20130408T232329.txt
+|46.51 48.01|Filename: Cell1Sensor4TimeData-20130409T201941.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 46.51
 48.01
@@ -2468,38 +2639,29 @@ Sensor number being checked: 4;1
 Sensor number being checked: 4;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,4,46.51,48.01,232329)
-Old average process time for station 4: 3
-New average process time for station 4: 3
-Values in time Array:
-3
-3
-3
-3
-3
-3
-3
-3
-3
-3
+             		VALUES (NULL,71,4,46.51,48.01,201941)
+1.Process Time for car 45: 33
+Old average process time for station 4: 18.604
+Process Time is: 33
+New average process time for station 4: 21.003333333333
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+UPDATE latest_info SET status = 2 WHERE station = 5
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 5
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 6
-In write to table.
-UPDATE latest_info SET status = 1 WHERE station = 1
+UPDATE latest_info SET status = 2 WHERE station = 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In write to table.
-UPDATE latest_info SET error_type = 1 WHERE station = 6
-Writing to error type: 1
+UPDATE latest_info SET error_type = 2 WHERE station = 5
+Writing to error type: 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Values in time Array:
+In write to table.
+UPDATE latest_info SET average_process_time = 21.003333333333 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 11.302848484848 WHERE station = 1
+In write to table.
+UPDATE latest_info SET takt_time = 34.5 WHERE station = 5
+In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4Values in time Array:
 1.5
 1.5
 1.5
@@ -2515,19 +2677,32 @@ UPDATE latest_info SET average_idle_time = 1.2 WHERE station = 1
 In write to table.
 UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
 Returning true
-Filename gets set to: Cell1Sensor4DefectResults-20130408T232329.txt
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201940.txt
 File contents: 0
-Filename: Cell1Sensor4DefectResults-20130408T232329.txt
+Filename: Cell1Sensor5DefectResults-20130409T201940.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Unable to map data or defect file contained no defect.
 Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232328.txt
-File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232328.txt
-Unable to map data or defect file contained no defect.
-Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232330.txt
+Filename gets set to: Cell1Sensor5TimeData-20130409T201942.txt
 File contents: 48.01 49.51
-|48.01 49.51|Filename: Cell1Sensor5TimeData-20130408T232330.txt
+|48.01 49.51|Filename: Cell1Sensor5TimeData-20130409T201942.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 48.01
 49.51
@@ -2539,34 +2714,39 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,48.01,49.51,232330)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-Values in time Array:
-3
-3
-3
-3
-3
-3
-3
-3
-3
-3
+             		VALUES (NULL,71,5,48.01,49.51,201942)
+1.Process Time for car 54: 12
+Old average process time for station 5: 
+Process Time is: 12
+New average process time for station 5: 12
 In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+UPDATE latest_info SET average_process_time = 12 WHERE station = 6
 In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+UPDATE latest_info SET average_process_time = 13.702848484848 WHERE station = 1
 In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
+UPDATE latest_info SET takt_time = 13.5 WHERE station = 6
 In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.501 WHERE station = 1
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4In write to table.
+UPDATE latest_info SET takt_time = 51.01 WHERE station = 1
 Returning true
-Filename gets set to: Cell1Sensor5TimeData-20130408T232331.txt
+Filename gets set to: Cell1Sensor4DefectResults-20130409T201941.txt
+File contents: 0
+Filename: Cell1Sensor4DefectResults-20130409T201941.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor5TimeData-20130409T201943.txt
 File contents: 51.01 52.51
-|51.01 52.51|Filename: Cell1Sensor5TimeData-20130408T232331.txt
+|51.01 52.51|Filename: Cell1Sensor5TimeData-20130409T201943.txt
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 2 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data: Array
 51.01
 52.51
@@ -2578,33 +2758,15 @@ Sensor number being checked: 5;1
 Sensor number being checked: 5;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,120,5,51.01,52.51,232331)
-Old average process time for station 5: 3
-New average process time for station 5: 3
-Values in time Array:
-3
-3
-3
-3
-3
-3
-3
-3
-3
-3
-In write to table.
-UPDATE latest_info SET average_process_time = 3 WHERE station = 6
-In write to table.
-UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
-In write to table.
-UPDATE latest_info SET takt_time = 4.5 WHERE station = 6
-In write to table.
-UPDATE latest_info SET bottleneck = 2 WHERE station = 1
-The bottleneck station is: 2In write to table.
-UPDATE latest_info SET takt_time = 19.500909090909 WHERE station = 1
+             		VALUES (NULL,71,5,51.01,52.51,201943)
 Returning true
-Filename gets set to: Cell1Sensor5DefectResults-20130408T232330.txt
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201942.txt
 File contents: 0
-Filename: Cell1Sensor5DefectResults-20130408T232330.txt
+Filename: Cell1Sensor5DefectResults-20130409T201942.txt
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: Cell1Sensor5DefectResults-20130409T201943.txt
+File contents: 0
+Filename: Cell1Sensor5DefectResults-20130409T201943.txt
 Unable to map data or defect file contained no defect.
 Returning true
