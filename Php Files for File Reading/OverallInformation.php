@@ -93,6 +93,9 @@
 
      public function updateTotalTime($carNumber, $timeAmount, $stationNumber)
      {
+
+         echo "Car number ".$carNumber." with station number: ".$stationNumber." and time: ".$timeAmount."\n";
+       
        if($stationNumber == 1)
        {
          $this -> overallTime[$carNumber % self::NUMBEROFTIMESKEPT] = $timeAmount;
@@ -102,6 +105,7 @@
           $index = $carNumber % self::NUMBEROFTIMESKEPT;
           $this -> overallTime[$index] = $timeAmount + $this -> overallTime[$index];
           $this -> accumulatedTotalTime = $this -> accumulatedTotalTime + $this -> overallTime[$index];
+          echo "Overall finished with a process time of: ".$this->overallTime[$index]." for car number: ".$carNumber."\n";
           $this -> accumulatedTotalTimeCount = $this -> accumulatedTotalTimeCount +1;
           $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "takt_time", $this -> accumulatedTotalTime/$this -> accumulatedTotalTimeCount); 
        }
@@ -127,7 +131,11 @@
        $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "time_since_defect", $newDefectTime); 
      }
      
-     
+     public function updateTotalDefectCount($newDefectsCount)
+     {
+       $this -> totalDefectCount = $this -> totalDefectCount + $newDefectsCount;
+       $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "daily_defect", $this -> totalDefectCount); //0 for updating the overall station
+     }
 
    }
 ?>

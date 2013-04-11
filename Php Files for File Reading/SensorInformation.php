@@ -10,6 +10,8 @@
     private $stationAfterSensor;
     const NUMBEROFTIMESKEPT = 20;
     private $lastDefectTime;
+    private $futureTimeCarsWithDefectList = array();
+    private $futureDefectCarsWithDefectList = array();
 
     public function __construct($newSensorNumber, $newStationBeforeSensor, $newStationAfterSensor)
     {
@@ -50,17 +52,50 @@
 
     public function incrementTimeCarNumber()
     {
-      $this -> timeCarNumber = $this -> timeCarNumber + 1;
+      while(count($this -> futureTimeCarsWithDefectList) > 0 and $this -> futureTimeCarsWithDefectList[0] == $this -> timeCarNumber + 1)
+      {
+         echo "???????????????????\n";
+         echo "Found in defect list:".($this -> timeCarNumber + 1)."\n";
+         echo "Time being set to: ".($this -> timeCarNumber + 2)."\n";
+         echo "???????????????????\n";
+         $this -> timeCarNumber = $this -> timeCarNumber + 1;
+         array_shift($this -> futureTimeCarsWithDefectList); 
+      }
+        $this -> timeCarNumber = $this -> timeCarNumber + 1;
     }
 
-    public function incrementDefectCarNumber($isDefect)
+    public function incrementDefectCarNumber($isDefect, $carNumberOfDefect = 0)
     {
-      $this -> defectCarNumber = $this -> defectCarNumber + 1;
-      if($isDefect and $this -> stationAfterSensor != null)
+      while(count($this -> futureDefectCarsWithDefectList) > 0 and $this -> futureDefectCarsWithDefectList[0] == $this -> defectCarNumber + 1)
       {
-        $this -> stationAfterSensor -> getNextSensor() -> incrementDefectCarNumber($isDefect);
-        $this -> stationAfterSensor -> getNextSensor() -> incrementTimeCarNumber();
-      } 
+         $this -> defectCarNumber = $this -> defectCarNumber + 1;
+         array_shift($this -> futureDefectCarsWithDefectList); 
+      }
+      if($isDefect == false)
+      {
+        $this -> defectCarNumber = $this -> defectCarNumber + 1;
+      }
+      else
+      {
+        if($carNumberOfDefect != 0)
+        {
+          echo "&&&&&&&&&&&&&&&&&&&&&&&&&\n";
+          echo "car with defect: ".$carNumberOfDefect." at station: ".$this-> sensorNumber."\n";
+          echo "&&&&&&&&&&&&&&&&&&&&&&&&&\n";
+          $this -> futureDefectCarsWithDefectList[] = $carNumberOfDefect;
+          $this -> futureTimeCarsWithDefectList[] = $carNumberOfDefect;
+        }
+        else
+        {
+           $this -> defectCarNumber = $this -> defectCarNumber + 1;  
+           $carNumberOfDefect =  $this -> defectCarNumber;
+        } 
+        if($this -> stationAfterSensor != null)
+        {
+           $this -> stationAfterSensor -> getNextSensor() -> incrementDefectCarNumber($isDefect, $carNumberOfDefect);
+       // $this -> stationAfterSensor -> getNextSensor() -> incrementTimeCarNumber($carNumberOfDefect);
+        }
+      }
     }
 
     public function getTimeCarNumber()
@@ -80,7 +115,7 @@
    
     public function setInOnTimeArray($carNumber, $value)
     {
-      $this -> onTimeArray[$carNumber % self::NUMBEROFTIMESKEPT];
+      $this -> onTimeArray[$carNumber % self::NUMBEROFTIMESKEPT] = $value;
     }
 
     public function getOutOfOffTimeArray($carNumber)
@@ -90,7 +125,7 @@
 
     public function setInOffTimeArray($carNumber, $value)
     {
-      $this -> offTimeArray[$carNumber % self::NUMBEROFTIMESKEPT]; 
+      $this -> offTimeArray[$carNumber % self::NUMBEROFTIMESKEPT] = $value; 
     }
 
     public function getBeforeStation()
@@ -107,6 +142,11 @@
     {
       $this -> lastDefectTime = $newLastDefectTime;
       $this -> stationBeforeSensor -> setLastDefectTime($newLastDefectTime);
+    }
+
+    public function passDefectCount($newDefectsCount)
+    {
+      $this -> stationBeforeSensor -> updateOverallDefectCount($newDefectsCount);
     }
   }
 ?>

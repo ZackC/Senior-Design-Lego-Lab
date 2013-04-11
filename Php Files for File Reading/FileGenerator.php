@@ -1,7 +1,7 @@
 <?php
 class FileGenerator
 {
-	private $numCars = 10;
+	private $numCars = 30;
 	private $carsDone = 0;
 	private $currentCar = 1;
 	private $numSensors = 5;
@@ -31,28 +31,40 @@ class FileGenerator
 	{
           while($this->carsDone < $this->numCars)
 	  {
-            if($this ->currentCar == 1)
+            if($this ->currentCar == 3)
             {
-              $this -> stationsWithDefect[0] = 1;
+              $this -> stationsWithDefect[1] = 1;
+            }
+            if($this -> currentCar == 4)
+            {
+              $this -> stationsWithDefect[1] = 1;
+            }
+            if($this -> currentCar == 15)
+            {
+              $this -> stationsWithDefect[3] = 1;
             }
             echo "Current car: ".$this->currentCar."\n";
             if ($this->currentCar <= $this->numSensors)
             {
                for ($count = 1; $count <= $this->currentCar; $count++)
 	       {
+		 if ($count == $this->currentCar)
+		 {
+		   $this->sensorTimes[$count - 1] = $this->timeSpent;
+	         }
+		 else
+		 {
+		   $this->sensorTimes[$count - 1] += $this->pTime;
+		   $this->timeSpent = ($this->sensorTimes[$count - 1] + $this->add);
+	         }
                  if ($this->stationsWithDefect[$count - 1] < 2)
 		 {
-		   if ($count == $this->currentCar)
-		   {
-		     $this->sensorTimes[$count - 1] = $this->timeSpent;
-	           }
-		   else
-		   {
-		     $this->sensorTimes[$count - 1] += $this->pTime;
-		     $this->timeSpent = ($this->sensorTimes[$count - 1] + $this->add);
-	           }
 		   $this -> writeFiles($count);
 		 }
+                 else
+                 {
+                   echo "Station: ".($count - 1)." Car Number: ".$this -> currentCar." contained a defect and not printing file.\n";
+                 }
 	       }
                $this-> propagateDefect();
                echo "incrementing current car\n";
@@ -61,11 +73,11 @@ class FileGenerator
 	     }
 	     else if ($this->currentCar <= $this->numCars)
 	     {
-	       for ($count = 1; $count <= $this->numSensors; $count++)
+	       for ($count = $this -> numSensors; $count > 0; $count--)
 	       {
-		 if ($this->stationsWithDefect[$count - 1] < 2)
+		 $this->sensorTimes[$count - 1] += $this->pTime;
+                 if ($this->stationsWithDefect[$count - 1] < 2)
 		 {
-		   $this->sensorTimes[$count - 1] += $this->pTime;
 		   $this -> writeFiles($count);
 	         }
 	       }
@@ -78,9 +90,9 @@ class FileGenerator
 	     {
 	       for ($count = ($this->carsDone - $this->numSensors + 1); $count <= $this->numSensors; $count++)
 	       {
-		 if ($this->stationsWithDefect[$count - 1] < 2)
+		 $this->sensorTimes[$count - 1] += $this->pTime;
+                 if ($this->stationsWithDefect[$count - 1] < 2)
 	         {
-		   $this->sensorTimes[$count - 1] += $this->pTime;
 		   $this -> writeFiles($count);
 		 }
 	       }
@@ -122,7 +134,7 @@ class FileGenerator
            }
            else
            {
-             fwrite($handle, "1 4,5");
+             fwrite($handle, "1 4,5,6");
            }
 	   fclose($handle);
            $handle = null;

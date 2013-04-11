@@ -13,6 +13,7 @@
     private $accumulatedProcessTimeCount = 0;
     private $averageProcessTime;
     private $idleTimes = array();
+    private $idleTimesForTotalTime = array();
     private $lastIdleTime;
     private $countOfTimesInIdleTimes = 0;
     private $accumulatedIdleTime = 0;
@@ -40,6 +41,7 @@
       $this -> sigmaIdleTimeForStation = $newSigmaIdleTime;
       $this -> sigmaProcessTimeForStation = $newSigmaProcessTime;
       $this -> overallStation = $newOverallStation;
+      $this -> idleTimesForTotalTime = array_pad($this -> idleTimesForTotalTime, self::NUMBEROFTIMESINARRAY,0);
     }
 
     public function setPreviousStation($newPreviousStation)
@@ -71,6 +73,12 @@
 
     public function addProcessTime($time, $carNumber)
     {
+       if($time > 3.5)
+       {
+         echo "$$$$$$$$$$$$$$$$$$$$$$$$$\n";
+         echo "time = ".$time." station number: ".$this -> stationNumber." car number: ".$carNumber."\n";
+         echo "$$$$$$$$$$$$$$$$$$$$$$$$$\n";
+       }
        $this -> addTimePoint($time, $this -> accumulatedProcessTimeCount, $this -> accumulatedProcessTime, $this -> countOfTimesInProcessTimes, $this -> processTimes);
        echo "Old average process time for station ".$this -> stationNumber.": ".$this -> averageProcessTime."\n"; 
        echo "Process Time is: ".$time."\n";
@@ -100,7 +108,25 @@
        $this -> grapher -> makeGraph($this -> processTimes, $this ->meanProcessTimeForStation, $this -> sigmaProcessTimeForStation * 3 + $this -> meanProcessTimeForStation,"Latest Process Times","Cell1Station".$this -> stationNumber."ProcessGraph.png");
        $this -> tableWriter -> writeToTable($this -> cellNumber,$this -> stationNumber, "average_process_time", $this -> averageProcessTime);
        $this -> overallStation -> updateAverageProcessTime($this -> accumulatedProcessTime/$this -> accumulatedProcessTimeCount, $this -> stationNumber);
-       $totalStationTime = $time + $this -> lastIdleTime;//not sure if this is order safe
+       if($this -> stationNumber != 1)
+       {
+         if($this -> idleTimesForTotalTime[$carNumber % self::NUMBEROFTIMESINARRAY] != 0)
+         {
+           $totalStationTime = $time + $this -> idleTimesForTotalTime[$carNumber % self::NUMBEROFTIMESINARRAY];
+           $this -> idleTimesForTotalTime[$carNumber % self::NUMBEROFTIMESINARRAY] = 0;
+         }
+         else
+         {
+           echo "station Number: ".$this -> stationNumber."\n";
+           echo "station number equals 1: ".($this -> stationNumber == 1)."\n";
+           echo "station number not equal 1: ".($this -> stationNumber != 1)."\n";
+           die("Unable to get idle time for $carNumber\n");
+         }
+       }
+       else
+       {
+         $totalStationTime = $time;
+       }
        $this -> tableWriter -> writeToTable($this -> cellNumber,$this -> stationNumber, "takt_time", $totalStationTime);
        $this -> overallStation -> updateBottleNeckStation($totalStationTime, $this -> stationNumber);
 
@@ -112,6 +138,7 @@
     public function addIdleTime($time,$carNumber)
     {
        $this -> lastIdleTime = $time;
+       $this -> idleTimesForTotalTime[$carNumber % self::NUMBEROFTIMESINARRAY] = $time;
        $this -> addTimePoint($time, $this -> accumulatedIdleTimeCount, $this -> accumulatedIdleTime, $this -> countOfTimesInIdleTimes, $this -> idleTimes);
        $this -> averageIdleTime = $this -> accumulatedIdleTime / $this -> accumulatedIdleTimeCount;
        if($this -> lastIdleTime > 2 * $this -> sigmaIdleTimeForStation + $this -> meanIdleTimeForStation)
@@ -300,9 +327,12 @@
           $processTime = $stationOffTime - $stationOnTime;
           $this -> previousSensor -> setInOffTimeArray($carNumber, 0);
           $this -> nextSensor -> setInOnTimeArray($carNumber, 0);
-          //echo "Station on time: ".$stationOnTime."\n";
-          //echo "Station off time: ".$stationOffTime."\n";
-          echo "1.Process Time for car ".$carNumber.": ".$processTime."\n";
+          if($this -> stationNumber == 3)
+          {
+            echo "Station on time: ".$stationOnTime."\n";
+            echo "Station off time: ".$stationOffTime."\n";
+            echo "1.Process Time for car ".$carNumber.": ".$processTime."\n";
+          }
           $this -> addProcessTime($processTime, $carNumber);
         }
       }
@@ -347,13 +377,18 @@
     public function setLastDefectTime($newLastDefectTime)
     {
       $this -> lastDefectTime = $newLastDefectTime;
-      $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> stationNumber, "time_since_defect", $this -> $newLastDefectTime);
+      $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> stationNumber, "time_since_defect",  $newLastDefectTime);
       $this -> overallStation -> updateDefectTimes($newLastDefectTime, $this -> stationNumber);
     }
 
     public function getLastDefectTime()
     {
        return $this -> lastDefectTime;
+    }
+
+    public function updateOverallDefectCount($newDefectsCount)
+    {
+      $this -> overallStation -> updateTotalDefectCount($newDefectsCount);
     }
 
   }

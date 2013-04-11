@@ -62,7 +62,7 @@ class TableWriter
     {
         $this->fileTime = $tableObject->getFileTime();
 		$this->cellNumber = $tableObject->getCellNumber();
-		$this->stationNumber = $tableObject->getStationNumber();
+		//$this->stationNumber = $tableObject->getStationNumber();
 		$this->sensorNumber = $tableObject->getSensorNumber();
         $this->defectLocations = $tableObject->getDefects();
     }
@@ -80,7 +80,7 @@ class TableWriter
         }
         $defectCount = $this->getDefectCountOfStation() + $defectCount;
         mysqli_query($this->con, "UPDATE latest_info SET daily_defect = $defectCount WHERE station = $stationId");
-
+        mysqli_query($this->con, "UPDATE latest_info SET time_since_defect = ".$this -> fileTime." WHERE station = $stationId");
         //mysqli_query($this->con, "UPDATE latest_info SET status = 4 WHERE station = $stationId");
     }
     

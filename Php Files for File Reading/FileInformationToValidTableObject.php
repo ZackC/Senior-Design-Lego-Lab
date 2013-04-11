@@ -40,7 +40,7 @@
          $this -> fileToObjectMapper = new TimeFileToTableObjectMapper($this -> sensorInformation);
          $this -> tableObjectValidator = new TimeTableObjectValidator();
          $this -> tableObject = new TimeTableObject();
-         $this -> tableWriterDelegator = new TimeTableWriterDelegator($tableWriter,$this -> sensorInformation);
+         $this -> tableWriterDelegator = new TimeTableWriterDelegator($tableWriter);
        } 
        else
        {
