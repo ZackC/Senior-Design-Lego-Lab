@@ -72,13 +72,15 @@
              //echo "File being compared: ".$newDirectoryContents[$i]."\n";
              if(strpos($newDirectoryContents[$i],basename($this -> filename)) !== FALSE)
              {
-                 $this -> fileToTableObject -> setFilename($newDirectoryContents[$i]);
+                 $directory = dirname($this -> filename);
+                 $this -> fileToTableObject -> setFilename($directory."/".$newDirectoryContents[$i]);
                  
                  //echo "Found File.\n";
                  //echo "{$newDirectoryContents[$i]}\n";
                  if($this -> fileToTableObject -> fileDataToTable())   //may need to change if implementing observer pattern
                  {
-                   unlink($newDirectoryContents[$i]);
+                   $directory = dirname($this -> filename);
+                   unlink($directory."/".$newDirectoryContents[$i]);
                  }
              }
              //echo strpos($newDirectoryContents[$i],basename($this -> filename));

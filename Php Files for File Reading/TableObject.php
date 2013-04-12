@@ -24,11 +24,13 @@
 
     public function getSensorNumber()
     {
+      
       return $this -> sensorNumber;
     }
 
     public function setCellNumber($newCellNumber)
     {
+      echo "Cell: ".$newCellNumber."\n";
       $this -> cellNumber = $newCellNumber;
     }
 
@@ -39,6 +41,7 @@
 
     public function setSensorNumber($newSensorNumber)
     {
+      echo "Sensor: ".$newSensorNumber."\n";
       $this -> sensorNumber = $newSensorNumber;
     }
 

@@ -105,7 +105,7 @@
        //echo "Mean Process Time for station: ".$this ->meanProcessTimeForStation."\n";
        //echo "Sigma Process Time for station: ".$this -> sigmaProcessTimeForStation."\n";
        //echo "Sigma Process Time for station * 3: ".($this -> sigmaProcessTimeForStation * 3)."\n";
-       $this -> grapher -> makeGraph($this -> processTimes, $this ->meanProcessTimeForStation, $this -> sigmaProcessTimeForStation * 3 + $this -> meanProcessTimeForStation,"Latest Process Times","Cell1Station".$this -> stationNumber."ProcessGraph.png");
+       $this -> grapher -> makeGraph($this -> processTimes, $this ->meanProcessTimeForStation, $this -> sigmaProcessTimeForStation * 3 + $this -> meanProcessTimeForStation,"Latest Process Times","../GUIGraphs/Cell1Station".$this -> stationNumber."ProcessGraph.png");
        $this -> tableWriter -> writeToTable($this -> cellNumber,$this -> stationNumber, "average_process_time", $this -> averageProcessTime);
        $this -> overallStation -> updateAverageProcessTime($this -> accumulatedProcessTime/$this -> accumulatedProcessTimeCount, $this -> stationNumber);
        if($this -> stationNumber != 1)
@@ -160,7 +160,7 @@
          }
        }
        $this -> overallStation -> updateAverageIdleTime($this -> accumulatedIdleTime/$this -> accumulatedIdleTimeCount, $this -> stationNumber);
-       $this -> grapher -> makeGraph($this -> idleTimes, $this ->meanIdleTimeForStation, $this -> sigmaIdleTimeForStation * 3 + $this -> meanIdleTimeForStation,"Latest Idle Times", "Cell1Station".$this -> stationNumber."IdleGraph.png");
+       $this -> grapher -> makeGraph($this -> idleTimes, $this ->meanIdleTimeForStation, $this -> sigmaIdleTimeForStation * 3 + $this -> meanIdleTimeForStation,"Latest Idle Times", "../GUIGraphs/Cell1Station".$this -> stationNumber."IdleGraph.png");
      $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> stationNumber, "average_idle_time", $this -> averageIdleTime);
     }
 
@@ -368,6 +368,8 @@
           $processTime = $stationOffTime - $stationOnTime;
           $this -> previousSensor -> setInOffTimeArray($carNumber,0);
           $this -> nextSensor -> setInOnTimeArray($carNumber , 0);
+          echo "Station on time: ".$stationOnTime."\n";
+          echo "Station off time: ".$stationOffTime."\n";
           echo "4.Process Time for car ".$carNumber.": ".$processTime."\n";
           $this -> addProcessTime($stationOnTime, $carNumber);
         }

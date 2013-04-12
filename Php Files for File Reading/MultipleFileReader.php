@@ -80,19 +80,20 @@
   $sensorTable = $labInit -> setUpLab($tableWriter);
   $tableWriter -> resetLatestInfo();
   $fileWatcherArray = array();
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor1TimeData",$sensorTable[0],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor2TimeData",$sensorTable[1],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor3TimeData",$sensorTable[2],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor4TimeData",$sensorTable[3],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(1, realpath(dirname(__FILE__))."/Cell1Sensor5TimeData",$sensorTable[4],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor1DefectResults",$sensorTable[0],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor2DefectResults",$sensorTable[1],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor3DefectResults",$sensorTable[2],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor4DefectResults",$sensorTable[3],$tableWriter);
-  $fileWatcherArray[] = new FileWatcher(0, realpath(dirname(__FILE__))."/Cell1Sensor5DefectResults",$sensorTable[4],$tableWriter);
+  $pathStart = '/home/legolab/LEGOLABHAHA';
+  $fileWatcherArray[] = new FileWatcher(1, $pathStart."/Cell1Sensor1TimeData",$sensorTable[0],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(1, $pathStart."/Cell1Sensor2TimeData",$sensorTable[1],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(1, $pathStart."/Cell1Sensor3TimeData",$sensorTable[2],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(1, $pathStart."/Cell1Sensor4TimeData",$sensorTable[3],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(1, $pathStart."/Cell1Sensor5TimeData",$sensorTable[4],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, $pathStart."/Cell1Sensor1DefectResults",$sensorTable[0],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, $pathStart."/Cell1Sensor2DefectResults",$sensorTable[1],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, $pathStart."/Cell1Sensor3DefectResults",$sensorTable[2],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, $pathStart."/Cell1Sensor4DefectResults",$sensorTable[3],$tableWriter);
+  $fileWatcherArray[] = new FileWatcher(0, $pathStart."/Cell1Sensor5DefectResults",$sensorTable[4],$tableWriter);
 
   $fileWatcherArraySize = count($fileWatcherArray);
-  $directory = realpath(dirname(__FILE__));
+  $directory = realpath($pathStart);
         //echo "Directory: ".$directory."\n";
   $directoryContents = scandir($directory) or die("Unable to read directory\n"); // may need to make a softer error handling later
   $oldDirectoryContentsSize = count($directoryContents);  

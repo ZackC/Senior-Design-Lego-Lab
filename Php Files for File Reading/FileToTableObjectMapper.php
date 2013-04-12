@@ -27,8 +27,8 @@
       //echo "Cell Number: ".substr($filename,self::CHARACTERS_TILL_CELL_NUMBER, 1)."\n";
       //echo "Sensor Number: ".substr($filename,self::CHARACTERS_TILL_STATION_NUMBER,1)."\n";
       //echo "File Time: ".substr($filename,strrpos($filename,"T")+1,self::TIME_CHARACTERS)."\n";
-      $tableObject -> setCellNumber(substr($filename,self::CHARACTERS_TILL_CELL_NUMBER, 1));
-      $tableObject -> setSensorNumber(substr($filename,self::CHARACTERS_TILL_STATION_NUMBER,1)); 
+      $tableObject -> setCellNumber(substr($filename,strrpos($filename,"/") + 1 + self::CHARACTERS_TILL_CELL_NUMBER, 1));
+      $tableObject -> setSensorNumber(substr($filename,strrpos($filename,"/") + 1 + self::CHARACTERS_TILL_STATION_NUMBER,1)); 
       $tableObject -> setFileTime(substr($filename,strrpos($filename,"T")+1,self::TIME_CHARACTERS));
     }
   }
