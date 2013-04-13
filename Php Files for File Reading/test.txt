@@ -1,6 +1,6 @@
 Found run value in database.
-Run time start is: 20130410214339
-|214339|
+Run time start is: 20130413013501
+|013501|
 
 123 Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData
 In parent constructor
@@ -18,9 +18,14 @@ In parent constructor
 In parent constructor
 In parent constructor
 In parent constructor
-Filename gets set to: Cell1Sensor1TimeData-20130410T214341.txt
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013506.txt
+File contents: 
+Returning false
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013506.txt
 File contents: 3.01 4.51
-|3.01 4.51|Filename: Cell1Sensor1TimeData-20130410T214341.txt
+|3.01 4.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013506.txt
+Cell: 1
+Sensor: 1
 In write to table.
 UPDATE latest_info SET status = 1 WHERE station = 2
 In write to table.
@@ -41,7 +46,7 @@ Sensor number being checked: 1;1
 Sensor number being checked: 1;Calling writeTimesToTable
 In write times to table.
 INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
-             		VALUES (NULL,133,1,3.01,4.51,214341)
+             		VALUES (NULL,161,1,3.01,4.51,013506)
 2.Process Time for car 1: 3.01
 Old average process time for station 1: 
 Process Time is: 3.01
@@ -50,4 +55,2744 @@ In write to table.
 UPDATE latest_info SET average_process_time = 3.01 WHERE station = 2
 In write to table.
 UPDATE latest_info SET average_process_time = 0.602 WHERE station = 1
-Unable to get idle time for 1
+In write to table.
+UPDATE latest_info SET bottleneck = 1 WHERE station = 1
+The bottleneck station is: 1Car number 1 with station number: 1 and time: 3.01
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 0.375 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013506.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013506.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013507.txt
+File contents: 6.01 7.51
+|6.01 7.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013507.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+6.01
+7.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,6.01,7.51,013507)
+3.Process Time for car 2: 3
+Old average process time for station 1: 3.01
+Process Time is: 3
+New average process time for station 1: 3.005
+In write to table.
+UPDATE latest_info SET average_process_time = 3.005 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 0.601 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 1 WHERE station = 1
+The bottleneck station is: 1Car number 2 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 0.375 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013507.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013507.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013508.txt
+File contents: 7.51 9.01
+|7.51 9.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013508.txt
+Cell: 1
+Sensor: 2
+data: Array
+7.51
+9.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,7.51,9.01,013508)
+station on time: 4.51
+station off time: 7.51
+22222222222222222
+Old average process time for station 2: 
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 1.201 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 1 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 0.75 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013508.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013508.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013509.txt
+File contents: 9.01 10.51
+|9.01 10.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013509.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+9.01
+10.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,9.01,10.51,013509)
+3.Process Time for car 3: 3
+Old average process time for station 1: 3.005
+Process Time is: 3
+New average process time for station 1: 3.0033333333333
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0033333333333 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 1.2006666666667 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 3 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 0.75 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013509.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013509.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013510.txt
+File contents: 10.51 12.01
+|10.51 12.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013510.txt
+Cell: 1
+Sensor: 2
+data: Array
+10.51
+12.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,10.51,12.01,013510)
+station on time: 7.51
+station off time: 10.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 1.2006666666667 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 2 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 0.75 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013510.txt
+File contents: 1 4,5,6
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013510.txt
+Cell: 1
+Sensor: 2
+&&&&&&&&&&&&&&&&&&&&&&&&&
+car with defect: 2 at station: 3
+&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&
+car with defect: 2 at station: 4
+&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&
+car with defect: 2 at station: 5
+&&&&&&&&&&&&&&&&&&&&&&&&&
+In write to table.
+UPDATE latest_info SET status = 4 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 4 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 4 WHERE station = 3
+Writing to error type: 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Sensor number being checked: 2;In write defects to Table.
+In get defect count of station.
+In write to table.
+UPDATE latest_info SET time_since_defect = 013510 WHERE station = 3
+In write to table.
+UPDATE latest_info SET time_since_defect = 013510 WHERE station = 1
+In write to table.
+UPDATE latest_info SET daily_defect = 3 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013511.txt
+File contents: 12.01 13.51
+|12.01 13.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013511.txt
+Cell: 1
+Sensor: 3
+data: Array
+12.01
+13.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,12.01,13.51,013511)
+station on time: 9.01
+station off time: 12.01
+22222222222222222
+Station on time: 9.01
+Station off time: 12.01
+1.Process Time for car 1: 3
+Old average process time for station 3: 
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 1.8006666666667 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 1 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 4 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.125 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013511.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013511.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013512.txt
+File contents: 12.01 13.51
+|12.01 13.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013512.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 4 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+12.01
+13.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,12.01,13.51,013512)
+3.Process Time for car 4: 3
+Old average process time for station 1: 3.0033333333333
+Process Time is: 3
+New average process time for station 1: 3.0025
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0025 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 1.8005 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 4 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.125 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013512.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013512.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013513.txt
+File contents: 13.51 15.01
+|13.51 15.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013513.txt
+Cell: 1
+Sensor: 2
+data: Array
+13.51
+15.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,13.51,15.01,013513)
+station on time: 10.51
+station off time: 13.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 1.8005 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 3 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.125 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013513.txt
+File contents: 1 4,5,6
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013513.txt
+Cell: 1
+Sensor: 2
+&&&&&&&&&&&&&&&&&&&&&&&&&
+car with defect: 3 at station: 3
+&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&
+car with defect: 3 at station: 4
+&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&
+car with defect: 3 at station: 5
+&&&&&&&&&&&&&&&&&&&&&&&&&
+In write to table.
+UPDATE latest_info SET status = 4 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 4 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 4 WHERE station = 3
+Writing to error type: 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Sensor number being checked: 2;In write defects to Table.
+In get defect count of station.
+In write to table.
+UPDATE latest_info SET time_since_defect = 013513 WHERE station = 3
+In write to table.
+UPDATE latest_info SET time_since_defect = 013513 WHERE station = 1
+In write to table.
+UPDATE latest_info SET daily_defect = 6 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013514.txt
+File contents: 16.51 18.01
+|16.51 18.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013514.txt
+Cell: 1
+Sensor: 4
+data: Array
+16.51
+18.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,16.51,18.01,013514)
+station on time: 13.51
+station off time: 16.51
+22222222222222222
+Old average process time for station 4: 
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 2.4005 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4Car number 1 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 4 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013514.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013514.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013515.txt
+File contents: 15.01 16.51
+|15.01 16.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013515.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 4 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+15.01
+16.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,15.01,16.51,013515)
+3.Process Time for car 5: 3
+Old average process time for station 1: 3.0025
+Process Time is: 3
+New average process time for station 1: 3.002
+In write to table.
+UPDATE latest_info SET average_process_time = 3.002 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 2.4004 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4Car number 5 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013515.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013515.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013516.txt
+File contents: 16.51 18.01
+|16.51 18.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013516.txt
+Cell: 1
+Sensor: 2
+data: Array
+16.51
+18.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,16.51,18.01,013516)
+station on time: 13.51
+station off time: 16.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 2.4004 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 4 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013516.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013516.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013517.txt
+File contents: 21.01 22.51
+|21.01 22.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013517.txt
+Cell: 1
+Sensor: 5
+data: Array
+21.01
+22.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,21.01,22.51,013517)
+station on time: 18.01
+station off time: 21.01
+Old average process time for station 5: 
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0004 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 1 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21.01 for car number: 1
+In write to table.
+UPDATE latest_info SET takt_time = 21.01 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013517.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013517.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013518.txt
+File contents: 21.01 22.51
+|21.01 22.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013518.txt
+Cell: 1
+Sensor: 3
+???????????????????
+Found in defect list:2
+Time being set to: 3
+???????????????????
+???????????????????
+Found in defect list:3
+Time being set to: 4
+???????????????????
+data: Array
+21.01
+22.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,21.01,22.51,013518)
+station on time: 18.01
+station off time: 21.01
+22222222222222222
+Station on time: 18.01
+Station off time: 21.01
+1.Process Time for car 4: 3
+Old average process time for station 3: 3
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0004 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 4 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013518.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013518.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013519.txt
+File contents: 19.51 21.01
+|19.51 21.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013519.txt
+Cell: 1
+Sensor: 2
+data: Array
+19.51
+21.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,19.51,21.01,013519)
+station on time: 16.51
+station off time: 19.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0004 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 5 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013519.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013519.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013520.txt
+File contents: 18.01 19.51
+|18.01 19.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013520.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+18.01
+19.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,18.01,19.51,013520)
+3.Process Time for car 6: 3
+Old average process time for station 1: 3.002
+Process Time is: 3
+New average process time for station 1: 3.0016666666667
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0016666666667 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 6 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013520.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013520.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013521.txt
+File contents: 25.51 27.01
+|25.51 27.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013521.txt
+Cell: 1
+Sensor: 4
+???????????????????
+Found in defect list:2
+Time being set to: 3
+???????????????????
+???????????????????
+Found in defect list:3
+Time being set to: 4
+???????????????????
+data: Array
+25.51
+27.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,25.51,27.01,013521)
+station on time: 22.51
+station off time: 25.51
+22222222222222222
+Old average process time for station 4: 3
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 4 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013521.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013521.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013522.txt
+File contents: 24.01 25.51
+|24.01 25.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013522.txt
+Cell: 1
+Sensor: 3
+data: Array
+24.01
+25.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,24.01,25.51,013522)
+station on time: 21.01
+station off time: 24.01
+22222222222222222
+Station on time: 21.01
+Station off time: 24.01
+1.Process Time for car 5: 3
+Old average process time for station 3: 3
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 5 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013522.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013522.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013523.txt
+File contents: 22.51 24.01
+|22.51 24.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013523.txt
+Cell: 1
+Sensor: 2
+data: Array
+22.51
+24.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,22.51,24.01,013523)
+station on time: 19.51
+station off time: 22.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0003333333333 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 6 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013523.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013523.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013524.txt
+File contents: 21.01 22.51
+|21.01 22.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013524.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+21.01
+22.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,21.01,22.51,013524)
+3.Process Time for car 7: 3
+Old average process time for station 1: 3.0016666666667
+Process Time is: 3
+New average process time for station 1: 3.0014285714286
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0014285714286 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 7 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013524.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013524.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013525.txt
+File contents: 30.01 31.51
+|30.01 31.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013525.txt
+Cell: 1
+Sensor: 5
+???????????????????
+Found in defect list:2
+Time being set to: 3
+???????????????????
+???????????????????
+Found in defect list:3
+Time being set to: 4
+???????????????????
+data: Array
+30.01
+31.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,30.01,31.51,013525)
+station on time: 27.01
+station off time: 30.01
+^^^^^^^^^^^^^^^^^^^^
+Car number: 4
+Start time: 30.01
+Stop time: 0
+Old average process time for station 5: 3
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 4 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21 for car number: 4
+In write to table.
+UPDATE latest_info SET takt_time = 21.005 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013525.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013525.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013526.txt
+File contents: 28.51 30.01
+|28.51 30.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013526.txt
+Cell: 1
+Sensor: 4
+data: Array
+28.51
+30.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,28.51,30.01,013526)
+station on time: 25.51
+station off time: 28.51
+22222222222222222
+Old average process time for station 4: 3
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 5 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013526.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013526.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013527.txt
+File contents: 27.01 28.51
+|27.01 28.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013527.txt
+Cell: 1
+Sensor: 3
+data: Array
+27.01
+28.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,27.01,28.51,013527)
+station on time: 24.01
+station off time: 27.01
+22222222222222222
+Station on time: 24.01
+Station off time: 27.01
+1.Process Time for car 6: 3
+Old average process time for station 3: 3
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 6 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013527.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013527.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013528.txt
+File contents: 25.51 27.01
+|25.51 27.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013528.txt
+Cell: 1
+Sensor: 2
+data: Array
+25.51
+27.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,25.51,27.01,013528)
+station on time: 22.51
+station off time: 25.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002857142857 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 7 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013528.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013528.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013529.txt
+File contents: 24.01 25.51
+|24.01 25.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013529.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+24.01
+25.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,24.01,25.51,013529)
+3.Process Time for car 8: 3
+Old average process time for station 1: 3.0014285714286
+Process Time is: 3
+New average process time for station 1: 3.00125
+In write to table.
+UPDATE latest_info SET average_process_time = 3.00125 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 8 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013529.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013529.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013530.txt
+File contents: 33.01 34.51
+|33.01 34.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013530.txt
+Cell: 1
+Sensor: 5
+data: Array
+33.01
+34.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,33.01,34.51,013530)
+station on time: 30.01
+station off time: 33.01
+^^^^^^^^^^^^^^^^^^^^
+Car number: 5
+Start time: 33.01
+Stop time: 30.01
+Cycle time: 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 2
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 6
+Old average process time for station 5: 3
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 5 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21 for car number: 5
+In write to table.
+UPDATE latest_info SET takt_time = 21.003333333333 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013530.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013530.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013531.txt
+File contents: 31.51 33.01
+|31.51 33.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013531.txt
+Cell: 1
+Sensor: 4
+data: Array
+31.51
+33.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,31.51,33.01,013531)
+station on time: 28.51
+station off time: 31.51
+22222222222222222
+Old average process time for station 4: 3
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 6 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013531.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013531.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013532.txt
+File contents: 30.01 31.51
+|30.01 31.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013532.txt
+Cell: 1
+Sensor: 3
+data: Array
+30.01
+31.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,30.01,31.51,013532)
+station on time: 27.01
+station off time: 30.01
+22222222222222222
+Station on time: 27.01
+Station off time: 30.01
+1.Process Time for car 7: 3
+Old average process time for station 3: 3
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 7 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013532.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013532.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013533.txt
+File contents: 28.51 30.01
+|28.51 30.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013533.txt
+Cell: 1
+Sensor: 2
+data: Array
+28.51
+30.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,28.51,30.01,013533)
+station on time: 25.51
+station off time: 28.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.00025 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 8 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013533.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013533.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013534.txt
+File contents: 27.01 28.51
+|27.01 28.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013534.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+27.01
+28.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,27.01,28.51,013534)
+3.Process Time for car 9: 3
+Old average process time for station 1: 3.00125
+Process Time is: 3
+New average process time for station 1: 3.0011111111111
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0011111111111 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 9 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013534.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013534.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013535.txt
+File contents: 36.01 37.51
+|36.01 37.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013535.txt
+Cell: 1
+Sensor: 5
+data: Array
+36.01
+37.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,36.01,37.51,013535)
+station on time: 33.01
+station off time: 36.01
+^^^^^^^^^^^^^^^^^^^^
+Car number: 6
+Start time: 36.01
+Stop time: 33.01
+Cycle time: 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 2
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 6
+Old average process time for station 5: 3
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 6 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21 for car number: 6
+In write to table.
+UPDATE latest_info SET takt_time = 21.0025 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013535.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013535.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013536.txt
+File contents: 34.51 36.01
+|34.51 36.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013536.txt
+Cell: 1
+Sensor: 4
+data: Array
+34.51
+36.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,34.51,36.01,013536)
+station on time: 31.51
+station off time: 34.51
+22222222222222222
+Old average process time for station 4: 3
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 7 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013536.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013536.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013537.txt
+File contents: 33.01 34.51
+|33.01 34.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013537.txt
+Cell: 1
+Sensor: 3
+data: Array
+33.01
+34.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,33.01,34.51,013537)
+station on time: 30.01
+station off time: 33.01
+22222222222222222
+Station on time: 30.01
+Station off time: 33.01
+1.Process Time for car 8: 3
+Old average process time for station 3: 3
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 8 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013537.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013537.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013538.txt
+File contents: 31.51 33.01
+|31.51 33.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013538.txt
+Cell: 1
+Sensor: 2
+data: Array
+31.51
+33.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,31.51,33.01,013538)
+station on time: 28.51
+station off time: 31.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002222222222 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 9 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013538.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013538.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013539.txt
+File contents: 30.01 31.51
+|30.01 31.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013539.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+30.01
+31.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,30.01,31.51,013539)
+3.Process Time for car 10: 3
+Old average process time for station 1: 3.0011111111111
+Process Time is: 3
+New average process time for station 1: 3.001
+Values in time Array:
+3.01
+3
+3
+3
+3
+3
+3
+3
+3
+3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.001 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0002 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 10 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Values in time Array:
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013539.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013539.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013540.txt
+File contents: 33.01 34.51
+|33.01 34.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1TimeData-20130413T013540.txt
+Cell: 1
+Sensor: 1
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 2
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 2
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data: Array
+33.01
+34.51
+1
+Sensor number being checked: 1;1
+1
+1
+1
+Sensor number being checked: 1;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,1,33.01,34.51,013540)
+3.Process Time for car 11: 3
+Old average process time for station 1: 3.001
+Process Time is: 3
+New average process time for station 1: 3.0009090909091
+Values in time Array:
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0009090909091 WHERE station = 2
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 11 with station number: 1 and time: 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 3
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 3
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Values in time Array:
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 3
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013540.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor1DefectResults-20130413T013540.txt
+Cell: 1
+Sensor: 1
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013541.txt
+File contents: 34.51 36.01
+|34.51 36.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013541.txt
+Cell: 1
+Sensor: 2
+data: Array
+34.51
+36.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,34.51,36.01,013541)
+station on time: 31.51
+station off time: 34.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+Values in time Array:
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 10 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Values in time Array:
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013541.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013541.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013542.txt
+File contents: 36.01 37.51
+|36.01 37.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013542.txt
+Cell: 1
+Sensor: 3
+data: Array
+36.01
+37.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,36.01,37.51,013542)
+station on time: 33.01
+station off time: 36.01
+22222222222222222
+Station on time: 33.01
+Station off time: 36.01
+1.Process Time for car 9: 3
+Old average process time for station 3: 3
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 9 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013542.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013542.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013543.txt
+File contents: 37.51 39.01
+|37.51 39.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013543.txt
+Cell: 1
+Sensor: 4
+data: Array
+37.51
+39.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,37.51,39.01,013543)
+station on time: 34.51
+station off time: 37.51
+22222222222222222
+Old average process time for station 4: 3
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4Car number 8 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013543.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013543.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013544.txt
+File contents: 39.01 40.51
+|39.01 40.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013544.txt
+Cell: 1
+Sensor: 5
+data: Array
+39.01
+40.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,39.01,40.51,013544)
+station on time: 36.01
+station off time: 39.01
+^^^^^^^^^^^^^^^^^^^^
+Car number: 7
+Start time: 39.01
+Stop time: 36.01
+Cycle time: 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 2
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 6
+Old average process time for station 5: 3
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 4 WHERE station = 1
+The bottleneck station is: 4Car number 7 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21 for car number: 7
+In write to table.
+UPDATE latest_info SET takt_time = 21.002 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013544.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013544.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013545.txt
+File contents: 37.51 39.01
+|37.51 39.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2TimeData-20130413T013545.txt
+Cell: 1
+Sensor: 2
+data: Array
+37.51
+39.01
+1
+Sensor number being checked: 2;1
+1
+1
+1
+Sensor number being checked: 2;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,2,37.51,39.01,013545)
+station on time: 34.51
+station off time: 37.51
+22222222222222222
+Old average process time for station 2: 3
+Process Time is: 3
+New average process time for station 2: 3
+Values in time Array:
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 11 with station number: 2 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 4
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 4
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Values in time Array:
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 4
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013545.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor2DefectResults-20130413T013545.txt
+Cell: 1
+Sensor: 2
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013546.txt
+File contents: 39.01 40.51
+|39.01 40.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013546.txt
+Cell: 1
+Sensor: 3
+data: Array
+39.01
+40.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,39.01,40.51,013546)
+station on time: 36.01
+station off time: 39.01
+22222222222222222
+Station on time: 36.01
+Station off time: 39.01
+1.Process Time for car 10: 3
+Old average process time for station 3: 3
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 10 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013546.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013546.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013547.txt
+File contents: 40.51 42.01
+|40.51 42.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013547.txt
+Cell: 1
+Sensor: 4
+data: Array
+40.51
+42.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,40.51,42.01,013547)
+station on time: 37.51
+station off time: 40.51
+22222222222222222
+Old average process time for station 4: 3
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 9 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013547.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013547.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013548.txt
+File contents: 42.01 43.51
+|42.01 43.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013548.txt
+Cell: 1
+Sensor: 5
+data: Array
+42.01
+43.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,42.01,43.51,013548)
+station on time: 39.01
+station off time: 42.01
+^^^^^^^^^^^^^^^^^^^^
+Car number: 8
+Start time: 42.01
+Stop time: 39.01
+Cycle time: 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 2
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 6
+Old average process time for station 5: 3
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 8 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21 for car number: 8
+In write to table.
+UPDATE latest_info SET takt_time = 21.001666666667 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013548.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013548.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013549.txt
+File contents: 42.01 43.51
+|42.01 43.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3TimeData-20130413T013549.txt
+Cell: 1
+Sensor: 3
+data: Array
+42.01
+43.51
+1
+Sensor number being checked: 3;1
+1
+1
+1
+Sensor number being checked: 3;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,3,42.01,43.51,013549)
+station on time: 39.01
+station off time: 42.01
+22222222222222222
+Station on time: 39.01
+Station off time: 42.01
+1.Process Time for car 11: 3
+Old average process time for station 3: 3
+Process Time is: 3
+New average process time for station 3: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 11 with station number: 3 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 5
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 5
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013549.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor3DefectResults-20130413T013549.txt
+Cell: 1
+Sensor: 3
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013550.txt
+File contents: 43.51 45.01
+|43.51 45.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013550.txt
+Cell: 1
+Sensor: 4
+data: Array
+43.51
+45.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,43.51,45.01,013550)
+station on time: 40.51
+station off time: 43.51
+22222222222222222
+Old average process time for station 4: 3
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 10 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013550.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013550.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013551.txt
+File contents: 45.01 46.51
+|45.01 46.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013551.txt
+Cell: 1
+Sensor: 5
+data: Array
+45.01
+46.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,45.01,46.51,013551)
+station on time: 42.01
+station off time: 45.01
+^^^^^^^^^^^^^^^^^^^^
+Car number: 9
+Start time: 45.01
+Stop time: 42.01
+Cycle time: 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 2
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 6
+Old average process time for station 5: 3
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 9 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21 for car number: 9
+In write to table.
+UPDATE latest_info SET takt_time = 21.001428571429 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013551.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013551.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013552.txt
+File contents: 46.51 48.01
+|46.51 48.01|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4TimeData-20130413T013552.txt
+Cell: 1
+Sensor: 4
+data: Array
+46.51
+48.01
+1
+Sensor number being checked: 4;1
+1
+1
+1
+Sensor number being checked: 4;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,4,46.51,48.01,013552)
+station on time: 43.51
+station off time: 46.51
+22222222222222222
+Old average process time for station 4: 3
+Process Time is: 3
+New average process time for station 4: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 11 with station number: 4 and time: 4.5
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 6
+In write to table.
+UPDATE latest_info SET status = 1 WHERE station = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET error_type = 1 WHERE station = 6
+Writing to error type: 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 1
+In write to table.
+UPDATE latest_info SET average_idle_time = 1.5 WHERE station = 6
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013552.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor4DefectResults-20130413T013552.txt
+Cell: 1
+Sensor: 4
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013553.txt
+File contents: 48.01 49.51
+|48.01 49.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013553.txt
+Cell: 1
+Sensor: 5
+data: Array
+48.01
+49.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,48.01,49.51,013553)
+station on time: 45.01
+station off time: 48.01
+^^^^^^^^^^^^^^^^^^^^
+Car number: 10
+Start time: 48.01
+Stop time: 45.01
+Cycle time: 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 2
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 6
+Old average process time for station 5: 3
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 10 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21 for car number: 10
+In write to table.
+UPDATE latest_info SET takt_time = 21.00125 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013553.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013553.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013554.txt
+File contents: 51.01 52.51
+|51.01 52.51|Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5TimeData-20130413T013554.txt
+Cell: 1
+Sensor: 5
+data: Array
+51.01
+52.51
+1
+Sensor number being checked: 5;1
+1
+1
+1
+Sensor number being checked: 5;Calling writeTimesToTable
+In write times to table.
+INSERT INTO time(time_id,run,sensor,on_time,off_time,timestamp) 
+             		VALUES (NULL,161,5,51.01,52.51,013554)
+station on time: 48.01
+station off time: 51.01
+^^^^^^^^^^^^^^^^^^^^
+Car number: 11
+Start time: 51.01
+Stop time: 48.01
+Cycle time: 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 2
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 3
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 4
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 5
+In write to table.
+UPDATE latest_info SET takt_time = 3 WHERE station = 6
+Old average process time for station 5: 3
+Process Time is: 3
+New average process time for station 5: 3
+In write to table.
+UPDATE latest_info SET average_process_time = 3 WHERE station = 6
+In write to table.
+UPDATE latest_info SET average_process_time = 3.0001818181818 WHERE station = 1
+In write to table.
+UPDATE latest_info SET bottleneck = 2 WHERE station = 1
+The bottleneck station is: 2Car number 11 with station number: 5 and time: 4.5
+Overall finished with a process time of: 21 for car number: 11
+In write to table.
+UPDATE latest_info SET takt_time = 21.001111111111 WHERE station = 1
+Returning true
+Filename gets set to: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013554.txt
+File contents: 0
+Filename: /home/zack/git/Senior-Design-Lego-Lab/Php Files for File Reading/Cell1Sensor5DefectResults-20130413T013554.txt
+Cell: 1
+Sensor: 5
+Unable to map data or defect file contained no defect.
+Returning true

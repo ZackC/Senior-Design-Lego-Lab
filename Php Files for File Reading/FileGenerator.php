@@ -1,7 +1,7 @@
 <?php
 class FileGenerator
 {
-	private $numCars = 30;
+	private $numCars = 10;
 	private $carsDone = 0;
 	private $currentCar = 1;
 	private $numSensors = 5;

@@ -12,6 +12,7 @@
     private $lastDefectTime;
     private $futureTimeCarsWithDefectList = array();
     private $futureDefectCarsWithDefectList = array();
+    private $station5sOnTimesAlreadyUsed = array();
 
     public function __construct($newSensorNumber, $newStationBeforeSensor, $newStationAfterSensor)
     {
@@ -20,6 +21,10 @@
       $this -> stationAfterSensor = $newStationAfterSensor;
       $this -> onTimeArray = array_pad($this -> onTimeArray, self::NUMBEROFTIMESKEPT, 0);
       $this -> offTimeArray = array_pad($this -> offTimeArray, self::NUMBEROFTIMESKEPT, 0);
+      if($this -> sensorNumber == 5)
+      {
+        $this -> station5sOnTimesAlreadyUsed = array_pad($this -> station5sOnTimesAlreadyUsed, self::NUMBEROFTIMESKEPT, false);
+      }
     }
 
 
@@ -113,6 +118,24 @@
        return $this -> onTimeArray[$carNumber % self::NUMBEROFTIMESKEPT];
     }
    
+    public function checkThenSetInOnTimeArray($carNumber, $value)
+    {
+      if($this -> sensorNumber == 5)
+      {
+        if($this -> station5sOnTimesAlreadyUsed[$carNumber % self::NUMBEROFTIMESKEPT] == false)
+        {
+           $this -> station5sOnTimesAlreadyUsed[$carNumber % self::NUMBEROFTIMESKEPT] = true;
+           return true;
+        }
+        else
+        {
+          $this -> station5sOnTimesAlreadyUsed[$carNumber % self::NUMBEROFTIMESKEPT] = false;
+          $this -> onTimeArray[$carNumber % self::NUMBEROFTIMESKEPT] = $value;
+        }
+      }
+      return false;
+    }
+
     public function setInOnTimeArray($carNumber, $value)
     {
       $this -> onTimeArray[$carNumber % self::NUMBEROFTIMESKEPT] = $value;

@@ -20,17 +20,29 @@
      private $statusArray = array();
      private $defectTimeArray = array();
      private $totalDefectCount = 0;
+     private $grapher;
+     private $processTimesForGraph = array();
+     private $countOfProcessTimesForGraph = 0;
+     const PROCESSMEAN = 10;
+     const PROCESSSIGMA = 5;
+     private $idleTimesForGraph = array();
+     private $countOfIdleTimesForGraph = 0;
+     const IDLEMEAN = 10;
+     const IDLESIGMA = 5;
+     const NUMBEROFTIMESINARRAY = 10;
      
-     public function __construct($newStationsPerCell, $newTableWriter)
+     public function __construct($newStationsPerCell, $newTableWriter, $newGrapher)
      {
        $this -> stationsPerCell = $newStationsPerCell;
        $this -> overallTime = array_pad($this -> overallTime, self::NUMBEROFTIMESKEPT, 0);
        $this -> averageProcessTimeArray = array_pad($this -> averageProcessTimeArray, $newStationsPerCell, 0);
        $this -> averageIdleTimeArray = array_pad($this -> averageIdleTimeArray, $newStationsPerCell, 0);
+       unset($this -> averageIdleTimeArray[0]);
        $this -> bottleneckArray = array_pad($this -> bottleneckArray, $newStationsPerCell, 0);
        $this -> tableWriter = $newTableWriter;
        $this -> statusArray = array_pad($this -> statusArray, $newStationsPerCell, 1);
        $this -> defectTimeArray = array_pad($this -> defectTimeArray, $newStationsPerCell,0);
+       $this -> grapher = $newGrapher;
      }
 
      //may want to add a call to udpate the tables later
@@ -136,6 +148,31 @@
        $this -> totalDefectCount = $this -> totalDefectCount + $newDefectsCount;
        $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "daily_defect", $this -> totalDefectCount); //0 for updating the overall station
      }
+
+     public function updateGraphs()
+     {
+         $this -> addTimePoint($this -> averageProcessTime, $this -> countOfProcessTimesForGraph, $this -> processTimesForGraph);
+         $this -> grapher -> makeGraph($this -> processTimesForGraph, self::PROCESSMEAN, self::PROCESSMEAN + 3 * self::PROCESSSIGMA, "Average Process Times", "Cell1OverallProcessGraph.png");
+         $this -> addTimePoint($this -> averageIdleTime, $this -> countOfIdleTimesForGraph, $this -> idleTimesForGraph);
+         $this -> grapher -> makeGraph($this -> idleTimesForGraph, self::IDLEMEAN, self::IDLEMEAN + 3 * self::IDLESIGMA, "Average Idle Times", "Cell1OverallIdleGraph.png");
+     }
+
+    public function addTimePoint($time,&$countOfTimeArrayPoints,&$timeArray)
+    {
+
+       //if full - remove then add
+      if($countOfTimeArrayPoints  == self::NUMBEROFTIMESINARRAY)
+      {
+        array_shift($timeArray);
+        array_push($timeArray ,$time);
+      }
+       //else - just add
+      else
+      {
+        array_push($timeArray ,$time);
+        $countOfTimeArrayPoints = $countOfTimeArrayPoints + 1;
+      }
+    }
 
    }
 ?>

@@ -72,15 +72,23 @@
   }
 
   spl_autoload_register('my_autoloader');
-
-
-
+   //$pathStart = '/home/legolab/LEGOLABHAHA';
+   $pathStart = dirname(__FILE__);
+   $directory = realpath($pathStart);
+        //echo "Directory: ".$directory."\n";
+  $directoryContents = scandir($directory) or die("Unable to read directory\n"); // may need to make a softer error handling later
+  //This for loop deletes all of the files in the directory.  Useful for testing
+  //but will probably not be in the final product.
+  /*for($i = 0; $i < count($directoryContents); i++)
+  {
+    unlink($directoryContens[i]);
+  }*/
   $tableWriter = new TableWriter();
   $labInit = new LabInitialization();
   $sensorTable = $labInit -> setUpLab($tableWriter);
   $tableWriter -> resetLatestInfo();
   $fileWatcherArray = array();
-  $pathStart = '/home/legolab/LEGOLABHAHA';
+  
   $fileWatcherArray[] = new FileWatcher(1, $pathStart."/Cell1Sensor1TimeData",$sensorTable[0],$tableWriter);
   $fileWatcherArray[] = new FileWatcher(1, $pathStart."/Cell1Sensor2TimeData",$sensorTable[1],$tableWriter);
   $fileWatcherArray[] = new FileWatcher(1, $pathStart."/Cell1Sensor3TimeData",$sensorTable[2],$tableWriter);
@@ -93,10 +101,8 @@
   $fileWatcherArray[] = new FileWatcher(0, $pathStart."/Cell1Sensor5DefectResults",$sensorTable[4],$tableWriter);
 
   $fileWatcherArraySize = count($fileWatcherArray);
-  $directory = realpath($pathStart);
-        //echo "Directory: ".$directory."\n";
-  $directoryContents = scandir($directory) or die("Unable to read directory\n"); // may need to make a softer error handling later
-  $oldDirectoryContentsSize = count($directoryContents);  
+  //$directoryContents = scandir($directory);
+  //$oldDirectoryContentsSize = count($directoryContents);  
   while(true)
   {
 
@@ -105,15 +111,15 @@
        $newDirectoryContents = scandir($directory);
        //echo "Old Directory Size: ".$oldDirectoryContentsSize."\n";
        //echo "New Directory Size: ".count($newDirectoryContents)."\n";
-       if($oldDirectoryContentsSize != count($newDirectoryContents))
-       {
+      // if($oldDirectoryContentsSize != count($newDirectoryContents))
+      // {
   	 for($i = 0; $i < $fileWatcherArraySize; $i++)
   	 {
   		$fileWatcherArray[$i] -> processSimilarFiles($newDirectoryContents);
   	 }
-         $oldDirectoryContentsSize = count(scandir($directory));
+      //   $oldDirectoryContentsSize = count(scandir($directory));
          //break;
-       }	
+      // }	
   }
   echo "Done\n";
 ?>

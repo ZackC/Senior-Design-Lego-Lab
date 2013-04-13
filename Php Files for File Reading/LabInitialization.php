@@ -18,9 +18,10 @@
 
      public function setUpLab($tableWriter)
      {
-       $overallStation = new OverallInformation(self::NUMBEROFSTATIONSPERCELL,$tableWriter); 
-       $stationArray = array();
        $grapher = new Grapher();
+       $overallStation = new OverallInformation(self::NUMBEROFSTATIONSPERCELL,$tableWriter, $grapher); 
+       $stationArray = array();
+       
        for($i = 0; $i < self::NUMBEROFSTATIONSPERCELL; $i++)
        { 
          $stationArray[$i] = new StationInformation($i+1,$tableWriter,$grapher,$this -> stationMeanIdleTimes[$i],$this -> stationMeanProcessTimes[$i],$this -> stationSigmaIdleTimes[$i],$this -> stationSigmaProcessTimes[$i],$overallStation);
