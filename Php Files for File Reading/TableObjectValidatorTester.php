@@ -1,4 +1,11 @@
 <?php
+function my_autoloader($class)
+  {
+    include realpath(dirname(__FILE__))."/".$class.'.php';
+  }
+
+  spl_autoload_register('my_autoloader');
+  
 //this file is used to test parts of the object validator classes
 //can't test all of the classes at the moment since they are not finished
 function my_autoloader($class)

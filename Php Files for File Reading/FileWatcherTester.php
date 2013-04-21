@@ -1,4 +1,11 @@
 <?php
+function my_autoloader($class)
+  {
+    include realpath(dirname(__FILE__))."/".$class.'.php';
+  }
+
+  spl_autoload_register('my_autoloader');
+  
   // this is a class used to test the file watcher and not part of the main project
   function my_autoloader($class)
   {

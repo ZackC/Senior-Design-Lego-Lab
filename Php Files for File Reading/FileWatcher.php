@@ -1,4 +1,11 @@
 <?php
+function my_autoloader($class)
+  {
+    include realpath(dirname(__FILE__))."/".$class.'.php';
+  }
+
+  spl_autoload_register('my_autoloader');
+  
   /*
    * The class that handles watching for file changes.  I am not sure if they are only 
    * writing a few files and changing them or if they are adding new files with a 

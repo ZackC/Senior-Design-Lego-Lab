@@ -48,8 +48,8 @@ function display()
 	<td>Cycle Time: ' . $infoRow['takt_time'] . '</td>
 	</tr>
 	</table>
-	<p class="centeredImage"><img src="../../GUIGraphs/Cell1Station4ProcessGraph" src="" width="60%" height="40%" alt="Process Times"></p>
-	<p class="centeredImage"><img src="../../GUIGraphs/Cell1Station4IdleGraph" src="" width="60%" height="40%" alt="Idle Times"></p>';
+	<p class="centeredImage"><img src="../../GUIGraphs/Cell1Station4ProcessGraph.png" src="" width="60%" height="40%" alt="Process Times"></p>
+	<p class="centeredImage"><img src="../../GUIGraphs/Cell1Station4IdleGraph.png" src="" width="60%" height="40%" alt="Idle Times"></p>';
 }
 ?>
 <!-- InstanceEndEditable -->

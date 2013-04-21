@@ -1,4 +1,11 @@
 <?php
+function my_autoloader($class)
+  {
+    include realpath(dirname(__FILE__))."/".$class.'.php';
+  }
+
+  spl_autoload_register('my_autoloader');
+  
    /*
     * This class is used to start the system and create a process that will watch each
     * file.  This may change depeding on how the other group does the file system but

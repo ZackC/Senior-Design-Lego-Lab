@@ -1,4 +1,6 @@
 <?php
+  spl_autoload_register('my_autoloader');
+  
   class SensorInformation
   {
     private $onTimeArray = array();

@@ -1,4 +1,11 @@
 <?php
+function my_autoloader($class)
+  {
+    include realpath(dirname(__FILE__))."/".$class.'.php';
+  }
+
+  spl_autoload_register('my_autoloader');
+  
   /*
    * The class that converts the information from the time file to the 
    * form required to put the time in the tables.

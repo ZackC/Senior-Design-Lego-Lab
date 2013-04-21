@@ -48,7 +48,7 @@ function display()
 	<td>Cycle Time: ' . $infoRow['takt_time'] . '</td>
 	</tr>
 	</table>
-	<p class="centeredImage"><img src="../../GUIGraphs/Cell2Station1ProcessGraph" src="" width="60%" height="40%" alt="Process Times"></p>';
+	<p class="centeredImage"><img src="../../GUIGraphs/Cell2Station1ProcessGraph.png" src="" width="60%" height="40%" alt="Process Times"></p>';
 }
 ?>
 <!-- InstanceEndEditable -->

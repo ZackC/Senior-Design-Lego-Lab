@@ -79,7 +79,13 @@ function display()
 			case 4:
 				if ($station != 0)
 				{
-					$defects = mysqli_query($con, "SELECT location FROM defect WHERE sensor=$stationId ORDER BY timestamp DESC, location ASC");
+					$run = mysqli_query($con, "SELECT * FROM run ORDER BY run_id DESC");
+					$runRow = mysqli_fetch_array($run);
+					$runId = $runRow['run_id'];
+					$allDefects = mysqli_query($con, "SELECT * FROM defect WHERE sensor=$stationId AND run=$runId ORDER BY timestamp DESC, location ASC");
+					$allDefectsRow = mysqli_fetch_array($allDefects);
+					$maxTimestamp = $allDefectsRow['timestamp'];
+					$defects = mysqli_query($con, "SELECT location FROM defect WHERE sensor=$stationId AND run=$runId AND timestamp=$maxTimestamp ORDER BY location ASC");
 					while ($defectRow = mysqli_fetch_array($defects))
 					{
 						$location = $defectRow['location'];

@@ -2,12 +2,13 @@
     /*
      * This is the class for reading defect files.
      */
-    //function my_autoloader($class)
-    //{
-    //  include realpath(dirname(__FILE__))."/".$class.'.php';
-    //}
 
-    //spl_autoload_register('my_autoloader');
+function my_autoloader($class)
+{
+	include realpath(dirname(__FILE__))."/".$class.'.php';
+}
+ 
+spl_autoload_register('my_autoloader');
 
   //The constructor of the class. 
   class DefectFileReader extends FileReader

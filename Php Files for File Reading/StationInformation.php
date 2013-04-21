@@ -49,15 +49,30 @@
     {
        $this -> previousStation = $newPreviousStation;
     }
+    
+    public function getPreviousStation()
+    {
+    	return $this->previousStation;
+    }
 
     public function setNextStation($newNextStation)
     {
        $this -> nextStation = $newNextStation;
     }
+    
+    public function getNextStation()
+    {
+    	return $this->nextStation;
+    }
 
     public function setPreviousSensor($newPreviousSensor)
     {
        $this -> previousSensor = $newPreviousSensor;
+    }
+    
+    public function getPreviousSensor()
+    {
+    	return $this->previousSensor;
     }
 
     public function setNextSensor($newNextSensor)

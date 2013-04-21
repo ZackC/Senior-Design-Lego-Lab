@@ -1,4 +1,11 @@
 <?php
+function my_autoloader($class)
+  {
+    include realpath(dirname(__FILE__))."/".$class.'.php';
+  }
+
+  spl_autoload_register('my_autoloader');
+  
   /*
    * This is the general class for converting file information into information that
    * can go into a table.  This class handles the whole process from reading the 

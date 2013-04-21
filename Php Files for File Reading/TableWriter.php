@@ -1,4 +1,4 @@
-<?php
+<?php  
 class TableWriter
 {
 	//Database Information
@@ -24,16 +24,16 @@ class TableWriter
 		$runs = mysqli_query($this->con, "SELECT * FROM run ORDER BY run_id DESC LIMIT 1");
 		if($runs)
 		{
-                        echo "Found run value in database.\n";
-                        $runRow = mysqli_fetch_array($runs);
+			echo "Found run value in database.\n";
+			$runRow = mysqli_fetch_array($runs);
 			$this->runNumber = $runRow['run_id'];
-                        $this->runNumber = $this -> runNumber + 1;
+			$this->runNumber = $this -> runNumber + 1;
 		}
-                date_default_timezone_set('America/Chicago');
-                $time = date("YmdHis");
-                $run = $this -> runNumber;
-                echo "Run time start is: ".$time."\n";
-                mysqli_query($this -> con, "INSERT INTO run(run_id, start, stop) VALUES ($run,$time,0)") or die("Unable to write run information.\nINSERT INTO run(run_id, start, stop) VALUES ($run,$time,0)\n"); //will need to change to softer error handling later but used for testing now.
+		date_default_timezone_set('America/Chicago');
+		$time = date("YmdHis");
+		$run = $this -> runNumber;
+		echo "Run time start is: ".$time."\n";
+		mysqli_query($this -> con, "INSERT INTO run(run_id, start, stop) VALUES ($run,$time,0)") or die("Unable to write run information.\nINSERT INTO run(run_id, start, stop) VALUES ($run,$time,0)\n"); //will need to change to softer error handling later but used for testing now.
 	}
 	
 	public function writeToTable($cellNumber, $stationNumber, $columnName, $columnValue)

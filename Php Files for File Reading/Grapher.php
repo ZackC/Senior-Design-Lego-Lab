@@ -1,5 +1,4 @@
 <?php
-
   set_include_path('jpgraph-3.5.0b1/src/');
   require_once ('jpgraph.php');
   require_once ('jpgraph_line.php');

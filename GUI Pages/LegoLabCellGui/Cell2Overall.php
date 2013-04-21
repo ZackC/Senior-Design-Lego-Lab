@@ -49,8 +49,8 @@ function display()
 	<td>Bottleneck Station: ' . $infoRow['bottleneck'] . '</td>
 	</tr>
 	</table>
-	<p class="centeredImage"><img src="../../GUIGraphs/Cell2OverallProcessGraph" src="" width="60%" height="40%" alt="Process Times"></p>
-	<p class="centeredImage"><img src="../../GUIGraphs/Cell2OverallIdleGraph" src="" width="60%" height="40%" alt="Idle Times"></p>';
+	<p class="centeredImage"><img src="../../GUIGraphs/Cell2OverallProcessGraph.png" src="" width="60%" height="40%" alt="Process Times"></p>
+	<p class="centeredImage"><img src="../../GUIGraphs/Cell2OverallIdleGraph.png" src="" width="60%" height="40%" alt="Idle Times"></p>';
 }
 ?>
 <!-- InstanceEndEditable -->

@@ -1,8 +1,15 @@
 <?php
+function my_autoloader($class)
+  {
+    include realpath(dirname(__FILE__))."/".$class.'.php';
+  }
+
+  spl_autoload_register('my_autoloader');
+  
   class TimeTableObject extends TableObject
   {
-    private $onTime;
-    private $offTime;
+    private $onTime = 0;
+    private $offTime = 0;
 
     public function __construct()
     {

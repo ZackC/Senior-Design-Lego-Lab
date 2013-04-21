@@ -1,11 +1,10 @@
 <?php
-
   class TableObject
   {
 
-    private $fileTime;
-    private $cellNumber;
-    private $sensorNumber;
+    private $fileTime = 0;
+    private $cellNumber = 0;
+    private $sensorNumber = 0;
 
     public function __construct()
     {
