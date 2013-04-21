@@ -1,36 +1,79 @@
 <?php
+  /*
+   *  The class that holds the information for a station and performs the 
+   *  calculations for the station.
+   */
   class StationInformation
   {
+    //the cell number of the station
     private $cellNumber = 1;
+    //the number of this station in the cell
     private $stationNumber;
+    //the station before this station
     private $previousStation;
+    //the station after this station
     private $nextStation;
+    //the sensor before this station
     private $previousSensor;
+    //the sensor after this station 
     private $nextSensor;
+    //the array storing the latest process times for graphing
     private $processTimes = array();
+    //the count of the amount of times in the processTime graph
     private $countOfTimesInProcessTimes = 0;
+    //the accumulation of the process times
     private $accumulatedProcessTime = 0;
+    //the count of the times in the accumulated process times
     private $accumulatedProcessTimeCount = 0;
+    //the average process time for the station
     private $averageProcessTime;
+    //the idle times to graph
     private $idleTimes = array();
+     //the idle times stored in a way that they can be used in the total time calculation
     private $idleTimesForTotalTime = array();
+    //the last idle time for the station
     private $lastIdleTime;
+    //the count of the times in the idle time array
     private $countOfTimesInIdleTimes = 0;
+    //the accumulation of the idle time
     private $accumulatedIdleTime = 0;
+    //the count of the times in the accumulation of the idle time
     private $accumulatedIdleTimeCount = 0;
+    //the latest average idle time of the station
     private $averageIdleTime;
+    //the current number of the car
     private $currentCarNumber = 0;
+    //the status of the station, 1 is fine (green), 2 is warning (yellow), 3 is alert (red)
+    // and 4 is defect (black)
     private $status = 1;
+    //the database writer
     private $tableWriter;
+    //the graphing object
     private $grapher;
+    //the mean of the idle time for the station
     private $meanIdleTimeForStation;
+    //the mean of the process time for the station
     private $meanProcessTimeForStation;
+    //the standard deviation of the idle time for the station
     private $sigmaIdleTimeForStation;
+    //the standard deviation of the process time for the station
     private $sigmaProcessTimeForStation;
+    //the number of times being stored in the array
     const NUMBEROFTIMESINARRAY = 10;
+    //the link to the overall station
     private $overallStation;
+    //the time of the last defect for the station
     private $lastDefectTime;
     
+    //the constructor
+    //newStationNumber - the station number
+    //newTableWriter - the database writer
+    //newGrapher - the graphing object
+    //newMeanIdleTime - the mean idle time for the station
+    //newMeanProcessTime - the mean process time for the station
+    //newSigmaIdleTime - the standard deviation of the idle time
+    //newSigmaProcessTime - the standard deviation of the process time
+    //newOverallStation - the link to the overall station
     public function __construct($newStationNumber, $newTableWriter,$newGrapher,$newMeanIdleTime, $newMeanProcessTime, $newSigmaIdleTime, $newSigmaProcessTime, $newOverallStation)
     {
       $this -> stationNumber = $newStationNumber;
@@ -45,48 +88,57 @@
 
     }
 
+    //sets the station before this station
     public function setPreviousStation($newPreviousStation)
     {
        $this -> previousStation = $newPreviousStation;
     }
     
+    //returns the station before this station
     public function getPreviousStation()
     {
     	return $this->previousStation;
     }
 
+    //sets the station after this station
     public function setNextStation($newNextStation)
     {
        $this -> nextStation = $newNextStation;
     }
     
+    //returns the station after this station
     public function getNextStation()
     {
     	return $this->nextStation;
     }
 
+    //sets the sensor before the station
     public function setPreviousSensor($newPreviousSensor)
     {
        $this -> previousSensor = $newPreviousSensor;
     }
     
+    //returns the sensor before the station
     public function getPreviousSensor()
     {
     	return $this->previousSensor;
     }
 
+    //sets the sensor after the station
     public function setNextSensor($newNextSensor)
     {
        $this -> nextSensor = $newNextSensor;
        //echo "Setting next sensor\n";
     }
 
+    //returns the sensor after the station
     public function getNextSensor()
     {
        return $this -> nextSensor;
     }
 
-
+    //adds a process time for a specific carNumber and updates all the information 
+    //the can be updated from the process time
     public function addProcessTime($time, $carNumber)
     {
        if($time > 3.5)
@@ -147,10 +199,9 @@
        $this -> overallStation -> updateBottleNeckStation($totalStationTime, $this -> stationNumber);
 
        $this -> overallStation -> updateTotalTime($carNumber, $totalStationTime, $this -> stationNumber);
-       
-       
     }
 
+    //adds the idle time to the for a specific car and updates all the information that can be updated from a new idle time
     public function addIdleTime($time,$carNumber)
     {
        $this -> lastIdleTime = $time;
@@ -180,6 +231,12 @@
      $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> stationNumber, "average_idle_time", $this -> averageIdleTime);
     }
 
+    //adds the time point to the array
+    //$time - the time to add to the array
+    //numberOfTimes - the number of times that have been added to the total time count
+    //totalTime - the accumulated total time
+    //countOfTimeArrayPoints - the count of the points in the array
+    //timeArray - the aray of the latest time points
     public function addTimePoint($time,&$numberOfTimes,&$totalTime,&$countOfTimeArrayPoints,&$timeArray)
     {
        $numberOfTimes = $numberOfTimes + 1;
@@ -198,6 +255,12 @@
        }
     }
 
+    //updates the status for the station 
+    //it always updates if the car number is larger than the previous car number
+    //newStatus - the status to change to
+    //carNumber - the number of the car to update
+    //timeErrorType - the type of the time error, 2 for process time error, 3 for idle
+        time error
     public function updateStatus($newStatus, $carNumber, $timeErrorType = null)
     {
       //echo "{{{{{{{{{{{{{{{{{{{{{{{{{{{{\n";
@@ -255,10 +318,7 @@
    //This function returns true if the process is out of control according
     // to the Shewhart Control Chart rules and false other wise.
     //this function need to have as least 6 points to work
-    // I haven't tested this function yet.
-    // Assuming this function is called every time the program runs
-    // we also need to ask how long they get to get a base before throwing
-    // these errors.
+    
     public function isSystemOutOfControl($timeArray, $mean, $sigma)
     {
        echo "Values in time Array:\n";
@@ -330,6 +390,8 @@
        return FALSE;
     }
 
+    //calculates the process time from the sensor on time (station off time)
+    //as long as the station's on time is already known 
     public function calculateProcessTimeFromSensorOnTime($onTime, $carNumber)
     {
       //$this -> currentCarNumber = $carNumber;
@@ -386,6 +448,8 @@
       
     }
 
+    //calculates the process time from sensor off time (station on time) if the off time for the station 
+    //is already known
     public function calculateProcessTimeFromSensorOffTime($offTime, $carNumber)
     {
       //$this -> currentCarNumber = $carNumber;
@@ -408,6 +472,8 @@
       }
     }
 
+    //sets the last defect time of the station, writes to the table
+    //and updates the overall defect time
     public function setLastDefectTime($newLastDefectTime)
     {
       $this -> lastDefectTime = $newLastDefectTime;
@@ -415,16 +481,23 @@
       $this -> overallStation -> updateDefectTimes($newLastDefectTime, $this -> stationNumber);
     }
 
+    //returns the time of the last defect for the station
     public function getLastDefectTime()
     {
        return $this -> lastDefectTime;
     }
 
+    //This function updates the overall station's defect count.
+    //it is just used to forward information to the overall information
+    //class
     public function updateOverallDefectCount($newDefectsCount)
     {
       $this -> overallStation -> updateTotalDefectCount($newDefectsCount);
     }
   
+    //This function updates the cycle time for the specific car number.
+    //The cycle time is the difference of the on times at station 5
+    //between cars.  It measures how often a car is being finished 
     public function updateCycleTime($carNumber)
     {
       if($this -> stationNumber == 5 && $carNumber > 1)

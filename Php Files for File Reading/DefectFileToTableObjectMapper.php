@@ -1,10 +1,11 @@
 <?php
-function my_autoloader($class)
+/*function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
   spl_autoload_register('my_autoloader');
+*/
   
   /*
    * The class that handles rearranging the information from the 
@@ -13,6 +14,8 @@ function my_autoloader($class)
   class DefectFileToTableObjectMapper extends FileToTableObjectMapper
   {
    
+    //the default constructor for the class
+    // newSensor - the sensor that is sensing the defect
     public function __construct($newSensor)
     {
       parent::__construct($newSensor);

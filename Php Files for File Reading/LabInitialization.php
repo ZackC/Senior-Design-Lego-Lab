@@ -1,20 +1,31 @@
 <?php
-function my_autoloader($class)
+/*function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
-  spl_autoload_register('my_autoloader');
-  
+  spl_autoload_register('my_autoloader');*/
+
+  /**
+   *
+   * This class initializes the laboratory set up in the correct order.
+   *
+   */
   class LabInitialization
   {
-
+     // the total number of the station per cell
      const NUMBEROFSTATIONSPERCELL = 5;
+     // the array of the mean idle times for the stations
      private $stationMeanIdleTimes = array();
+     // the array of the mean process times for the stations
      private $stationMeanProcessTimes = array();
+     // the array of the standard deviations of the idle times
      private $stationSigmaIdleTimes = array();
+     // the array of the standard deviations of the process times
      private $stationSigmaProcessTimes = array();
 
+     // the constructor that intializes the array values.  It holds all of the 
+     // information for the different stations
      public function __construct()
      {
        $this -> stationMeanIdleTimes = array(10,10,10,10,10);
@@ -23,6 +34,12 @@ function my_autoloader($class)
        $this -> stationSigmaProcessTimes = array(5,5,5,5,5);
      }
 
+    /*
+     *
+     * This method makes sure the overall information, station information, and
+     * sensor information are all initialized correctly 
+     *
+     */
      public function setUpLab($tableWriter)
      {
        $grapher = new Grapher();

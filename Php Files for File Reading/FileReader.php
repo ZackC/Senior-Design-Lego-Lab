@@ -51,6 +51,7 @@
        $this -> filename = $newFilename;
      }
 
+     //returns the file name that the file reader is reading
      public function getFilename()
      {
         return $this -> filename;

@@ -1,4 +1,9 @@
 <?php
+  /***
+   *
+   *  This file is not part of the main program
+   *
+   */
   $fw = new FileWatcher(1,realpath(dirname(__FILE__))."/Cell1Station1Time");
   $fw -> watchDirectoryForSimilarFiles();
   $tableObject = $fw -> getTableObject();

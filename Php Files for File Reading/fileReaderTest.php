@@ -1,6 +1,6 @@
 <?php
 //this class is for testing the php file reader
-
+//it is not part of the main program
 function my_autoloader($class)
 {
   echo realpath(dirname(__FILE__))."\n";

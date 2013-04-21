@@ -1,23 +1,44 @@
-<?php  
+<?php 
+/**
+ *
+ * The class for writing to the mysql database
+ *
+ */ 
 class TableWriter
 {
 	//Database Information
+        
+        //the database location
 	private $dbHost = "localhost";
+        //the user for the database
 	private $dbUsername = "LegoLab";
+        //the password for the user
 	private $dbPass = "";
+        //the name of the database
 	private $dbName = "legolab";
 	
+        //the database connection object
 	private $con;
+        //the current run number
 	private $runNumber = 1;
 	
+        //the time of the file
 	private $fileTime;
+        //the cell number of the file
 	private $cellNumber;
+        //the station number of the file
 	private $stationNumber;
+        //the sensor number of the file
 	private $sensorNumber;
+        //the on time from the file
 	private $onTime;
+        //the off time from the file
 	private $offTime;
+        //the defects locations in the file
         private $defectLocations;
 	
+        //this method connects to the database, resets the values that are displayed,
+        //and calculates the run number
 	public function __construct()
 	{
 		$this->con = mysqli_connect($this->dbHost, $this->dbUsername, $this->dbPass, $this->dbName);
@@ -36,6 +57,9 @@ class TableWriter
 		mysqli_query($this -> con, "INSERT INTO run(run_id, start, stop) VALUES ($run,$time,0)") or die("Unable to write run information.\nINSERT INTO run(run_id, start, stop) VALUES ($run,$time,0)\n"); //will need to change to softer error handling later but used for testing now.
 	}
 	
+        //writes to the latest info table
+        //it writes the station decided by cellNumber and stationNumber
+        //it writes the information in columnvalue to the column with the name columnName
 	public function writeToTable($cellNumber, $stationNumber, $columnName, $columnValue)
 	{
                 echo "In write to table.\n";
@@ -48,7 +72,7 @@ class TableWriter
 		mysqli_query($this->con, "UPDATE latest_info SET $columnName = $columnValue WHERE station = $stationId");
 	}
 	
-	
+	//reads the information from the time table object
 	public function readTimeTableObject($tableObject)
 	{
 		$this->fileTime = $tableObject->getFileTime();
@@ -58,6 +82,7 @@ class TableWriter
 		$this->offTime = $tableObject->getOffTime();
 	}
 
+    //reads the information from the defect table object
     public function readDefectTableObject($tableObject)
     {
         $this->fileTime = $tableObject->getFileTime();
@@ -67,6 +92,7 @@ class TableWriter
         $this->defectLocations = $tableObject->getDefects();
     }
 
+    //writes defect information to the defect table
     public function writeDefectsToTable()
     {
         echo "In write defects to Table.\n";
@@ -84,7 +110,7 @@ class TableWriter
         //mysqli_query($this->con, "UPDATE latest_info SET status = 4 WHERE station = $stationId");
     }
     
-
+    //writes time information to the time table
     public function writeTimesToTable()
     {
       echo "In write times to table.\n";
@@ -94,6 +120,7 @@ class TableWriter
              		VALUES (NULL,$this->runNumber,$this->sensorNumber,$this->onTime,$this->offTime,$this->fileTime)\n";
     }
 
+    //returns the defect count of the current station
     public function getDefectCountOfStation()
     {
         echo "In get defect count of station.\n";
@@ -103,6 +130,7 @@ class TableWriter
     	return $stationRow['daily_defect'];
     }
     
+    //returns the station id in the table for the current station
     public function getStationId()
     {
     	$stations = mysqli_query($this->con, "SELECT * FROM station WHERE cell = $this->cellNumber AND station = $this->stationNumber") or die("Unable to extract station information at cell: ".$this ->cellNumber."and station: ".$this->stationNumber."\n");
@@ -111,6 +139,7 @@ class TableWriter
     	return $stationId;
     }
     
+    //resets the latest info table to their default values
     public function resetLatestInfo()
     {
     	date_default_timezone_set('America/Chicago');

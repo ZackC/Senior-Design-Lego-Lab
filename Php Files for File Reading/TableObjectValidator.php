@@ -1,10 +1,10 @@
 <?php
-function my_autoloader($class)
+/*function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
-  spl_autoload_register('my_autoloader');
+  spl_autoload_register('my_autoloader');*/
   
   /*
    *  The general class for validating objects that will go into the table

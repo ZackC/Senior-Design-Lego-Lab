@@ -5,38 +5,75 @@
   }
   spl_autoload_register('my_autoloader');*/
   
+   /**
+    *
+    * The class that stores the information of the overall stations
+    */
    class OverallInformation
    {
+     // the array for the total times of all the stations for each car
+     // used in calculating the overall accumulatedTotalTime
      private $overallTime = array();
+     // the station of the bottleneck station
      private $bottleneckStationNumber;
+     // the array used to hold the information for the bottleneck station
      private $bottleneckArray = array();
+     // the value storing the average process time for all of the different stations
      private $averageProcessTime;
+     // the value storing the average idle time for all of the different stations
      private $averageIdleTime;
-     private $averageDefectTime;
+     //private $averageDefectTime;
+     //the array that is storing the process times for all the stations
      private $averageProcessTimeArray = array();
+     //the array that is sotring the average idle times for all the stations
      private $averageIdleTimeArray = array();
+     // the accumulations of all of the total times
      private $accumulatedTotalTime = 0;
+     // the count of all of the total times
      private $accumulatedTotalTimeCount = 0;
+     // the station number for the overall station
      private $overallStationNumber = 0;
+     // the cell number for the station
      private $cellNumber = 1;
+     // the object writing to the database
      private $tableWriter;
-     const STATIONNUMBER = 0;
+      
+     //const STATIONNUMBER = 0;
+     //the number of times kept in the arrays
      const NUMBEROFTIMESKEPT = 20;
+     //the stations per cell
      private $stationsPerCell;
+     //the array of the statuses of the stations
      private $statusArray = array();
+     //the array of the total defects of each station
      private $defectTimeArray = array();
+     //the total defect count
      private $totalDefectCount = 0;
+     //the graphing object
      private $grapher;
+     //the process time array that is being graphed
      private $processTimesForGraph = array();
+     //the amount of points in the process times
      private $countOfProcessTimesForGraph = 0;
+     //the mean of the process times
      const PROCESSMEAN = 10;
+     //standard deviation of the process times
      const PROCESSSIGMA = 5;
+     //the points for the idle time graph
      private $idleTimesForGraph = array();
+     //the count of the points in the idle time graph
      private $countOfIdleTimesForGraph = 0;
+     //the mean of the idle times
      const IDLEMEAN = 10;
+     //the standard deviation of the idle times
      const IDLESIGMA = 5;
-     const NUMBEROFTIMESINARRAY = 10;
      
+    /*
+     * The constructor for the overall station 
+     * newStationsPerCell - the number of stations per cell
+     * newTableWriter - the object writing to the database
+     * newGrapher - the object making graphs
+     */
      public function __construct($newStationsPerCell, $newTableWriter, $newGrapher)
      {
        $this -> stationsPerCell = $newStationsPerCell;
@@ -51,7 +88,9 @@
        $this -> grapher = $newGrapher;
      }
 
-     //may want to add a call to udpate the tables later
+     //updates the average process time 
+     //$processTime - the new process time
+     //$stationNubmer - the number where the process time came from
      public function updateAverageProcessTime($processTime,$stationNumber)
      {
        // echo "====================\n";
@@ -66,6 +105,14 @@
         $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "average_process_time", $this -> averageProcessTime);
      }
 
+    /*
+     * Updates the updates the different mean times and puts the time in the latest
+     * time array
+     * $newTimeValue - the time to put in the array
+     * $stationNumber - the station that the time is for
+     * $array - the array of the station's times
+     * $averageTime - the specific average time to update 
+     */
      private function updateAverageTime($newTimeValue, $stationNumber, &$array, &$averageTime)
      {
         if($stationNumber > 0 and $stationNumber < $this -> stationsPerCell + 1)
@@ -109,6 +156,10 @@
        }
      }
 
+     //updates the total time for the for a car
+     //carNumber - the car whose time to update
+     //timeAmount - the time amount to add to the total time count
+     //stationNumber - the number of the station where the time came from
      public function updateTotalTime($carNumber, $timeAmount, $stationNumber)
      {
 
@@ -134,6 +185,8 @@
        }
      }
      
+     //updates the status for the overall station by selecting
+     //the most critical status from the group
      public function updateStatus($newStatus, $stationNumber)
      {
         $this -> statusArray[$stationNumber - 1] = $newStatus; 
@@ -141,6 +194,7 @@
         $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "status", $status); 
      }
    
+     //updates the defect time for a station
      public function updateDefectTimes($newDefectTime, $stationNumber)
      {
        //$this -> defectTimeArray[$stationNumber - 1] = $newDefectTime;
@@ -149,12 +203,18 @@
        $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "time_since_defect", $newDefectTime); 
      }
      
+     //updates the total defect count with the
+     //newDefectCount to be added to the total defect count
      public function updateTotalDefectCount($newDefectsCount)
      {
        $this -> totalDefectCount = $this -> totalDefectCount + $newDefectsCount;
        $this -> tableWriter -> writeToTable($this -> cellNumber, $this -> overallStationNumber, "daily_defect", $this -> totalDefectCount); //0 for updating the overall station
      }
 
+    /*
+     * This function creates new graphs for the overall station
+     *
+     */
      public function updateGraphs()
      {
          $this -> addTimePoint($this -> averageProcessTime, $this -> countOfProcessTimesForGraph, $this -> processTimesForGraph);
@@ -163,6 +223,10 @@
          $this -> grapher -> makeGraph($this -> idleTimesForGraph, self::IDLEMEAN, self::IDLEMEAN + 3 * self::IDLESIGMA, "Average Idle Times", "Cell1OverallIdleGraph.png");
      }
 
+    //This function handles adding tiem points to that arrays that will be graphed
+    //time - the time to add to the graph
+    //countOfTimeArrayPoints - the count of the time points in the array
+    //timeArray - the time array to add the point to.
     public function addTimePoint($time,&$countOfTimeArrayPoints,&$timeArray)
     {
 

@@ -1,11 +1,11 @@
 <?php
-function my_autoloader($class)
+/*function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
   spl_autoload_register('my_autoloader');
-  
+*/  
   /*
    * The class that handles watching for file changes.  I am not sure if they are only 
    * writing a few files and changing them or if they are adding new files with a 
@@ -21,7 +21,7 @@ function my_autoloader($class)
      private $fileToTableObject;
      // the file to read from, or the file prefix and path if new files are being created
      private $filename;
-    
+     // the object that is writing the database
      private $tableWriter;
 
 
@@ -29,6 +29,8 @@ function my_autoloader($class)
      //$type - the type of the file being watched (1 for time file, anything else for 
      //    defect files
      //$newFilename - the name of the file to watch
+     //$sensorInformation - the sensor object
+     //$tableWriter - the writer to the database
      public function __construct($type, $newFilename, $sensorInformation,$tableWriter)  // may need to change constructor if we change class to use observer pattern
      {
         $this -> fileToTableObject = new FileInformationToValidTableObject($type, $newFilename,$sensorInformation,$tableWriter); // may have to change this if watching a directory instead of a file
@@ -112,6 +114,7 @@ function my_autoloader($class)
         return $this -> running;
      }
 
+     // returns the table object
      public function getTableObject()
      {
         return $this -> fileToTableObject -> getTableObject();

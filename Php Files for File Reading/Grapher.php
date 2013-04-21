@@ -15,7 +15,13 @@
      private $numberOfPoints;
 
 
-
+     // the class that will call the other functions in the correct order to 
+     // make the graph
+     // $points - the points to plot on the graph
+     // $mean - the mean line location on the graph
+     // $sigma - the 3 times the standard deviation plus the mean
+     // $title - the title of the graph
+     // $filename - the file name for the resulting graph
      public function makeGraph($points, $mean, $sigma, $title,$filename)
      {
        $this -> createGraphOfPoints($points);
@@ -29,6 +35,7 @@
      //creates the graph object and puts the points on the graph.  Needs
      // to be called before the other methods. We can move this to a constructor
      // to inforce that if we want.
+     // $points - the points to graph
      public function createGraphOfPoints($points)
      {
  
@@ -55,13 +62,13 @@
        $lineplot -> SetColor("#0276FD"); // have to change the color after you add it for some reason
      }
 
-     //outputs the graph (for my computer a .png)
+     //outputs the graph to the specified filename
      public function drawGraph($filename)
      {
        $this -> graph -> Stroke($filename);
      }
 
-     // adds the 3rd sigma line to the graph as a dotted red line
+     // graphs the sigmaValue on the graph as a dotted red line
      public function addSigmaLine($sigmaValue)
      {
         // echo "Nubmer of points: ".$this -> numberOfPoints."\n";
@@ -87,6 +94,7 @@
         $meanLinePlot -> SetColor("#FFCC00"); // have to change the color after you add it for some reason.
      }
 
+     // sets the title for the graph
      public function setTitle($title)
      {
        $this -> graph -> title -> Set($title);

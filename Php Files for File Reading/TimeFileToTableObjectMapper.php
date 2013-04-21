@@ -1,11 +1,11 @@
 <?php
-function my_autoloader($class)
+/*function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
   spl_autoload_register('my_autoloader');
-  
+*/  
   /*
    * The class that converts the information from the time file to the 
    * form required to put the time in the tables.
@@ -13,6 +13,8 @@ function my_autoloader($class)
   class TimeFileToTableObjectMapper extends FileToTableObjectMapper
   {
 
+    //the constructor for the class
+    //newSensor - the sensor for the object mapper
     public function __construct($newSensor)
     {
       parent::__construct($newSensor);
@@ -20,7 +22,7 @@ function my_autoloader($class)
     }
 
     //maps the information stored in $data into a format that can 
-    //be put in tables.
+    //be put in tables. $tableObject - the object to put the data in
     public function mapData($data, $tableObject)
     {
        $this -> sensor -> incrementTimeCarNumber();

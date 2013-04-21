@@ -1,11 +1,11 @@
 <?php
-function my_autoloader($class)
+/*function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
   spl_autoload_register('my_autoloader');
-  
+  */
   /*
    * The class that insures that the information stored in the time table objects is
    * valid before putting it in the table.
@@ -34,7 +34,7 @@ function my_autoloader($class)
      // sure what part would be checking for that
      public function isValidTimeInput($timeInput)
      {
-        return preg_match('/^\d+\.\d\d$/',$timeInput); // if there can only be 2 digits on either side of the decimal.
+        return preg_match('/^\d+\.\d\d$/',$timeInput); // if there can only be 2 digits on the right side of the decimal.
         //return preg_match('/^\d+\.\d$/',$timeInput);  // line for there can be multiple digits on both sides of the decimal.
      }
   }

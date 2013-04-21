@@ -1,6 +1,15 @@
 <?php
 class FileGenerator
 {
+/***
+ *
+ * This class is used to test the system.  It generates files in a way similar to the
+ * matlab system.  However, it can be improved to add more variation in the file 
+ * generation.
+ *
+ * This class is not part of the main program
+ *
+ */
 	private $numCars = 10;
 	private $carsDone = 0;
 	private $currentCar = 1;

@@ -1,4 +1,8 @@
 <?php
+//the tester for parts of the station information class
+//
+//this file is not part of the main program
+
 function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
@@ -6,13 +10,13 @@ function my_autoloader($class)
 
   spl_autoload_register('my_autoloader');
   
-    function my_autoloader($class)
+/*    function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
   spl_autoload_register('my_autoloader');
-
+*/
 
   $si = new StationInformation(1,1,1,1,1,1,1,1);
   $timeTotal = 450;

@@ -1,10 +1,11 @@
 <?php
-function my_autoloader($class)
+/*function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
   spl_autoload_register('my_autoloader');
+  */
   
   /*
    * This is the general class for converting file information into information that
@@ -20,13 +21,13 @@ function my_autoloader($class)
      private $fileToObjectMapper;
      // the table object validating object
      private $tableObjectValidator;
-
+     // the object that stores the information that will go in the table
      private $tableObject;
-     
+     // the class that will send the information to the correct places
      private $tableWriterDelegator;
-
+     // the sensor class that stores the information from the files
      private $sensorInformation;
-
+     // if the class is handling defects or time files
      private $type;
 
      // Used to construct the two different pathways.  a type 1 is the time file path
@@ -35,6 +36,8 @@ function my_autoloader($class)
      // $type - which type of information the file stores (1 for time, anything else for 
      //      defect)
      // $filename - the name of the file to read from.
+     // $sensorInformtation - the sensor that the files are from
+     // $tableWriter - the table to write to
      public function __construct($newType,$filename, $newSensorInformation, $tableWriter)
      {
        $this -> sensorInformation = $newSensorInformation;
@@ -113,6 +116,7 @@ function my_autoloader($class)
         $this -> fileReader -> setFilename($filename);
      }
 
+     // returns the table object that stores the information
      public function getTableObject()
      {
        return $this -> tableObject;
