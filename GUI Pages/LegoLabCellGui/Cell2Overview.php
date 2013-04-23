@@ -38,6 +38,9 @@ function display()
 		$currentTime = date("His");
 		$timeDifference = $currentTime - $infoRow['time_since_defect'];
 		$timeDifference = gmdate("H:i:s", $timeDifference);
+		$statusNumber = $infoRow['status'];
+		$status = mysqli_query($con, "SELECT status FROM status WHERE status_id = $statusNumber");
+		$statusRow = mysqli_fetch_array($status);
 		if ($stationRow['station'] != 0)
 		{
 			echo '
@@ -52,6 +55,11 @@ function display()
 			<p align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
 			<p align="left">Time Since Defect: ' . $timeDifference . '</p>
 			<p>&nbsp;</p>
+			</td>
+			<td id="station' . $stationRow['station'] . 'Status" width="40%" class="' . $statusRow['status'] . '">&nbsp;</td>
+			</tr>
+			</table>
+			</a>
 			</td>';
 		}
 		else
@@ -68,17 +76,13 @@ function display()
 			<p align="left">Daily Defects: ' . $infoRow['daily_defect'] . '</p>
 			<p align="left">Time Since Defect: ' . $timeDifference . '</p>
 			<p align="left">Bottleneck Station: ' . $infoRow['bottleneck'] . '</p>
+			</td>
+			<td id="overallStatus" width="40%" class="' . $statusRow['status'] . '">&nbsp;</td>
+			</tr>
+			</table>
+			</a>
 			</td>';
 		}
-		$statusNumber = $infoRow['status'];
-		$status = mysqli_query($con, "SELECT status FROM status WHERE status_id = $statusNumber");
-		$statusRow = mysqli_fetch_array($status);
-		echo '
-		<td width="40%" class="' . $statusRow['status'] . '">&nbsp;</td>
-		</tr>
-		</table>
-		</a>
-		</td>';
 		if ($count % 2 != 0)
 		{
 			echo '

@@ -40,7 +40,7 @@ function display()
 				$status = mysqli_query($con, "SELECT status FROM status WHERE status_id = $statusNumber");
 				$statusRow = mysqli_fetch_array($status);
 				echo '
-				<td class="' . $statusRow['status'] . '">&nbsp;</td>';
+				<td id="cell' . $stationRow['cell'] . 'Station' . $stationRow['station'] . '" class="' . $statusRow['status'] . '">&nbsp;</td>';
 			}
 		}
 		echo '
