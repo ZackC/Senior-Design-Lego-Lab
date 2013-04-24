@@ -22,16 +22,23 @@ abstract public class StationDisplay
   protected WebDriver driver;
   //the title on the web page for the station
   protected String TITLE_STRING;
-
+  //the number of the station
+  protected int stationNumber;
+  //the cell number for the station
+  protected int cellNumber;
+  
   /***
    * The constructor for the class
    * @param newDriver - the webdriver
    * @param title - the title of the page
    */
-  public StationDisplay(WebDriver newDriver, String title)
+  public StationDisplay(WebDriver newDriver, String title, int stationNumber,
+		  int cellNumber)
   {
 	  driver = newDriver;
 	  TITLE_STRING = title;
+	  this.stationNumber = stationNumber;
+	  this.cellNumber = cellNumber;
 	  StationDisplayStructure.checkTitleLoaded(TITLE_STRING, driver);
   }
   
@@ -72,12 +79,21 @@ abstract public class StationDisplay
   }
   
   /***
-   * Checks the takt time sting of the station pages
+   * Checks the cycle time string of the station pages
    * @throws Exception
    */
-  public void checkTaktText() throws Exception
+  public void checkCycleTimeText() throws Exception
   {
-	  StationDisplayStructure.checkForStringInPage(driver, "Takt Time");
+	  StationDisplayStructure.checkForStringInPage(driver, "Cycle Time");
+  }
+  
+  /***
+   * Checks the lead time string of the overall station pages
+   * @throws Exception
+   */
+  public void checkLeadTimeText() throws Exception
+  {
+	  StationDisplayStructure.checkForStringInPage(driver, "Lead Time");
   }
   
   /***
@@ -86,7 +102,16 @@ abstract public class StationDisplay
    */
   public void checkProcessTimesImage() throws Exception
   {
-	  StationDisplayStructure.checkPictureDisplayedInPage(driver,"processtimes");
+	  if(stationNumber == 0)
+	  {
+		  StationDisplayStructure.checkPictureDisplayedInPage(driver,"../../GUIGraphs/Cell"+cellNumber+
+				  "OverallProcessGraph.png",0); 
+	  }
+	  else
+	  {
+	    StationDisplayStructure.checkPictureDisplayedInPage(driver,"../../GUIGraphs/Cell"+cellNumber
+			  +"Station"+stationNumber+"ProcessGraph.png",0);
+	  }
   }
   
   /***
@@ -95,7 +120,16 @@ abstract public class StationDisplay
    */
   public void checkIdleTimesImage() throws Exception
   {
-	  StationDisplayStructure.checkPictureDisplayedInPage(driver,"idletimes");
+	  if(stationNumber == 0)
+	  {
+		  StationDisplayStructure.checkPictureDisplayedInPage(driver,"../../GUIGraphs/Cell"+cellNumber+
+				  "OverallIdleGraph.png",1); 
+	  }
+	  else if(stationNumber != 1)
+	  {
+	  StationDisplayStructure.checkPictureDisplayedInPage(driver,"../../GUIGraphs/Cell"+cellNumber+
+			  "Station"+stationNumber+"IdleGraph.png",1);
+	  }
   }
   
   /***

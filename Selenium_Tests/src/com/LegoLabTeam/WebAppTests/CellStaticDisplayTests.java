@@ -25,7 +25,7 @@ public class CellStaticDisplayTests extends TestCase {
 	 @Before
 	  public void setUp() throws Exception {
 	    driver = new FirefoxDriver();
-	    baseUrl = "http://127.0.0.1/GUI%20Pages/LegoLabCellGui/";
+	    baseUrl = "http://127.0.0.1/GUIPages/LegoLabCellGui/";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
 	 
@@ -54,11 +54,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell1OverallButtonContainsTaktTimeText() throws Exception
+	 public void testCell1OverallButtonContainsLeadTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell1().getOverallButton(),
-				 "Takt Time");
+				 "Lead Time");
 	 }
 	 
 	 @Test
@@ -110,11 +110,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell1Station1ButtonContainsTaktTimeText() throws Exception
+	 public void testCell1Station1ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell1().getStation1Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -159,11 +159,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell1Station2ButtonContainsTaktTimeText() throws Exception
+	 public void testCell1Station2ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell1().getStation2Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -208,11 +208,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell1Station3ButtonContainsTaktTimeText() throws Exception
+	 public void testCell1Station3ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell1().getStation3Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -257,11 +257,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell1Station4ButtonContainsTaktTimeText() throws Exception
+	 public void testCell1Station4ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell1().getStation4Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -306,11 +306,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell1Station5ButtonContainsTaktTimeText() throws Exception
+	 public void testCell1Station5ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell1().getStation5Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -355,11 +355,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell2StationOverallButtonContainsTaktTimeText() throws Exception
+	 public void testCell2StationOverallButtonContainsLeadTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell2().getOverallButton(),
-				 "Takt Time");
+				 "Lead Time");
 	 }
 	 
 	 @Test
@@ -411,11 +411,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell2Station1ButtonContainsTaktTimeText() throws Exception
+	 public void testCell2Station1ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell2().getStation1Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -460,11 +460,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell2Station2ButtonContainsTaktTimeText() throws Exception
+	 public void testCell2Station2ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell2().getStation2Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -509,11 +509,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell2Station3ButtonContainsTaktTimeText() throws Exception
+	 public void testCell2Station3ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell2().getStation3Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -558,11 +558,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell2Station4ButtonContainsTaktTimeText() throws Exception
+	 public void testCell2Station4ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell2().getStation4Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -607,11 +607,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell2Station5ButtonContainsTaktTimeText() throws Exception
+	 public void testCell2Station5ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell2().getStation5Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -656,11 +656,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell3StationOverallButtonContainsTaktTimeText() throws Exception
+	 public void testCell3StationOverallButtonContainsLeadTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell3().getOverallButton(),
-				 "Takt Time");
+				 "Lead Time");
 	 }
 	 
 	 @Test
@@ -712,11 +712,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell3Station1ButtonContainsTaktTimeText() throws Exception
+	 public void testCell3Station1ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell3().getStation1Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -761,11 +761,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell3Station2ButtonContainsTaktTimeText() throws Exception
+	 public void testCell3Station2ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell3().getStation2Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -810,11 +810,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell3Station3ButtonContainsTaktTimeText() throws Exception
+	 public void testCell3Station3ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell3().getStation3Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -859,11 +859,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell3Station4ButtonContainsTaktTimeText() throws Exception
+	 public void testCell3Station4ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell3().getStation4Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test
@@ -908,11 +908,11 @@ public class CellStaticDisplayTests extends TestCase {
 	 }
 	 
 	 @Test
-	 public void testCell3Station5ButtonContainsTaktTimeText() throws Exception
+	 public void testCell3Station5ButtonContainsCycleTimeText() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
 		 CellDisplayStructure.checkTextIsInButton(cellOverview.navigateToCell3().getStation5Button(),
-				 "Takt Time");
+				 "Cycle Time");
 	 }
 	 
 	 @Test

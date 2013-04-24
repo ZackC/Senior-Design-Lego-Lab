@@ -56,17 +56,17 @@
      //the amount of points in the process times
      private $countOfProcessTimesForGraph = 0;
      //the mean of the process times
-     const PROCESSMEAN = 10;
+     const PROCESSMEAN = 71;
      //standard deviation of the process times
-     const PROCESSSIGMA = 5;
+     const PROCESSSIGMA = 19;
      //the points for the idle time graph
      private $idleTimesForGraph = array();
      //the count of the points in the idle time graph
      private $countOfIdleTimesForGraph = 0;
      //the mean of the idle times
-     const IDLEMEAN = 10;
+     const IDLEMEAN = 8;
      //the standard deviation of the idle times
-     const IDLESIGMA = 5;
+     const IDLESIGMA = 2;
      
     /*
      * The constructor for the overall station 

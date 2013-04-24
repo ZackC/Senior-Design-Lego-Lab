@@ -2,10 +2,12 @@ package com.LegoLabTeam.WebAppTests;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -37,9 +39,10 @@ public class StationDisplayStructure extends DisplayStructure
 	 * @param driver - the webdriver
 	 * @param pictureName - the name of the picture to verify
 	 */
-	public static void checkPictureDisplayedInPage(WebDriver driver, String pictureName)
+	public static void checkPictureDisplayedInPage(WebDriver driver, String pictureName, int position)
 	{
-		driver.findElement(By.name(pictureName)).isDisplayed();
+		List<WebElement> images = driver.findElements(By.tagName("img"));
+		images.get(position).isDisplayed();
 	}
 	/***
 	 * This method defines how to click the back button on the page

@@ -9,9 +9,9 @@ import org.openqa.selenium.WebDriver;
 public class StationsForCell1PageObject extends StationDisplay
 {
 	
-  public StationsForCell1PageObject(WebDriver driver, String title)
+  public StationsForCell1PageObject(WebDriver driver, String title, int stationNumber)
   {
-	  super(driver, title);
+	  super(driver, title, stationNumber, 1);
   }
   
   /***

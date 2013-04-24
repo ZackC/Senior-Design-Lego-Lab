@@ -40,14 +40,15 @@ public abstract class CellDisplay
    */
   public StationDisplay goToStation(Class<? extends StationDisplay> stationDisplayClassToReturn,int stationNumber) throws Exception
   {
-	if (stationNumber == 0)
+	/*if (stationNumber == 0)
 	{
 	  return CellDisplayStructure.navigateToStation(driver, stationDisplayClassToReturn, "overallProcessTime");
 	}
 	else
 	{
 	  return CellDisplayStructure.navigateToStation(driver, stationDisplayClassToReturn, "station"+stationNumber+"ProcessTime");
-	}
+	}*/
+	return CellDisplayStructure.navigateToStation(driver, stationDisplayClassToReturn, stationNumber); 
   }
   
   /**
@@ -91,7 +92,7 @@ public abstract class CellDisplay
    */
   public WebElement getButton(int stationNumber)
   {
-	  if (stationNumber == 0)
+	  /*if (stationNumber == 0)
 		{
 		  return CellDisplayStructure.returnButton(driver, "overallProcessTime");
 		}
@@ -99,6 +100,8 @@ public abstract class CellDisplay
 		{
 		  return CellDisplayStructure.returnButton(driver, "station"+stationNumber+"ProcessTime");
 		}
+		*/
+	  return CellDisplayStructure.returnButton(driver, stationNumber);
   }
   
   /***

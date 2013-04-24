@@ -23,7 +23,7 @@ public class LabStaticDisplayTests extends TestCase
 	@Before
 	  public void setUp() throws Exception {
 	    driver = new FirefoxDriver();
-	    baseUrl = "http://127.0.0.1/GUI%20Pages/LegoLabCellGui/";
+	    baseUrl = "http://127.0.0.1/GUIPages/LegoLabCellGui/";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
 	
@@ -31,7 +31,7 @@ public class LabStaticDisplayTests extends TestCase
 	public void testCell1ButtonTitle() throws Exception
 	{
 		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		cellOverview.checkTitleIsInButton(1, "Cell1");
+		cellOverview.checkTitleIsInButton(1, "Cell 1");
 	}
 	
 	@Test
@@ -76,7 +76,7 @@ public class LabStaticDisplayTests extends TestCase
 	public void testCell2ButtonTitle() throws Exception
 	{
 		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		cellOverview.checkTitleIsInButton(2, "Cell2");
+		cellOverview.checkTitleIsInButton(2, "Cell 2");
 	}
 	
 	@Test
@@ -121,7 +121,7 @@ public class LabStaticDisplayTests extends TestCase
 	public void testCell3ButtonTitle() throws Exception
 	{
 		LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		cellOverview.checkTitleIsInButton(3, "Cell3");
+		cellOverview.checkTitleIsInButton(3, "Cell 3");
 	}
 	
 	@Test

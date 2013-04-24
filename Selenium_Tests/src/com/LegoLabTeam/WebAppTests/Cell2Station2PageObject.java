@@ -16,7 +16,7 @@ public class Cell2Station2PageObject extends StationsForCell2PageObject{
 	 */
 	public Cell2Station2PageObject(WebDriver newDriver)
 	{
-        super(newDriver,"Tiger Automotive Lab: Cell 2 Station 2");
+        super(newDriver,"Tiger Automotive Lab: Cell 2 Station 2",2);
 	}
 
 }

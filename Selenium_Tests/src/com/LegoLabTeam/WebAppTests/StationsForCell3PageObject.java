@@ -9,9 +9,9 @@ import org.openqa.selenium.WebDriver;
 public class StationsForCell3PageObject extends StationDisplay{
 
 	
-	public StationsForCell3PageObject(WebDriver driver, String title)
+	public StationsForCell3PageObject(WebDriver driver, String title, int stationNumber)
 	{
-		super(driver, title);
+		super(driver, title, stationNumber, 3);
 	}
 	/***
 	 * This method defines how to go back to cell 3

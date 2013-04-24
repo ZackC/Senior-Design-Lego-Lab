@@ -1,5 +1,6 @@
 package com.LegoLabTeam.WebAppTests;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -44,7 +45,7 @@ public class LabDisplayPageObject
      */
     public static LabDisplayPageObject navigateToSelf(WebDriver driver, String baseUrl)
     {
-    	driver.get(baseUrl + "Cell%20Overview.php");
+    	driver.get(baseUrl + "CellOverview.php");
     	return new LabDisplayPageObject(driver);
     }
     
@@ -85,7 +86,9 @@ public class LabDisplayPageObject
      */
     public WebElement getButton(int cellNumber)
     {
-    	return driver.findElement(By.id("cell"+cellNumber+"Station1")).findElement(By.xpath("ancestor::a"));
+    	List links = driver.findElements(By.tagName("a"));
+    	return (WebElement)links.get(cellNumber - 1);
+    	//return driver.findElement(By.id("cell"+cellNumber+"Station1")).findElement(By.xpath("ancestor::a"));
     }
     
     /***

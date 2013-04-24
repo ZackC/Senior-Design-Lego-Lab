@@ -1,6 +1,7 @@
 package com.LegoLabTeam.WebAppTests;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -28,9 +29,9 @@ public class CellDisplayStructure extends DisplayStructure
 	 * @return - the station to get to.
 	 * @throws Exception
 	 */
-	public static StationDisplay navigateToStation(WebDriver driver, Class<? extends StationDisplay> stationDisplayClassToReturn, String idString) throws Exception
+	public static StationDisplay navigateToStation(WebDriver driver, Class<? extends StationDisplay> stationDisplayClassToReturn, int stationNumber)throws Exception
 	{
-	  returnButton(driver,idString).click();
+	  returnButton(driver,stationNumber).click();
 	  return stationDisplayClassToReturn.getDeclaredConstructor(WebDriver.class).newInstance(driver);
 
 	}
@@ -41,9 +42,11 @@ public class CellDisplayStructure extends DisplayStructure
 	 * @param idString - the id string of something in the button
 	 * @return: the button on the web page
 	 */
-	public static WebElement returnButton(WebDriver driver, String idString)
+	public static WebElement returnButton(WebDriver driver, int buttonNumber)
 	{
-		return driver.findElement(By.id(idString)).findElement(By.xpath("ancestor::a"));
+		List<WebElement> links = driver.findElements(By.tagName("a"));
+		return links.get(buttonNumber+1);
+		//return driver.findElement(By.id(idString)).findElement(By.xpath("ancestor::a"));
 	}
 	
 	/***

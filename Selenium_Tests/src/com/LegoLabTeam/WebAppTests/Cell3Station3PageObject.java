@@ -15,6 +15,6 @@ public class Cell3Station3PageObject extends StationsForCell3PageObject{
 	 */
 	public Cell3Station3PageObject(WebDriver newDriver)
 	{
-        super(newDriver,"Tiger Automotive Lab: Cell 3 Station 3");
+        super(newDriver,"Tiger Automotive Lab: Cell 3 Station 3",3);
 	}
 }

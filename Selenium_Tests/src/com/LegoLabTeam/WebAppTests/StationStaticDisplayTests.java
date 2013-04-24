@@ -27,7 +27,7 @@ public class StationStaticDisplayTests extends TestCase{
 	 @Before
 	  public void setUp() throws Exception {
 	    driver = new FirefoxDriver();
-	    baseUrl = "http://127.0.0.1/GUI%20Pages/LegoLabCellGui/";
+	    baseUrl = "http://127.0.0.1/GUIPages/LegoLabCellGui/";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
 	 
@@ -61,10 +61,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell1OverallStation() throws Exception
+	 public void testLeadTimeStringAtCell1OverallStation() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell1().navigateToOverall().checkTaktText();
+		    cellOverview.navigateToCell1().navigateToOverall().checkLeadTimeText();
 	 }
 	 
 	 @Test
@@ -111,10 +111,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell1Station1() throws Exception
+	 public void testCycleTimeStringAtCell1Station1() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell1().navigateToStation1().checkTaktText();
+		    cellOverview.navigateToCell1().navigateToStation1().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell1Station1() throws Exception
@@ -159,10 +159,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell1Station2() throws Exception
+	 public void testCycleTimeStringAtCell1Station2() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell1().navigateToStation2().checkTaktText();
+		    cellOverview.navigateToCell1().navigateToStation2().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell1Station2() throws Exception
@@ -207,10 +207,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell1Station3() throws Exception
+	 public void testCycleTimeStringAtCell1Station3() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell1().navigateToStation3().checkTaktText();
+		    cellOverview.navigateToCell1().navigateToStation3().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell1Station3() throws Exception
@@ -255,10 +255,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell1Station4() throws Exception
+	 public void testCycleTimeStringAtCell1Station4() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell1().navigateToStation4().checkTaktText();
+		    cellOverview.navigateToCell1().navigateToStation4().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell1Station4() throws Exception
@@ -303,10 +303,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell1Station5() throws Exception
+	 public void testCycleTimeStringAtCell1Station5() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell1().navigateToStation5().checkTaktText();
+		    cellOverview.navigateToCell1().navigateToStation5().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell1Station5() throws Exception
@@ -351,10 +351,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell2OverallStation() throws Exception
+	 public void testLeadTimeStringAtCell2OverallStation() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell2().navigateToOverall().checkTaktText();
+		    cellOverview.navigateToCell2().navigateToOverall().checkLeadTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell2OverallStation() throws Exception
@@ -399,10 +399,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell2Station1() throws Exception
+	 public void testCycleTimeStringAtCell2Station1() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell2().navigateToStation1().checkTaktText();
+		    cellOverview.navigateToCell2().navigateToStation1().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell2Station1() throws Exception
@@ -447,10 +447,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell2Station2() throws Exception
+	 public void testCycleTimeStringAtCell2Station2() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell2().navigateToStation2().checkTaktText();
+		    cellOverview.navigateToCell2().navigateToStation2().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell2Station2() throws Exception
@@ -495,10 +495,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell2Station3() throws Exception
+	 public void testCycleTimeStringAtCell2Station3() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell2().navigateToStation3().checkTaktText();
+		    cellOverview.navigateToCell2().navigateToStation3().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell2Station3() throws Exception
@@ -543,10 +543,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell2Station4() throws Exception
+	 public void testCycleTimeStringAtCell2Station4() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell2().navigateToStation4().checkTaktText();
+		    cellOverview.navigateToCell2().navigateToStation4().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell2Station4() throws Exception
@@ -591,10 +591,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell2Station5() throws Exception
+	 public void testCycleTimeStringAtCell2Station5() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell2().navigateToStation5().checkTaktText();
+		    cellOverview.navigateToCell2().navigateToStation5().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell2Station5() throws Exception
@@ -640,10 +640,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell3OverallStation() throws Exception
+	 public void testLeadTimeStringAtCell3OverallStation() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell3().navigateToOverall().checkTaktText();
+		    cellOverview.navigateToCell3().navigateToOverall().checkLeadTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell3OverallStation() throws Exception
@@ -688,10 +688,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell3Station1() throws Exception
+	 public void testCycleTimeStringAtCell3Station1() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell3().navigateToStation1().checkTaktText();
+		    cellOverview.navigateToCell3().navigateToStation1().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell3Station1() throws Exception
@@ -736,10 +736,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell3Station2() throws Exception
+	 public void testCycleTimeStringAtCell3Station2() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell3().navigateToStation2().checkTaktText();
+		    cellOverview.navigateToCell3().navigateToStation2().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell3Station2() throws Exception
@@ -784,10 +784,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell3Station3() throws Exception
+	 public void testCycleTimeStringAtCell3Station3() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell3().navigateToStation3().checkTaktText();
+		    cellOverview.navigateToCell3().navigateToStation3().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell3Station3() throws Exception
@@ -832,10 +832,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell3Station4() throws Exception
+	 public void testCycleTimeStringAtCell3Station4() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell3().navigateToStation4().checkTaktText();
+		    cellOverview.navigateToCell3().navigateToStation4().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell3Station4() throws Exception
@@ -880,10 +880,10 @@ public class StationStaticDisplayTests extends TestCase{
 	 }
 	 
 	 @Test
-	 public void testTaktStringAtCell3Station5() throws Exception
+	 public void testCycleTimeStringAtCell3Station5() throws Exception
 	 {
 		 LabDisplayPageObject cellOverview = LabDisplayPageObject.navigateToSelf(driver, baseUrl);
-		    cellOverview.navigateToCell3().navigateToStation5().checkTaktText();
+		    cellOverview.navigateToCell3().navigateToStation5().checkCycleTimeText();
 	 }
 	 @Test
 	 public void testProcessTimesGraphAtCell3Station5() throws Exception

@@ -28,10 +28,10 @@
      // information for the different stations
      public function __construct()
      {
-       $this -> stationMeanIdleTimes = array(10,10,10,10,10);
-       $this -> stationMeanProcessTimes = array(5,5,5,5,5);
-       $this -> stationSigmaIdleTimes = array(2,2,2,2,2);
-       $this -> stationSigmaProcessTimes = array(5,5,5,5,5);
+       $this -> stationMeanIdleTimes = array(0,10,10,10,10);
+       $this -> stationMeanProcessTimes = array(86,53,73,67,75);
+       $this -> stationSigmaIdleTimes = array(0,2,2,2,2);
+       $this -> stationSigmaProcessTimes = array(17,21,18,29,9);
      }
 
     /*
