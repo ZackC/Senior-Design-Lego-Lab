@@ -260,7 +260,7 @@
     //newStatus - the status to change to
     //carNumber - the number of the car to update
     //timeErrorType - the type of the time error, 2 for process time error, 3 for idle
-        time error
+    //    time error
     public function updateStatus($newStatus, $carNumber, $timeErrorType = null)
     {
       //echo "{{{{{{{{{{{{{{{{{{{{{{{{{{{{\n";
