@@ -1,11 +1,11 @@
 <?php
-function my_autoloader($class)
+/*function my_autoloader($class)
   {
     include realpath(dirname(__FILE__))."/".$class.'.php';
   }
 
   spl_autoload_register('my_autoloader');
-  
+ */ 
 /**
  *
  * The class for the abstract class for delegating information from the 

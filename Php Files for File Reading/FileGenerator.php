@@ -10,7 +10,7 @@ class FileGenerator
  * This class is not part of the main program
  *
  */
-	private $numCars = 10;
+	private $numCars = 20;
 	private $carsDone = 0;
 	private $currentCar = 1;
 	private $numSensors = 5;

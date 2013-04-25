@@ -67,6 +67,8 @@
      const IDLEMEAN = 8;
      //the standard deviation of the idle times
      const IDLESIGMA = 2;
+     //the number of times stored for the graphs
+     const NUMBEROFTIMESINARRAY = 10;
      
     /*
      * The constructor for the overall station 
